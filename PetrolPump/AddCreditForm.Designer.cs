@@ -66,7 +66,6 @@
             // CBType
             // 
             this.CBType.DropDownHeight = 205;
-            this.CBType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBType.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.CBType.FormattingEnabled = true;
             this.CBType.IntegralHeight = false;
@@ -167,7 +166,6 @@
             // CBVehicle
             // 
             this.CBVehicle.DropDownHeight = 205;
-            this.CBVehicle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBVehicle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.CBVehicle.FormattingEnabled = true;
             this.CBVehicle.IntegralHeight = false;
@@ -180,7 +178,6 @@
             // CBCompany
             // 
             this.CBCompany.DropDownHeight = 205;
-            this.CBCompany.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.CBCompany.FormattingEnabled = true;
             this.CBCompany.IntegralHeight = false;

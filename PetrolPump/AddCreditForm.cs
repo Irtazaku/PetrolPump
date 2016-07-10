@@ -26,10 +26,18 @@ namespace PetrolPump
         private void AddCreditForm_Load(object sender, EventArgs e)
         {
             foreach (string Name in Company.Name)
+            {
+                CBCompany.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                CBCompany.AutoCompleteSource = AutoCompleteSource.ListItems;
                 CBCompany.Items.Add(Name);
+            }
 
             foreach (string Item in Inventory.Name)
+            {
+                CBType.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                CBType.AutoCompleteSource = AutoCompleteSource.ListItems;
                 CBType.Items.Add(Item);
+            }
 
             if (CBCompany.Items.Count > 0)
                 CBCompany.SelectedIndex = 0;
@@ -42,7 +50,11 @@ namespace PetrolPump
             CBVehicle.Items.Clear();
 
             foreach (string Number in Company.Vehicles[CBCompany.SelectedIndex].Number)
+            {
+                CBVehicle.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                CBVehicle.AutoCompleteSource = AutoCompleteSource.ListItems;
                 CBVehicle.Items.Add(Number);
+            }
 
             if (CBVehicle.Items.Count > 0)
                 CBVehicle.SelectedIndex = 0;

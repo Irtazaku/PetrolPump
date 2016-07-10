@@ -111,7 +111,7 @@ namespace PetrolPump
                 worksheet.Cells[Row, 7].Value = "Closing";
                 worksheet.Cells[Row, 7, Row, 8].Merge = true;
                 worksheet.Cells[Row, 9].Value = "Rates";
-                worksheet.Cells[Row, 10].Value = "Total Sales Amount";
+                worksheet.Cells[Row, 10].Value = "Total Amount";
                 worksheet.Cells[Row, 3, Row, 10].Style.Font.Bold = true;
 
                 Row++;
@@ -170,7 +170,7 @@ namespace PetrolPump
                     }
                 }
 
-                worksheet.Cells[Row, 7].Value = "Grand Total Sales Amount";
+                worksheet.Cells[Row, 7].Value = "Grand Total Amount";
                 worksheet.Cells[Row, 7, Row, 9].Merge = true;
                 worksheet.Cells[Row, 10].Value = grand_amount;
                 worksheet.Cells[Row, 7, Row, 9].Style.Font.Bold = true;

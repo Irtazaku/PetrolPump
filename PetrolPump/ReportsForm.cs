@@ -528,11 +528,21 @@ namespace PetrolPump
             PanelVehicleCash.Visible = false;
 
             //inventory
+            
+            
             foreach (string Item in Inventory.Name)
             {
+                CBCashType.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                CBCashType.AutoCompleteSource = AutoCompleteSource.ListItems;
                 CBCashType.Items.Add(Item);
+                CBCreditType.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                CBCreditType.AutoCompleteSource = AutoCompleteSource.ListItems;
                 CBCreditType.Items.Add(Item);
+                CBLineCreditType.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                CBLineCreditType.AutoCompleteSource = AutoCompleteSource.ListItems;
                 CBLineCreditType.Items.Add(Item);
+                CBInventoryAddType.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                CBInventoryAddType.AutoCompleteSource = AutoCompleteSource.ListItems;
                 CBInventoryAddType.Items.Add(Item);
             }
 
@@ -551,8 +561,14 @@ namespace PetrolPump
             //company
             foreach (string Name in Company.Name)
             {
+                CBCreditCompany.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                CBCreditCompany.AutoCompleteSource = AutoCompleteSource.ListItems;
                 CBCreditCompany.Items.Add(Name);
+                CBVehicleCashCompany.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                CBVehicleCashCompany.AutoCompleteSource = AutoCompleteSource.ListItems;
                 CBVehicleCashCompany.Items.Add(Name);
+                CBCreditVehicleCashName.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                CBCreditVehicleCashName.AutoCompleteSource = AutoCompleteSource.ListItems;
                 CBCreditVehicleCashName.Items.Add(Name);
             }
 
@@ -567,8 +583,11 @@ namespace PetrolPump
 
             //line customer
             foreach (string Name in LineCustomer.Number)
+            {
+                CBLineCreditVehicle.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                CBLineCreditVehicle.AutoCompleteSource = AutoCompleteSource.ListItems;
                 CBLineCreditVehicle.Items.Add(Name);
-
+            }
             if (CBLineCreditVehicle.Items.Count > 0)
                 CBLineCreditVehicle.SelectedIndex = 0;
 
@@ -1133,10 +1152,20 @@ namespace PetrolPump
         {
             CBCreditVehicle.Items.Clear();
             foreach (string Number in Company.Vehicles[CBCreditCompany.SelectedIndex].Number)
+            {
+                CBCreditVehicle.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                CBCreditVehicle.AutoCompleteSource = AutoCompleteSource.ListItems;
                 CBCreditVehicle.Items.Add(Number);
+            }
+
 
             if (CBCreditVehicle.Items.Count > 0)
                 CBCreditVehicle.SelectedIndex = 0;
+        }
+
+        private void CBCreditVehicle_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

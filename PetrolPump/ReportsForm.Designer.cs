@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle64 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle65 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle66 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle67 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle68 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle69 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle70 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle92 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle93 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle94 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle95 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle96 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle97 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle98 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DGVReports = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -70,6 +70,7 @@
             this.RBCashAsc = new System.Windows.Forms.RadioButton();
             this.label7 = new System.Windows.Forms.Label();
             this.CBCashOrderBy = new System.Windows.Forms.ComboBox();
+            this.CBCashType = new System.Windows.Forms.ComboBox();
             this.PanelVehicleCash = new System.Windows.Forms.Panel();
             this.RBVehicleCashDesc = new System.Windows.Forms.RadioButton();
             this.RBVehicleCashAsc = new System.Windows.Forms.RadioButton();
@@ -80,6 +81,7 @@
             this.TBVehicleCashReceiver = new System.Windows.Forms.TextBox();
             this.BtnGetVehicleCash = new System.Windows.Forms.Button();
             this.label24 = new System.Windows.Forms.Label();
+            this.CBVehicleCashCompany = new System.Windows.Forms.ComboBox();
             this.PanelCreditVehicleCash = new System.Windows.Forms.Panel();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.RBCreditVehicleCashAsc = new System.Windows.Forms.RadioButton();
@@ -88,7 +90,11 @@
             this.label11 = new System.Windows.Forms.Label();
             this.BtnGetCreditVehicleCash = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
+            this.CBCreditVehicleCashName = new System.Windows.Forms.ComboBox();
             this.PanelCredit = new System.Windows.Forms.Panel();
+            this.CBCreditType = new System.Windows.Forms.ComboBox();
+            this.CBCreditVehicle = new System.Windows.Forms.ComboBox();
+            this.CBCreditCompany = new System.Windows.Forms.ComboBox();
             this.RBCreditDesc = new System.Windows.Forms.RadioButton();
             this.RBCreditAsc = new System.Windows.Forms.RadioButton();
             this.label8 = new System.Windows.Forms.Label();
@@ -109,6 +115,8 @@
             this.TBLineCreditCustomer = new System.Windows.Forms.TextBox();
             this.BtnGetLineCredit = new System.Windows.Forms.Button();
             this.label28 = new System.Windows.Forms.Label();
+            this.CBLineCreditType = new System.Windows.Forms.ComboBox();
+            this.CBLineCreditVehicle = new System.Windows.Forms.ComboBox();
             this.PanelInventoryAdded = new System.Windows.Forms.Panel();
             this.RBInventoryDesc = new System.Windows.Forms.RadioButton();
             this.RBInventoryAsc = new System.Windows.Forms.RadioButton();
@@ -117,19 +125,11 @@
             this.label17 = new System.Windows.Forms.Label();
             this.BtnGetInventory = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
+            this.CBInventoryAddType = new System.Windows.Forms.ComboBox();
             this.PanelDate = new System.Windows.Forms.Panel();
             this.CBDateMenu = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.CBCreditCompany = new System.Windows.Forms.ComboBox();
-            this.CBCreditVehicle = new System.Windows.Forms.ComboBox();
-            this.CBCreditType = new System.Windows.Forms.ComboBox();
-            this.CBVehicleCashCompany = new System.Windows.Forms.ComboBox();
-            this.CBCreditVehicleCashName = new System.Windows.Forms.ComboBox();
-            this.CBCashType = new System.Windows.Forms.ComboBox();
-            this.CBLineCreditType = new System.Windows.Forms.ComboBox();
-            this.CBLineCreditVehicle = new System.Windows.Forms.ComboBox();
-            this.CBInventoryAddType = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.DGVReports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVVisibleColumns)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -150,28 +150,28 @@
             this.DGVReports.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DGVReports.BackgroundColor = System.Drawing.Color.White;
             this.DGVReports.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle64.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle64.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle64.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle64.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
-            dataGridViewCellStyle64.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle64.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
-            dataGridViewCellStyle64.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVReports.DefaultCellStyle = dataGridViewCellStyle64;
+            dataGridViewCellStyle92.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle92.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle92.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle92.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            dataGridViewCellStyle92.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle92.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            dataGridViewCellStyle92.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVReports.DefaultCellStyle = dataGridViewCellStyle92;
             this.DGVReports.Location = new System.Drawing.Point(12, 264);
             this.DGVReports.Name = "DGVReports";
-            dataGridViewCellStyle65.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle65.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle65.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle65.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle65.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(234)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle65.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle65.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVReports.RowHeadersDefaultCellStyle = dataGridViewCellStyle65;
+            dataGridViewCellStyle93.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle93.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle93.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle93.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle93.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(234)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle93.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle93.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVReports.RowHeadersDefaultCellStyle = dataGridViewCellStyle93;
             this.DGVReports.RowHeadersVisible = false;
-            dataGridViewCellStyle66.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle66.Padding = new System.Windows.Forms.Padding(5, 6, 0, 6);
-            this.DGVReports.RowsDefaultCellStyle = dataGridViewCellStyle66;
+            dataGridViewCellStyle94.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle94.Padding = new System.Windows.Forms.Padding(5, 6, 0, 6);
+            this.DGVReports.RowsDefaultCellStyle = dataGridViewCellStyle94;
             this.DGVReports.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGVReports.Size = new System.Drawing.Size(1376, 712);
             this.DGVReports.TabIndex = 77;
@@ -287,40 +287,40 @@
             this.DGVVisibleColumns.AllowUserToOrderColumns = true;
             this.DGVVisibleColumns.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DGVVisibleColumns.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle67.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle67.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle67.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle67.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle67.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle67.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle67.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVVisibleColumns.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle67;
+            dataGridViewCellStyle95.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle95.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle95.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle95.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle95.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle95.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle95.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVVisibleColumns.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle95;
             this.DGVVisibleColumns.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVVisibleColumns.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2});
-            dataGridViewCellStyle68.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle68.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle68.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            dataGridViewCellStyle68.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
-            dataGridViewCellStyle68.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(234)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle68.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
-            dataGridViewCellStyle68.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVVisibleColumns.DefaultCellStyle = dataGridViewCellStyle68;
+            dataGridViewCellStyle96.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle96.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle96.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            dataGridViewCellStyle96.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            dataGridViewCellStyle96.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(234)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle96.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            dataGridViewCellStyle96.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVVisibleColumns.DefaultCellStyle = dataGridViewCellStyle96;
             this.DGVVisibleColumns.Location = new System.Drawing.Point(1207, 264);
             this.DGVVisibleColumns.Name = "DGVVisibleColumns";
-            dataGridViewCellStyle69.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle69.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle69.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle69.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle69.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(234)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle69.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle69.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVVisibleColumns.RowHeadersDefaultCellStyle = dataGridViewCellStyle69;
+            dataGridViewCellStyle97.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle97.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle97.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle97.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle97.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(234)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle97.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle97.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVVisibleColumns.RowHeadersDefaultCellStyle = dataGridViewCellStyle97;
             this.DGVVisibleColumns.RowHeadersVisible = false;
-            dataGridViewCellStyle70.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle70.Padding = new System.Windows.Forms.Padding(5, 6, 0, 6);
-            this.DGVVisibleColumns.RowsDefaultCellStyle = dataGridViewCellStyle70;
+            dataGridViewCellStyle98.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle98.Padding = new System.Windows.Forms.Padding(5, 6, 0, 6);
+            this.DGVVisibleColumns.RowsDefaultCellStyle = dataGridViewCellStyle98;
             this.DGVVisibleColumns.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGVVisibleColumns.Size = new System.Drawing.Size(181, 712);
             this.DGVVisibleColumns.TabIndex = 79;
@@ -595,6 +595,17 @@
             this.CBCashOrderBy.Size = new System.Drawing.Size(248, 32);
             this.CBCashOrderBy.TabIndex = 4;
             // 
+            // CBCashType
+            // 
+            this.CBCashType.DropDownHeight = 205;
+            this.CBCashType.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.CBCashType.FormattingEnabled = true;
+            this.CBCashType.IntegralHeight = false;
+            this.CBCashType.Location = new System.Drawing.Point(189, 97);
+            this.CBCashType.Name = "CBCashType";
+            this.CBCashType.Size = new System.Drawing.Size(408, 32);
+            this.CBCashType.TabIndex = 140;
+            // 
             // PanelVehicleCash
             // 
             this.PanelVehicleCash.Controls.Add(this.RBVehicleCashDesc);
@@ -605,8 +616,8 @@
             this.PanelVehicleCash.Controls.Add(this.label23);
             this.PanelVehicleCash.Controls.Add(this.TBVehicleCashReceiver);
             this.PanelVehicleCash.Controls.Add(this.BtnGetVehicleCash);
-            this.PanelVehicleCash.Controls.Add(this.label24);
             this.PanelVehicleCash.Controls.Add(this.CBVehicleCashCompany);
+            this.PanelVehicleCash.Controls.Add(this.label24);
             this.PanelVehicleCash.Location = new System.Drawing.Point(12, 92);
             this.PanelVehicleCash.Name = "PanelVehicleCash";
             this.PanelVehicleCash.Size = new System.Drawing.Size(1376, 132);
@@ -715,6 +726,18 @@
             this.label24.TabIndex = 103;
             this.label24.Text = "Vehicle Cash Report";
             // 
+            // CBVehicleCashCompany
+            // 
+            this.CBVehicleCashCompany.DropDownHeight = 205;
+            this.CBVehicleCashCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.CBVehicleCashCompany.FormattingEnabled = true;
+            this.CBVehicleCashCompany.IntegralHeight = false;
+            this.CBVehicleCashCompany.Location = new System.Drawing.Point(328, 55);
+            this.CBVehicleCashCompany.Name = "CBVehicleCashCompany";
+            this.CBVehicleCashCompany.Size = new System.Drawing.Size(550, 32);
+            this.CBVehicleCashCompany.Sorted = true;
+            this.CBVehicleCashCompany.TabIndex = 145;
+            // 
             // PanelCreditVehicleCash
             // 
             this.PanelCreditVehicleCash.Controls.Add(this.radioButton1);
@@ -818,6 +841,17 @@
             this.label13.TabIndex = 79;
             this.label13.Text = "Credit and Vehicle Cash Report";
             // 
+            // CBCreditVehicleCashName
+            // 
+            this.CBCreditVehicleCashName.DropDownHeight = 205;
+            this.CBCreditVehicleCashName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.CBCreditVehicleCashName.FormattingEnabled = true;
+            this.CBCreditVehicleCashName.IntegralHeight = false;
+            this.CBCreditVehicleCashName.Location = new System.Drawing.Point(474, 57);
+            this.CBCreditVehicleCashName.Name = "CBCreditVehicleCashName";
+            this.CBCreditVehicleCashName.Size = new System.Drawing.Size(409, 32);
+            this.CBCreditVehicleCashName.TabIndex = 140;
+            // 
             // PanelCredit
             // 
             this.PanelCredit.Controls.Add(this.CBCreditType);
@@ -836,6 +870,44 @@
             this.PanelCredit.Name = "PanelCredit";
             this.PanelCredit.Size = new System.Drawing.Size(1376, 132);
             this.PanelCredit.TabIndex = 87;
+            // 
+            // CBCreditType
+            // 
+            this.CBCreditType.DropDownHeight = 205;
+            this.CBCreditType.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.CBCreditType.FormattingEnabled = true;
+            this.CBCreditType.IntegralHeight = false;
+            this.CBCreditType.Location = new System.Drawing.Point(182, 99);
+            this.CBCreditType.Name = "CBCreditType";
+            this.CBCreditType.Size = new System.Drawing.Size(408, 32);
+            this.CBCreditType.Sorted = true;
+            this.CBCreditType.TabIndex = 146;
+            // 
+            // CBCreditVehicle
+            // 
+            this.CBCreditVehicle.DropDownHeight = 205;
+            this.CBCreditVehicle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.CBCreditVehicle.FormattingEnabled = true;
+            this.CBCreditVehicle.IntegralHeight = false;
+            this.CBCreditVehicle.Location = new System.Drawing.Point(723, 58);
+            this.CBCreditVehicle.Name = "CBCreditVehicle";
+            this.CBCreditVehicle.Size = new System.Drawing.Size(408, 32);
+            this.CBCreditVehicle.Sorted = true;
+            this.CBCreditVehicle.TabIndex = 145;
+            this.CBCreditVehicle.SelectedIndexChanged += new System.EventHandler(this.CBCreditVehicle_SelectedIndexChanged);
+            // 
+            // CBCreditCompany
+            // 
+            this.CBCreditCompany.DropDownHeight = 205;
+            this.CBCreditCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.CBCreditCompany.FormattingEnabled = true;
+            this.CBCreditCompany.IntegralHeight = false;
+            this.CBCreditCompany.Location = new System.Drawing.Point(182, 58);
+            this.CBCreditCompany.Name = "CBCreditCompany";
+            this.CBCreditCompany.Size = new System.Drawing.Size(408, 32);
+            this.CBCreditCompany.Sorted = true;
+            this.CBCreditCompany.TabIndex = 144;
+            this.CBCreditCompany.SelectedIndexChanged += new System.EventHandler(this.CBCreditCompany_SelectedIndexChanged);
             // 
             // RBCreditDesc
             // 
@@ -1076,6 +1148,24 @@
             this.label28.TabIndex = 103;
             this.label28.Text = "Line Credit Report";
             // 
+            // CBLineCreditType
+            // 
+            this.CBLineCreditType.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.CBLineCreditType.FormattingEnabled = true;
+            this.CBLineCreditType.Location = new System.Drawing.Point(182, 97);
+            this.CBLineCreditType.Name = "CBLineCreditType";
+            this.CBLineCreditType.Size = new System.Drawing.Size(408, 32);
+            this.CBLineCreditType.TabIndex = 144;
+            // 
+            // CBLineCreditVehicle
+            // 
+            this.CBLineCreditVehicle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.CBLineCreditVehicle.FormattingEnabled = true;
+            this.CBLineCreditVehicle.Location = new System.Drawing.Point(718, 56);
+            this.CBLineCreditVehicle.Name = "CBLineCreditVehicle";
+            this.CBLineCreditVehicle.Size = new System.Drawing.Size(408, 32);
+            this.CBLineCreditVehicle.TabIndex = 145;
+            // 
             // PanelInventoryAdded
             // 
             this.PanelInventoryAdded.Controls.Add(this.RBInventoryDesc);
@@ -1176,6 +1266,15 @@
             this.label18.TabIndex = 109;
             this.label18.Text = "Inventory History";
             // 
+            // CBInventoryAddType
+            // 
+            this.CBInventoryAddType.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.CBInventoryAddType.FormattingEnabled = true;
+            this.CBInventoryAddType.Location = new System.Drawing.Point(450, 57);
+            this.CBInventoryAddType.Name = "CBInventoryAddType";
+            this.CBInventoryAddType.Size = new System.Drawing.Size(408, 32);
+            this.CBInventoryAddType.TabIndex = 144;
+            // 
             // PanelDate
             // 
             this.PanelDate.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -1237,118 +1336,11 @@
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // CBCreditCompany
-            // 
-            this.CBCreditCompany.DropDownHeight = 205;
-            this.CBCreditCompany.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CBCreditCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.CBCreditCompany.FormattingEnabled = true;
-            this.CBCreditCompany.IntegralHeight = false;
-            this.CBCreditCompany.Location = new System.Drawing.Point(182, 58);
-            this.CBCreditCompany.Name = "CBCreditCompany";
-            this.CBCreditCompany.Size = new System.Drawing.Size(408, 32);
-            this.CBCreditCompany.Sorted = true;
-            this.CBCreditCompany.TabIndex = 144;
-            this.CBCreditCompany.SelectedIndexChanged += new System.EventHandler(this.CBCreditCompany_SelectedIndexChanged);
-            // 
-            // CBCreditVehicle
-            // 
-            this.CBCreditVehicle.DropDownHeight = 205;
-            this.CBCreditVehicle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CBCreditVehicle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.CBCreditVehicle.FormattingEnabled = true;
-            this.CBCreditVehicle.IntegralHeight = false;
-            this.CBCreditVehicle.Location = new System.Drawing.Point(723, 58);
-            this.CBCreditVehicle.Name = "CBCreditVehicle";
-            this.CBCreditVehicle.Size = new System.Drawing.Size(408, 32);
-            this.CBCreditVehicle.Sorted = true;
-            this.CBCreditVehicle.TabIndex = 145;
-            // 
-            // CBCreditType
-            // 
-            this.CBCreditType.DropDownHeight = 205;
-            this.CBCreditType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CBCreditType.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.CBCreditType.FormattingEnabled = true;
-            this.CBCreditType.IntegralHeight = false;
-            this.CBCreditType.Location = new System.Drawing.Point(182, 99);
-            this.CBCreditType.Name = "CBCreditType";
-            this.CBCreditType.Size = new System.Drawing.Size(408, 32);
-            this.CBCreditType.Sorted = true;
-            this.CBCreditType.TabIndex = 146;
-            // 
-            // CBVehicleCashCompany
-            // 
-            this.CBVehicleCashCompany.DropDownHeight = 205;
-            this.CBVehicleCashCompany.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CBVehicleCashCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.CBVehicleCashCompany.FormattingEnabled = true;
-            this.CBVehicleCashCompany.IntegralHeight = false;
-            this.CBVehicleCashCompany.Location = new System.Drawing.Point(328, 55);
-            this.CBVehicleCashCompany.Name = "CBVehicleCashCompany";
-            this.CBVehicleCashCompany.Size = new System.Drawing.Size(550, 32);
-            this.CBVehicleCashCompany.Sorted = true;
-            this.CBVehicleCashCompany.TabIndex = 145;
-            // 
-            // CBCreditVehicleCashName
-            // 
-            this.CBCreditVehicleCashName.DropDownHeight = 205;
-            this.CBCreditVehicleCashName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CBCreditVehicleCashName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.CBCreditVehicleCashName.FormattingEnabled = true;
-            this.CBCreditVehicleCashName.IntegralHeight = false;
-            this.CBCreditVehicleCashName.Location = new System.Drawing.Point(474, 57);
-            this.CBCreditVehicleCashName.Name = "CBCreditVehicleCashName";
-            this.CBCreditVehicleCashName.Size = new System.Drawing.Size(409, 32);
-            this.CBCreditVehicleCashName.TabIndex = 140;
-            // 
-            // CBCashType
-            // 
-            this.CBCashType.DropDownHeight = 205;
-            this.CBCashType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CBCashType.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.CBCashType.FormattingEnabled = true;
-            this.CBCashType.IntegralHeight = false;
-            this.CBCashType.Location = new System.Drawing.Point(189, 97);
-            this.CBCashType.Name = "CBCashType";
-            this.CBCashType.Size = new System.Drawing.Size(408, 32);
-            this.CBCashType.TabIndex = 140;
-            // 
-            // CBLineCreditType
-            // 
-            this.CBLineCreditType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CBLineCreditType.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.CBLineCreditType.FormattingEnabled = true;
-            this.CBLineCreditType.Location = new System.Drawing.Point(182, 97);
-            this.CBLineCreditType.Name = "CBLineCreditType";
-            this.CBLineCreditType.Size = new System.Drawing.Size(408, 32);
-            this.CBLineCreditType.TabIndex = 144;
-            // 
-            // CBLineCreditVehicle
-            // 
-            this.CBLineCreditVehicle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CBLineCreditVehicle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.CBLineCreditVehicle.FormattingEnabled = true;
-            this.CBLineCreditVehicle.Location = new System.Drawing.Point(718, 56);
-            this.CBLineCreditVehicle.Name = "CBLineCreditVehicle";
-            this.CBLineCreditVehicle.Size = new System.Drawing.Size(408, 32);
-            this.CBLineCreditVehicle.TabIndex = 145;
-            // 
-            // CBInventoryAddType
-            // 
-            this.CBInventoryAddType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CBInventoryAddType.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.CBInventoryAddType.FormattingEnabled = true;
-            this.CBInventoryAddType.Location = new System.Drawing.Point(450, 57);
-            this.CBInventoryAddType.Name = "CBInventoryAddType";
-            this.CBInventoryAddType.Size = new System.Drawing.Size(408, 32);
-            this.CBInventoryAddType.TabIndex = 144;
-            // 
             // ReportsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1290, 788);
+            this.ClientSize = new System.Drawing.Size(1290, 741);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.DGVVisibleColumns);
             this.Controls.Add(this.checkBox1);
@@ -1357,12 +1349,12 @@
             this.Controls.Add(this.CBDateMenu);
             this.Controls.Add(this.menuStrip2);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.PanelCash);
             this.Controls.Add(this.PanelLineCredit);
             this.Controls.Add(this.PanelInventoryAdded);
             this.Controls.Add(this.PanelCredit);
             this.Controls.Add(this.PanelVehicleCash);
             this.Controls.Add(this.PanelCreditVehicleCash);
+            this.Controls.Add(this.PanelCash);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ReportsForm";
             this.Text = "Reports - Sitara Hilal Petroleum Service";
