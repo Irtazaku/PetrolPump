@@ -151,7 +151,9 @@ namespace PetrolPump
                         double closing = Math.Round(Convert.ToDouble(InventoryClosing[2]), 2);
                         double total_stock = sales + closing;
                         double opening = total_stock - purchase;
-                        double amount = sales * Math.Round(Convert.ToDouble(InventoryClosing[1]), 2);
+                        //double amount = sales * Math.Round(Convert.ToDouble(InventoryClosing[1]), 2);
+                        double amount = Math.Round(Convert.ToDouble(InventoryClosing[2]), 2) * Math.Round(Convert.ToDouble(InventoryClosing[1]), 2);
+
                         grand_amount += amount;
 
                         worksheet.Cells[Row, 2].Value = InventoryClosing[0].ToString();
