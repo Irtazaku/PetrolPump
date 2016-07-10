@@ -1,0 +1,1497 @@
+select linecredit.ID, Type, Liter, Rate, linecredit.Amount as TotalAmount, linecredit.datetime,sum(linecreditreceived.Amount) as AmountReceived,linecredit.Amount-sum(linecreditreceived.Amount) as AmountReceivable from linecredit inner join linecreditreceived on linecredit.ID = linecreditreceived.LineCreditID where CustomerID='1' group by linecredit.IDSSQ - select Name from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select ID, VehicleNumber from linecustomers
+
+
+SIQ - select ID from linecustomers where vehiclenumber='JU-1111'
+
+
+SQ - select linecredit.ID, Type, Liter, Rate, linecredit.Amount as TotalAmount, linecredit.datetime,sum(linecreditreceived.Amount) as AmountReceived,linecredit.Amount-sum(linecreditreceived.Amount) as AmountReceivable from linecredit left join linecreditreceived on linecredit.ID = linecreditreceived.LineCreditID where CustomerID='1' group by linecredit.ID
+
+
+SSQ - select Name from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select ID, VehicleNumber from linecustomers
+
+
+SIQ - select ID from linecustomers where vehiclenumber='JU-1111'
+
+
+SQ - select linecredit.ID, Type, Liter, Rate, linecredit.Amount as TotalAmount, linecredit.datetime,sum(linecreditreceived.Amount) as AmountReceived,linecredit.Amount-sum(linecreditreceived.Amount) as AmountReceivable from linecredit left join linecreditreceived on linecredit.ID = linecreditreceived.LineCreditID where CustomerID='1' group by linecredit.ID
+
+
+SSQ - select Name from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select ID, VehicleNumber from linecustomers
+
+
+SIQ - select ID from linecustomers where vehiclenumber='JU-1112'
+
+
+SQ - select linecredit.ID, Type, Liter, Rate, linecredit.Amount as TotalAmount, linecredit.datetime,sum(COALESCE(linecreditreceived.Amount,0)) as AmountReceived,linecredit.Amount-sum(COALESCE(linecreditreceived.Amount,0)) as AmountReceivable from linecredit left join linecreditreceived on linecredit.ID = linecreditreceived.LineCreditID where CustomerID='2' group by linecredit.ID
+
+
+SSQ - select Name from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select ID, VehicleNumber from linecustomers
+
+
+SIQ - select ID from linecustomers where vehiclenumber='JU-1111'
+
+
+SQ - select linecredit.ID, Type, Liter, Rate, linecredit.Amount as TotalAmount, linecredit.datetime,sum(COALESCE(linecreditreceived.Amount,0)) as AmountReceived,linecredit.Amount-sum(COALESCE(linecreditreceived.Amount,0)) as AmountReceivable from linecredit left join linecreditreceived on linecredit.ID = linecreditreceived.LineCreditID where CustomerID='1' group by linecredit.ID
+
+
+SSQ - select Name from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select ID, VehicleNumber from linecustomers
+
+
+SIQ - select ID from linecustomers where vehiclenumber='JU-1111'
+
+
+SQ - select linecredit.ID, Type, Liter, Rate, linecredit.Amount as TotalAmount, linecredit.datetime,sum(COALESCE(linecreditreceived.Amount,0)) as AmountReceived,linecredit.Amount-sum(COALESCE(linecreditreceived.Amount,0)) as AmountReceivable from linecredit left join linecreditreceived on linecredit.ID = linecreditreceived.LineCreditID where CustomerID='1' group by linecredit.ID
+
+
+SSQ - select Name from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select ID, VehicleNumber from linecustomers
+
+
+SIQ - select ID from linecustomers where vehiclenumber='JU-1112'
+
+
+SQ - select linecredit.ID, Type, Liter, Rate, linecredit.Amount as TotalAmount, linecredit.datetime,sum(COALESCE(linecreditreceived.Amount,0)) as AmountReceived,linecredit.Amount-sum(COALESCE(linecreditreceived.Amount,0)) as AmountReceivable from linecredit left join linecreditreceived on linecredit.ID = linecreditreceived.LineCreditID where CustomerID='2' group by linecredit.ID
+
+
+SSQ - select Name from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select ID, VehicleNumber from linecustomers
+
+
+SIQ - select ID from linecustomers where vehiclenumber='JU-1112'
+
+
+SQ - select linecredit.ID, Type, Liter, Rate, linecredit.Amount as TotalAmount, linecredit.datetime,sum(COALESCE(linecreditreceived.Amount,0)) as AmountReceived,linecredit.Amount-sum(COALESCE(linecreditreceived.Amount,0)) as AmountReceivable from linecredit left join linecreditreceived on linecredit.ID = linecreditreceived.LineCreditID where CustomerID='2' group by linecredit.ID
+
+
+SSQ - select Name from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select ID, VehicleNumber from linecustomers
+
+
+SIQ - select ID from linecustomers where vehiclenumber='JU-1111'
+
+
+SQ - select linecredit.ID, Type, Liter, Rate, linecredit.Amount as TotalAmount, linecredit.datetime,sum(COALESCE(linecreditreceived.Amount,0)) as AmountReceived,linecredit.Amount-sum(COALESCE(linecreditreceived.Amount,0)) as AmountReceivable from linecredit left join linecreditreceived on linecredit.ID = linecreditreceived.LineCreditID where CustomerID='1' group by linecredit.ID
+
+
+SIQ - select ID from linecustomers where vehiclenumber='JU-1112'
+
+
+SQ - select linecredit.ID, Type, Liter, Rate, linecredit.Amount as TotalAmount, linecredit.datetime,sum(COALESCE(linecreditreceived.Amount,0)) as AmountReceived,linecredit.Amount-sum(COALESCE(linecreditreceived.Amount,0)) as AmountReceivable from linecredit left join linecreditreceived on linecredit.ID = linecreditreceived.LineCreditID where CustomerID='2' group by linecredit.ID
+
+
+SSQ - select Name from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select ID, VehicleNumber from linecustomers
+
+
+SIQ - select ID from linecustomers where vehiclenumber='JU-1112'
+
+
+SQ - select linecredit.ID, Type, Liter, Rate, linecredit.Amount as TotalAmount, linecredit.datetime,sum(COALESCE(linecreditreceived.Amount,0)) as AmountReceived,linecredit.Amount-sum(COALESCE(linecreditreceived.Amount,0)) as AmountReceivable from linecredit left join linecreditreceived on linecredit.ID = linecreditreceived.LineCreditID where CustomerID='2' group by linecredit.ID
+
+
+SSQ - select Name from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select ID, VehicleNumber from linecustomers
+
+
+SIQ - select ID from linecustomers where vehiclenumber='JU-1112'
+
+
+SQ - select linecredit.ID, Type, Liter, Rate, linecredit.Amount as TotalAmount, linecredit.datetime,sum(COALESCE(linecreditreceived.Amount,0)) as AmountReceived,linecredit.Amount-sum(COALESCE(linecreditreceived.Amount,0)) as AmountReceivable from linecredit left join linecreditreceived on linecredit.ID = linecreditreceived.LineCreditID where CustomerID='2' group by linecredit.ID
+
+
+SSQ - select Name from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select ID, VehicleNumber from linecustomers
+
+
+SIQ - select ID from linecustomers where vehiclenumber='JU-1112'
+
+
+SQ - select linecredit.ID, Type, Liter, Rate, linecredit.Amount as TotalAmount, linecredit.datetime,sum(COALESCE(linecreditreceived.Amount,0)) as AmountReceived,linecredit.Amount-sum(COALESCE(linecreditreceived.Amount,0)) as AmountReceivable from linecredit left join linecreditreceived on linecredit.ID = linecreditreceived.LineCreditID where CustomerID='2' group by linecredit.ID
+
+
+NRQ - insert into linecreditreceived set amount='431.55', datetime='2016-01-30 21:40:30', LineCreditID='4', CashierID='1'
+
+
+SIQ - select ID from linecustomers where vehiclenumber='JU-1112'
+
+
+SQ - select linecredit.ID, Type, Liter, Rate, linecredit.Amount as TotalAmount, linecredit.datetime,sum(COALESCE(linecreditreceived.Amount,0)) as AmountReceived,linecredit.Amount-sum(COALESCE(linecreditreceived.Amount,0)) as AmountReceivable from linecredit left join linecreditreceived on linecredit.ID = linecreditreceived.LineCreditID where CustomerID='2' group by linecredit.ID
+
+
+SSQ - select Name from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select ID, VehicleNumber from linecustomers
+
+
+SIQ - select ID from linecustomers where vehiclenumber='JU-1112'
+
+
+SQ - select linecredit.ID, Type, Liter, Rate, linecredit.Amount as TotalAmount, linecredit.datetime,sum(COALESCE(linecreditreceived.Amount,0)) as AmountReceived,linecredit.Amount-sum(COALESCE(linecreditreceived.Amount,0)) as AmountReceivable from linecredit left join linecreditreceived on linecredit.ID = linecreditreceived.LineCreditID where CustomerID='2'  group by linecredit.ID having AmountReceivable >0
+
+
+SQ - select ID, VehicleNumber from linecustomers
+
+
+SIQ - select ID from linecustomers where vehiclenumber='JU-1112'
+
+
+SQ - select linecredit.ID, Type, Liter, Rate, linecredit.Amount as TotalAmount, linecredit.datetime,sum(COALESCE(linecreditreceived.Amount,0)) as AmountReceived,linecredit.Amount-sum(COALESCE(linecreditreceived.Amount,0)) as AmountReceivable from linecredit left join linecreditreceived on linecredit.ID = linecreditreceived.LineCreditID where CustomerID='2'  group by linecredit.ID having AmountReceivable >0
+
+
+NRQ - insert into linecreditreceived set amount='431.55', datetime='2016-01-30 21:46:06', LineCreditID='4', CashierID='1'
+
+
+SSQ - select Name from linecustomers where ID='2'
+
+
+SSQ - select Name from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select ID, VehicleNumber from linecustomers
+
+
+SIQ - select ID from linecustomers where vehiclenumber='JU-1112'
+
+
+SQ - select linecredit.ID, Type, Liter, Rate, linecredit.Amount as TotalAmount, linecredit.datetime,sum(COALESCE(linecreditreceived.Amount,0)) as AmountReceived,linecredit.Amount-sum(COALESCE(linecreditreceived.Amount,0)) as AmountReceivable from linecredit left join linecreditreceived on linecredit.ID = linecreditreceived.LineCreditID where CustomerID='2'  group by linecredit.ID having AmountReceivable >0
+
+
+NRQ - insert into linecreditreceived set amount='431.55', datetime='2016-01-30 21:46:59', LineCreditID='4', CashierID='1'
+
+
+NRQ - insert into linecreditreceived set amount='431.55', datetime='2016-01-30 21:47:09', LineCreditID='4', CashierID='1'
+
+
+SSQ - select Name from linecustomers where ID='2'
+
+
+SQ - select ID, VehicleNumber from linecustomers
+
+
+SIQ - select ID from linecustomers where vehiclenumber='JU-1112'
+
+
+SQ - select linecredit.ID, Type, Liter, Rate, linecredit.Amount as TotalAmount, linecredit.datetime,sum(COALESCE(linecreditreceived.Amount,0)) as AmountReceived,linecredit.Amount-sum(COALESCE(linecreditreceived.Amount,0)) as AmountReceivable from linecredit left join linecreditreceived on linecredit.ID = linecreditreceived.LineCreditID where CustomerID='2'  group by linecredit.ID having AmountReceivable >0
+
+
+NRQ - insert into linecreditreceived set amount='1500', datetime='2016-01-30 21:48:18', LineCreditID='5', CashierID='1'
+
+
+SSQ - select Name from linecustomers where ID='2'
+
+
+SSQ - select Name from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+NRQ - insert into companies set Name='Sample Company 1', Number='0300-2011000', Email='sample1@company.com'
+
+
+SQ - select ID from companies
+
+
+SSQ - select Name from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select ID from companies
+
+
+NRQ - insert into vehicles set Name='Sample Driver 1', Number='JU-3330', CompanyID='1'
+
+
+SQ - select ID from companies
+
+
+NRQ - insert into vehicles set Name='Sample Driver 2', Number='JU-3331', CompanyID='1'
+
+
+NRQ - insert into vehicles set Name='Sample Driver 3', Number='JU-3332', CompanyID='1'
+
+
+SQ - select * from company where Name like '%%' and Number like '%%' and Email like '%%'
+
+
+SSQ - select Name from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select * from company where Name like '%%' and Number like '%%' and Email like '%%'
+
+
+SSQ - select Name from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select * from companies where Name like '%%' and Number like '%%' and Email like '%%'
+
+
+SSQ - select Name from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select * from companies where Name like '%%' and Number like '%%' and Email like '%%'
+
+
+SQ - select vehicles.ID as ID, vehicles.Name as VName,vehicles.Number as VNumber,companies.Name as CName from vehicles inner join companies on companies.ID = vehicles.companyID where vehicles.Name like '%%' and vehicles.number like '%%'
+
+
+SQ - select ID, VehicleNumber from linecustomers
+
+
+SQ - select ID, Name from companies
+
+
+SQ - select ID, Number from vehicles where CompanyID='1'
+
+
+SSQ - select Name from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SSQ - select Name from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select ID, Name from companies
+
+
+SQ - select ID, Number from vehicles where CompanyID='1'
+
+
+SSQ - select Name from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select ID, Name from companies
+
+
+SQ - select ID, Number from vehicles where CompanyID='1'
+
+
+SSQ - select Name from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select ID, Name from companies
+
+
+SQ - select ID, Number from vehicles where CompanyID='1'
+
+
+SIQ - insert into credit set 
+                                CompanyID='1',
+                                VehicleID='1',
+                                CashierID='1',
+                                Type='Petrol',
+                                Liter='98',
+                                Rate='74.68',
+                                Amount='7318.64',
+                                DateTime='2016-01-30 22:03:25';
+                                SELECT LAST_INSERT_ID();
+
+
+SIQ - insert into credit set 
+                                CompanyID='1',
+                                VehicleID='2',
+                                CashierID='1',
+                                Type='Petrol',
+                                Liter='10',
+                                Rate='74.68',
+                                Amount='746.8',
+                                DateTime='2016-01-30 22:04:15';
+                                SELECT LAST_INSERT_ID();
+
+
+SIQ - insert into credit set 
+                                CompanyID='1',
+                                VehicleID='2',
+                                CashierID='1',
+                                Type='Petrol',
+                                Liter='10',
+                                Rate='74.68',
+                                Amount='746.8',
+                                DateTime='2016-01-30 22:04:17';
+                                SELECT LAST_INSERT_ID();
+
+
+SIQ - insert into credit set 
+                                CompanyID='1',
+                                VehicleID='2',
+                                CashierID='1',
+                                Type='Petrol',
+                                Liter='56',
+                                Rate='74.68',
+                                Amount='4182.08',
+                                DateTime='2016-01-30 22:04:21';
+                                SELECT LAST_INSERT_ID();
+
+
+SIQ - insert into credit set 
+                                CompanyID='1',
+                                VehicleID='3',
+                                CashierID='1',
+                                Type='Petrol',
+                                Liter='100',
+                                Rate='74.68',
+                                Amount='7468',
+                                DateTime='2016-01-30 22:04:26';
+                                SELECT LAST_INSERT_ID();
+
+
+SIQ - insert into credit set 
+                                CompanyID='1',
+                                VehicleID='3',
+                                CashierID='1',
+                                Type='Petrol',
+                                Liter='42',
+                                Rate='74.68',
+                                Amount='3136.56',
+                                DateTime='2016-01-30 22:04:32';
+                                SELECT LAST_INSERT_ID();
+
+
+SQ - select ID, Name from companies
+
+
+SQ - select ID, Name from companies
+
+
+SSQ - select Name from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select ID, Name from companies
+
+
+SSQ - select Name from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select ID, Name from companies
+
+
+SIQ - select ID from linecustomers where name='Sample Company 1'
+
+
+SQ - select credit.ID,credit.VehicleNumber credit.Type, Liter, Rate, credit.Amount as TotalAmount, credit.datetime,sum(COALESCE(creditreceived.Amount,0)) as AmountReceived,credit.Amount-sum(COALESCE(creditreceived.Amount,0)) as AmountReceivable from linecredit inner join creditreceived on credit.ID = creditreceived.CreditID where Company='-1' group by credit.ID  having AmountReceivable >0
+
+
+SSQ - select Name from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select ID, Name from companies
+
+
+SIQ - select ID from companies where name='Sample Company 1'
+
+
+SQ - select credit.ID,credit.VehicleNumber, credit.Type, Liter, Rate, credit.Amount as TotalAmount, credit.datetime,sum(COALESCE(creditreceived.Amount,0)) as AmountReceived,credit.Amount-sum(COALESCE(creditreceived.Amount,0)) as AmountReceivable from credit inner join creditreceived on credit.ID = creditreceived.CreditID where Company='1' group by credit.ID  having AmountReceivable >0
+
+
+SSQ - select Name from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select ID, Name from companies
+
+
+SIQ - select ID from companies where name='Sample Company 1'
+
+
+SQ - select credit.ID,vehicles.Number, credit.Type, Liter, Rate, credit.Amount as TotalAmount, credit.datetime,sum(COALESCE(creditreceived.Amount,0)) as AmountReceived,credit.Amount-sum(COALESCE(creditreceived.Amount,0)) as AmountReceivable from credit left join creditreceived on credit.ID = creditreceived.CreditID left join vehicles on vehicles.id=credit.vehicleid where credit.CompanyID='1' group by credit.ID  having AmountReceivable >0
+
+
+SSQ - select Name from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select ID, Name from companies
+
+
+SIQ - select ID from companies where name='Sample Company 1'
+
+
+SQ - select credit.ID,vehicles.Number, credit.Type, Liter, Rate, credit.Amount as TotalAmount, credit.datetime,sum(COALESCE(creditreceived.Amount,0)) as AmountReceived,credit.Amount-sum(COALESCE(creditreceived.Amount,0)) as AmountReceivable from credit left join creditreceived on credit.ID = creditreceived.CreditID left join vehicles on vehicles.id=credit.vehicleid where credit.CompanyID='1' group by credit.ID  having AmountReceivable >0
+
+
+SSQ - select Name from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select ID, Name from companies
+
+
+SIQ - select ID from companies where name='Sample Company 1'
+
+
+SQ - select credit.ID,vehicles.Number, credit.Type, Liter, Rate, credit.Amount as TotalAmount, credit.datetime,sum(COALESCE(creditreceived.Amount,0)) as AmountReceived,credit.Amount-sum(COALESCE(creditreceived.Amount,0)) as AmountReceivable from credit left join creditreceived on credit.ID = creditreceived.CreditID left join vehicles on vehicles.id=credit.vehicleid where credit.CompanyID='1' group by credit.ID  having AmountReceivable >0
+
+
+SSQ - select Name from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select ID, Name from companies
+
+
+SIQ - select ID from companies where name='Sample Company 1'
+
+
+SQ - select credit.ID,vehicles.Number, credit.Type, Liter, Rate, credit.Amount as TotalAmount, credit.datetime,sum(COALESCE(creditreceived.Amount,0)) as AmountReceived,credit.Amount-sum(COALESCE(creditreceived.Amount,0)) as AmountReceivable from credit left join creditreceived on credit.ID = creditreceived.CreditID left join vehicles on vehicles.id=credit.vehicleid where credit.CompanyID='1' group by credit.ID  having AmountReceivable >0
+
+
+SQ - select ID, VehicleNumber from linecustomers
+
+
+SIQ - select ID from linecustomers where vehiclenumber='JU-1111'
+
+
+SQ - select linecredit.ID, Type, Liter, Rate, linecredit.Amount as TotalAmount, linecredit.datetime,sum(COALESCE(linecreditreceived.Amount,0)) as AmountReceived,linecredit.Amount-sum(COALESCE(linecreditreceived.Amount,0)) as AmountReceivable from linecredit left join linecreditreceived on linecredit.ID = linecreditreceived.LineCreditID where CustomerID='2'  group by linecredit.ID having AmountReceivable >0
+
+
+SSQ - select Name from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select ID, Name from companies
+
+
+SIQ - select ID from companies where name='Sample Company 1'
+
+
+SQ - select credit.ID,vehicles.Number, credit.Type, Liter, Rate, credit.Amount as TotalAmount, credit.datetime,sum(COALESCE(creditreceived.Amount,0)) as AmountReceived,credit.Amount-sum(COALESCE(creditreceived.Amount,0)) as AmountReceivable from credit left join creditreceived on credit.ID = creditreceived.CreditID left join vehicles on vehicles.id=credit.vehicleid where credit.CompanyID='1' group by credit.ID  having AmountReceivable >0
+
+
+SQ - select credit.ID,vehicles.Number, credit.Type, Liter, Rate, credit.Amount as TotalAmount, credit.datetime,sum(COALESCE(creditreceived.Amount,0)) as AmountReceived,credit.Amount-sum(COALESCE(creditreceived.Amount,0)) as AmountReceivable from credit left join creditreceived on credit.ID = creditreceived.CreditID left join vehicles on vehicles.id=credit.vehicleid where credit.CompanyID='1' group by credit.ID  having AmountReceivable >0
+
+
+SSQ - select Name from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select ID, Name from companies
+
+
+SIQ - select ID from companies where name='Sample Company 1'
+
+
+SQ - select credit.ID,vehicles.Number, credit.Type, Liter, Rate, credit.Amount as TotalAmount, credit.datetime,sum(COALESCE(creditreceived.Amount,0)) as AmountReceived,credit.Amount-sum(COALESCE(creditreceived.Amount,0)) as AmountReceivable from credit left join creditreceived on credit.ID = creditreceived.CreditID left join vehicles on vehicles.id=credit.vehicleid where credit.CompanyID='1' group by credit.ID  having AmountReceivable >0
+
+
+SQ - select ID, VehicleNumber from linecustomers
+
+
+SIQ - select ID from linecustomers where vehiclenumber='JU-1111'
+
+
+SQ - select linecredit.ID, Type, Liter, Rate, linecredit.Amount as TotalAmount, linecredit.datetime,sum(COALESCE(linecreditreceived.Amount,0)) as AmountReceived,linecredit.Amount-sum(COALESCE(linecreditreceived.Amount,0)) as AmountReceivable from linecredit left join linecreditreceived on linecredit.ID = linecreditreceived.LineCreditID where CustomerID='2'  group by linecredit.ID having AmountReceivable >0
+
+
+SQ - select ID, Name from companies
+
+
+SIQ - select ID from companies where name='Sample Company 1'
+
+
+SQ - select credit.ID,vehicles.Number, credit.Type, Liter, Rate, credit.Amount as TotalAmount, credit.datetime,sum(COALESCE(creditreceived.Amount,0)) as AmountReceived,credit.Amount-sum(COALESCE(creditreceived.Amount,0)) as AmountReceivable from credit left join creditreceived on credit.ID = creditreceived.CreditID left join vehicles on vehicles.id=credit.vehicleid where credit.CompanyID='1' group by credit.ID  having AmountReceivable >0
+
+
+SQ - select ID, Name from companies
+
+
+SIQ - select ID from companies where name='Sample Company 1'
+
+
+SQ - select credit.ID,vehicles.Number, credit.Type, Liter, Rate, credit.Amount as TotalAmount, credit.datetime,sum(COALESCE(creditreceived.Amount,0)) as AmountReceived,credit.Amount-sum(COALESCE(creditreceived.Amount,0)) as AmountReceivable from credit left join creditreceived on credit.ID = creditreceived.CreditID left join vehicles on vehicles.id=credit.vehicleid where credit.CompanyID='1' group by credit.ID  having AmountReceivable >0
+
+
+SSQ - select Name from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select ID, Name from companies
+
+
+SIQ - select ID from companies where name='Sample Company 1'
+
+
+SQ - select credit.ID,vehicles.Number, credit.Type, Liter, Rate, credit.Amount as TotalAmount, credit.datetime,sum(COALESCE(creditreceived.Amount,0)) as AmountReceived,credit.Amount-sum(COALESCE(creditreceived.Amount,0)) as AmountReceivable from credit left join creditreceived on credit.ID = creditreceived.CreditID left join vehicles on vehicles.id=credit.vehicleid where credit.CompanyID='1' group by credit.ID  having AmountReceivable >0
+
+
+NRQ - insert into creditreceived set amount='746.8', datetime='2016-01-30 22:36:54', CreditID='2',Type='Cheque' ,Amount='',AccountNumber='10192380198',ChequeNumber='8590138',Bank='HBL', CashierID='1'
+
+
+SSQ - select Name from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select ID, Name from companies
+
+
+SIQ - select ID from companies where name='Sample Company 1'
+
+
+SQ - select credit.ID,vehicles.Number, credit.Type, Liter, Rate, credit.Amount as TotalAmount, credit.datetime,sum(COALESCE(creditreceived.Amount,0)) as AmountReceived,credit.Amount-sum(COALESCE(creditreceived.Amount,0)) as AmountReceivable from credit left join creditreceived on credit.ID = creditreceived.CreditID left join vehicles on vehicles.id=credit.vehicleid where credit.CompanyID='1' group by credit.ID  having AmountReceivable >0
+
+
+NRQ - insert into creditreceived set amount='746.8', datetime='2016-01-30 22:42:20', CreditID='2',Type='Cheque',AccountNumber='1297498127',ChequeNumber='091822',Bank='HBL', CashierID='1'
+
+
+NRQ - insert into creditreceived set amount='7468', datetime='2016-01-30 22:42:20', CreditID='5',Type='Cheque',AccountNumber='1297498127',ChequeNumber='091822',Bank='HBL', CashierID='1'
+
+
+SSQ - select Name from companies where ID='1'
+
+
+SSQ - select Name from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select ID, Name from companies
+
+
+SIQ - select ID from companies where name='Sample Company 1'
+
+
+SQ - select credit.ID,vehicles.Number, credit.Type, Liter, Rate, credit.Amount as TotalAmount, credit.datetime,sum(COALESCE(creditreceived.Amount,0)) as AmountReceived,credit.Amount-sum(COALESCE(creditreceived.Amount,0)) as AmountReceivable from credit left join creditreceived on credit.ID = creditreceived.CreditID left join vehicles on vehicles.id=credit.vehicleid where credit.CompanyID='1' group by credit.ID  having AmountReceivable >0
+
+
+NRQ - insert into creditreceived set amount='746.8', datetime='2016-01-30 22:45:15', CreditID='2',Type='Cheque',AccountNumber='123456789',ChequeNumber='123456',Bank='HBL', CashierID='1'
+
+
+NRQ - insert into creditreceived set amount='7468', datetime='2016-01-30 22:45:15', CreditID='5',Type='Cheque',AccountNumber='123456789',ChequeNumber='123456',Bank='HBL', CashierID='1'
+
+
+SSQ - select Name from companies where ID='1'
+
+
+SQ - select ID, Name from companies
+
+
+SIQ - select ID from companies where name='Sample Company 1'
+
+
+SQ - select credit.ID,vehicles.Number, credit.Type, Liter, Rate, credit.Amount as TotalAmount, credit.datetime,sum(COALESCE(creditreceived.Amount,0)) as AmountReceived,credit.Amount-sum(COALESCE(creditreceived.Amount,0)) as AmountReceivable from credit left join creditreceived on credit.ID = creditreceived.CreditID left join vehicles on vehicles.id=credit.vehicleid where credit.CompanyID='1' group by credit.ID  having AmountReceivable >0
+
+
+SQ - select ID, Name from companies
+
+
+SIQ - select ID from companies where name='Sample Company 1'
+
+
+SQ - select credit.ID,vehicles.Number, credit.Type, Liter, Rate, credit.Amount as TotalAmount, credit.datetime,sum(COALESCE(creditreceived.Amount,0)) as AmountReceived,credit.Amount-sum(COALESCE(creditreceived.Amount,0)) as AmountReceivable from credit left join creditreceived on credit.ID = creditreceived.CreditID left join vehicles on vehicles.id=credit.vehicleid where credit.CompanyID='1' group by credit.ID  having AmountReceivable >0
+
+
+NRQ - insert into creditreceived set amount='2000', datetime='2016-01-30 22:48:35', CreditID='4',Type='Cash', CashierID='1'
+
+
+SSQ - select Name from companies where ID='1'
+
+
+SIQ - select ID from companies where name='Sample Company 1'
+
+
+SQ - select credit.ID,vehicles.Number, credit.Type, Liter, Rate, credit.Amount as TotalAmount, credit.datetime,sum(COALESCE(creditreceived.Amount,0)) as AmountReceived,credit.Amount-sum(COALESCE(creditreceived.Amount,0)) as AmountReceivable from credit left join creditreceived on credit.ID = creditreceived.CreditID left join vehicles on vehicles.id=credit.vehicleid where credit.CompanyID='1' group by credit.ID  having AmountReceivable >0
+
+
+SSQ - select Name from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select ID, Name from companies
+
+
+SIQ - insert into vehiclecash set 
+                                CompanyID='1',
+                                CashierID='1',
+                                RecieverName='Reciever Name 1',
+                                Amount='1500',
+                                DateTime='2016-01-31 1:59:56';
+                                SELECT LAST_INSERT_ID();
+
+
+SSQ - select Name from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select ID, Name from companies
+
+
+SIQ - insert into vehiclecash set 
+                                CompanyID='1',
+                                CashierID='1',
+                                ReceiverName='Receiver Name 1',
+                                Amount='1500',
+                                DateTime='2016-01-31 2:00:54';
+                                SELECT LAST_INSERT_ID();
+
+
+SQ - select ID, Name from companies
+
+
+SIQ - insert into vehiclecash set 
+                                CompanyID='1',
+                                CashierID='1',
+                                ReceiverName='Receiver Name 2',
+                                Amount='5000',
+                                DateTime='2016-01-31 2:01:13';
+                                SELECT LAST_INSERT_ID();
+
+
+SQ - select ID, Name from companies
+
+
+SQ - select ID, Name from companies
+
+
+SIQ - select ID from companies where name='Sample Company 1'
+
+
+SQ - select credit.ID,vehicles.Number, credit.Type, Liter, Rate, credit.Amount as TotalAmount, credit.datetime,sum(COALESCE(creditreceived.Amount,0)) as AmountReceived,credit.Amount-sum(COALESCE(creditreceived.Amount,0)) as AmountReceivable from credit left join creditreceived on credit.ID = creditreceived.CreditID left join vehicles on vehicles.id=credit.vehicleid where credit.CompanyID='1' group by credit.ID  having AmountReceivable >0
+
+
+SQ - select Name,Type from users where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select Name,Type from users where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select Name,Type from users where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select Name,Type from users where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select Name,Type from users where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select Name,Type from users where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select Name,Type from users where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select Name,Type from users where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select Name,Type from users where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select Name,Type from users where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select Name,Type from users where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select Name,Type from users where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select Name,Type from users where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select Name,Type from users where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select Name,Type from users where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select Name,Type from users where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select Name,Type from users where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select Name,Type from users where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select Name,Type from users where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select Name,Type from users where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select Name,Type from users where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select Name,Type from users where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select Name,Type from users where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select Name,Type from users where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select Name,Type from users where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select ID, Name from companies
+
+
+SQ - select ID, Number from vehicles where CompanyID='1'
+
+
+SQ - select Name,Type from users where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select Name,Type from users where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select Name,Type from users where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select Name,Type from users where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select Name,Type from users where ID='2' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select Name,Type from users where ID='2' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select Name,Type from users where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select Name,Type from users where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select Name,Type from users where ID='2' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select Name,Type from users where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select Name,Type from users where ID='2' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select * from inventory where Name like '%%' and Rate like '%%' and Quantity like '%%' order by Name asc
+
+
+SQ - select * from linecustomers where Name like '%%' and vehicleNumber like '%%'
+
+
+SQ - select Name,Type from users where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SIQ - 
+                                update inventory set quantity=quantity-2
+                                where name='Petrol'
+                                insert into cash set 
+                                CashierID='1',
+                                Name='Sample User 1',
+                                Type='Petrol',
+                                Liter='2',
+                                Rate='74.68',
+                                Amount='149.36',
+                                VehicleNumber='',
+                                DateTime='2016-01-31 19:14:13';
+                                SELECT LAST_INSERT_ID();
+
+
+SQ - select Name,Type from users where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SIQ - 
+                                update inventory set quantity=quantity-2
+                                where name='Petrol';
+                                insert into cash set 
+                                CashierID='1',
+                                Name='Sample User 1',
+                                Type='Petrol',
+                                Liter='2',
+                                Rate='74.68',
+                                Amount='149.36',
+                                VehicleNumber='',
+                                DateTime='2016-01-31 19:15:47';
+                                SELECT LAST_INSERT_ID();
+
+
+SQ - select Name,Type from users where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select Name,Type from users where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select Name,Type from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - SELECT DateTime, cash.Name, VehicleNumber, Amount, cashiers.Name, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - select Name,Type from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - SELECT DateTime, cash.Name, VehicleNumber, Amount, cashiers.Name, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime, cash.Name, VehicleNumber, Amount, cashiers.Name, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime, cash.Name, VehicleNumber, Amount, cashiers.Name, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime, cash.Name, VehicleNumber, Amount, cashiers.Name, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime, cash.Name, VehicleNumber, Amount, cashiers.Name, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime, cash.Name, VehicleNumber, Amount, cashiers.Name, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime, cash.Name, VehicleNumber, Amount, cashiers.Name, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - select Name,Type from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - SELECT DateTime, cash.Name, VehicleNumber, Amount, cashiers.Name, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime, cash.Name, VehicleNumber, Amount, cashiers.Name, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%'  and date >= '2016-02-03' 
+
+
+SQ - select Name,Type from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - SELECT DateTime as Date, cash.Name as Driver Name, VehicleNumber as Vehicle Number, Amount, cashiers.Name as Cashier Name, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - select Name,Type from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%0%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%p%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%'  and datetime >= '2016-02-03' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%'  and datetime >= '2016-01-30' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%'  and datetime >= '2016-01-30' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%'  and datetime >= '2016-01-30' 
+
+
+SQ - select Name,Type from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%'  and datetime = '2016-02-03' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%'  and datetime = '2016-01-30' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%'  and datetime = '2016-01-30' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%'  and datetime = '2016-01-30' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%'  and datetime between '2016-01-11' and '2016-02-03' 
+
+
+SQ - select Name,Type from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%'  and date(datetime) = '2016-02-03' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%'  and date(datetime) = '2016-01-30' 
+
+
+SQ - select Name,Type from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - select Name,Type from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - select Name,Type from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - select Name,Type from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - select Name,Type from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - select Name,Type from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - select Name,Type from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select Name,Type from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - select Name,Type from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - select Name,Type from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - select Name,Type from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - select Name,Type from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - select Name,Type from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - select Name,Type from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - select Name,Type from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%i%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - select Name,Type from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - select Name,Type from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - select Name,Type from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%i%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%i%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%'  and date(datetime) = '2016-02-03' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%a%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%a%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%ae%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
+SQ - select Name,Type from cashiers where ID='1' and password='test'
+
+
+SQ - Select Name, Rate from inventory
+
+
+SQ - SELECT DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%%' and vehiclenumber like '%%' and cash.type like '%%' 
+
+
