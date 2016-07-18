@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DGVSearchInventory = new System.Windows.Forms.DataGridView();
             this.DGVName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DGVRate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,7 +41,6 @@
             this.LblName = new System.Windows.Forms.Label();
             this.TBRate = new System.Windows.Forms.TextBox();
             this.TBQuantity = new System.Windows.Forms.TextBox();
-            this.TBName = new System.Windows.Forms.TextBox();
             this.CBOrderBy = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.RBDesc = new System.Windows.Forms.RadioButton();
@@ -51,6 +50,7 @@
             this.inventoryManagementToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.label3 = new System.Windows.Forms.Label();
             this.BtnClose = new System.Windows.Forms.Button();
+            this.CBName = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.DGVSearchInventory)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -63,42 +63,42 @@
             this.DGVSearchInventory.AllowUserToResizeRows = false;
             this.DGVSearchInventory.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DGVSearchInventory.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVSearchInventory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVSearchInventory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.DGVSearchInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVSearchInventory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DGVName,
             this.DGVRate,
             this.DGVQuantity});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(234)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVSearchInventory.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(234)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVSearchInventory.DefaultCellStyle = dataGridViewCellStyle6;
             this.DGVSearchInventory.Location = new System.Drawing.Point(12, 212);
             this.DGVSearchInventory.Name = "DGVSearchInventory";
             this.DGVSearchInventory.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(234)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVSearchInventory.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(234)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVSearchInventory.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.DGVSearchInventory.RowHeadersVisible = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5, 6, 0, 6);
-            this.DGVSearchInventory.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(5, 6, 0, 6);
+            this.DGVSearchInventory.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.DGVSearchInventory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGVSearchInventory.Size = new System.Drawing.Size(1376, 764);
             this.DGVSearchInventory.TabIndex = 7;
@@ -172,15 +172,6 @@
             this.TBQuantity.TabIndex = 3;
             this.TBQuantity.TextChanged += new System.EventHandler(this.TBQuantity_TextChanged);
             // 
-            // TBName
-            // 
-            this.TBName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.TBName.Location = new System.Drawing.Point(315, 112);
-            this.TBName.Name = "TBName";
-            this.TBName.Size = new System.Drawing.Size(450, 35);
-            this.TBName.TabIndex = 1;
-            this.TBName.TextChanged += new System.EventHandler(this.TBName_TextChanged);
-            // 
             // CBOrderBy
             // 
             this.CBOrderBy.DropDownHeight = 205;
@@ -244,7 +235,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.menuStrip1.Size = new System.Drawing.Size(1400, 46);
+            this.menuStrip1.Size = new System.Drawing.Size(1362, 46);
             this.menuStrip1.TabIndex = 100;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -292,12 +283,22 @@
             this.BtnClose.UseVisualStyleBackColor = false;
             this.BtnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
+            // CBName
+            // 
+            this.CBName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBName.FormattingEnabled = true;
+            this.CBName.Location = new System.Drawing.Point(315, 112);
+            this.CBName.Name = "CBName";
+            this.CBName.Size = new System.Drawing.Size(450, 32);
+            this.CBName.TabIndex = 131;
+            this.CBName.SelectedIndexChanged += new System.EventHandler(this.CBName_SelectedIndexChanged);
+            // 
             // SearchInventoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.BtnClose;
-            this.ClientSize = new System.Drawing.Size(1400, 988);
+            this.ClientSize = new System.Drawing.Size(1362, 741);
             this.Controls.Add(this.BtnClose);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.menuStrip1);
@@ -309,9 +310,9 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.TBRate);
             this.Controls.Add(this.TBQuantity);
-            this.Controls.Add(this.TBName);
             this.Controls.Add(this.DGVSearchInventory);
             this.Controls.Add(this.LblName);
+            this.Controls.Add(this.CBName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "SearchInventoryForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -338,7 +339,6 @@
         private System.Windows.Forms.Label LblName;
         private System.Windows.Forms.TextBox TBRate;
         private System.Windows.Forms.TextBox TBQuantity;
-        private System.Windows.Forms.TextBox TBName;
         private System.Windows.Forms.ComboBox CBOrderBy;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RadioButton RBDesc;
@@ -348,5 +348,6 @@
         private System.Windows.Forms.ToolStripMenuItem inventoryManagementToolStripMenuItem1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button BtnClose;
+        private System.Windows.Forms.ComboBox CBName;
     }
 }

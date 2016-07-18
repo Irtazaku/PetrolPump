@@ -28,7 +28,11 @@ namespace PetrolPump
             RBCashPayment.Checked = true;
 
             foreach (string Name in Company.Name)
+            {
+                CBName.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                CBName.AutoCompleteSource = AutoCompleteSource.ListItems;
                 CBName.Items.Add(Name + "");
+            }
 
             if (CBName.Items.Count > 0)
                 CBName.SelectedIndex = 0;

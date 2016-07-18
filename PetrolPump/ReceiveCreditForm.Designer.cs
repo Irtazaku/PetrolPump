@@ -58,7 +58,6 @@
             // CBName
             // 
             this.CBName.DropDownHeight = 205;
-            this.CBName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.CBName.FormattingEnabled = true;
             this.CBName.IntegralHeight = false;

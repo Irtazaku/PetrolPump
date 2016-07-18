@@ -28,13 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label4 = new System.Windows.Forms.Label();
-            this.TBNumber = new System.Windows.Forms.TextBox();
-            this.TBName = new System.Windows.Forms.TextBox();
             this.DGVSearchCompany = new System.Windows.Forms.DataGridView();
             this.DGVID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DGVName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,8 +40,6 @@
             this.DGVEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LblName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.TBEmail = new System.Windows.Forms.TextBox();
-            this.TBID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.sitaraHilalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,6 +50,10 @@
             this.RBAsc = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
             this.CBOrderBy = new System.Windows.Forms.ComboBox();
+            this.CBNAME = new System.Windows.Forms.ComboBox();
+            this.CBID = new System.Windows.Forms.ComboBox();
+            this.CBNUMBER = new System.Windows.Forms.ComboBox();
+            this.CBEMAIL = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.DGVSearchCompany)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -68,24 +68,6 @@
             this.label4.TabIndex = 94;
             this.label4.Text = "Number";
             // 
-            // TBNumber
-            // 
-            this.TBNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBNumber.Location = new System.Drawing.Point(818, 112);
-            this.TBNumber.Name = "TBNumber";
-            this.TBNumber.Size = new System.Drawing.Size(408, 35);
-            this.TBNumber.TabIndex = 3;
-            this.TBNumber.TextChanged += new System.EventHandler(this.TBNumber_TextChanged);
-            // 
-            // TBName
-            // 
-            this.TBName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBName.Location = new System.Drawing.Point(258, 162);
-            this.TBName.Name = "TBName";
-            this.TBName.Size = new System.Drawing.Size(408, 35);
-            this.TBName.TabIndex = 2;
-            this.TBName.TextChanged += new System.EventHandler(this.TBName_TextChanged);
-            // 
             // DGVSearchCompany
             // 
             this.DGVSearchCompany.AllowUserToAddRows = false;
@@ -94,43 +76,43 @@
             this.DGVSearchCompany.AllowUserToResizeRows = false;
             this.DGVSearchCompany.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DGVSearchCompany.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVSearchCompany.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVSearchCompany.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.DGVSearchCompany.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVSearchCompany.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DGVID,
             this.DGVName,
             this.DGVNumber,
             this.DGVEmail});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(234)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVSearchCompany.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(234)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVSearchCompany.DefaultCellStyle = dataGridViewCellStyle18;
             this.DGVSearchCompany.Location = new System.Drawing.Point(12, 266);
             this.DGVSearchCompany.Name = "DGVSearchCompany";
             this.DGVSearchCompany.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(234)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVSearchCompany.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(234)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVSearchCompany.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.DGVSearchCompany.RowHeadersVisible = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5, 6, 0, 6);
-            this.DGVSearchCompany.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.Padding = new System.Windows.Forms.Padding(5, 6, 0, 6);
+            this.DGVSearchCompany.RowsDefaultCellStyle = dataGridViewCellStyle20;
             this.DGVSearchCompany.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGVSearchCompany.Size = new System.Drawing.Size(1376, 710);
             this.DGVSearchCompany.TabIndex = 8;
@@ -184,24 +166,6 @@
             this.label1.TabIndex = 96;
             this.label1.Text = "Email";
             // 
-            // TBEmail
-            // 
-            this.TBEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBEmail.Location = new System.Drawing.Point(818, 162);
-            this.TBEmail.Name = "TBEmail";
-            this.TBEmail.Size = new System.Drawing.Size(408, 35);
-            this.TBEmail.TabIndex = 4;
-            this.TBEmail.TextChanged += new System.EventHandler(this.TBEmail_TextChanged);
-            // 
-            // TBID
-            // 
-            this.TBID.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBID.Location = new System.Drawing.Point(258, 112);
-            this.TBID.Name = "TBID";
-            this.TBID.Size = new System.Drawing.Size(408, 35);
-            this.TBID.TabIndex = 1;
-            this.TBID.TextChanged += new System.EventHandler(this.TBID_TextChanged);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -222,7 +186,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.menuStrip1.Size = new System.Drawing.Size(1400, 46);
+            this.menuStrip1.Size = new System.Drawing.Size(1362, 46);
             this.menuStrip1.TabIndex = 99;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -323,12 +287,53 @@
             this.CBOrderBy.Sorted = true;
             this.CBOrderBy.TabIndex = 5;
             // 
+            // CBNAME
+            // 
+            this.CBNAME.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBNAME.FormattingEnabled = true;
+            this.CBNAME.Location = new System.Drawing.Point(258, 162);
+            this.CBNAME.Name = "CBNAME";
+            this.CBNAME.Size = new System.Drawing.Size(408, 32);
+            this.CBNAME.TabIndex = 132;
+            this.CBNAME.SelectedIndexChanged += new System.EventHandler(this.CBNAME_SelectedIndexChanged);
+            // 
+            // CBID
+            // 
+            this.CBID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBID.FormattingEnabled = true;
+            this.CBID.Location = new System.Drawing.Point(258, 112);
+            this.CBID.Name = "CBID";
+            this.CBID.Size = new System.Drawing.Size(408, 32);
+            this.CBID.TabIndex = 133;
+            this.CBID.SelectedIndexChanged += new System.EventHandler(this.CBID_SelectedIndexChanged);
+            // 
+            // CBNUMBER
+            // 
+            this.CBNUMBER.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBNUMBER.FormattingEnabled = true;
+            this.CBNUMBER.Location = new System.Drawing.Point(818, 112);
+            this.CBNUMBER.Name = "CBNUMBER";
+            this.CBNUMBER.Size = new System.Drawing.Size(408, 32);
+            this.CBNUMBER.TabIndex = 134;
+            this.CBNUMBER.SelectedIndexChanged += new System.EventHandler(this.CBNUMBER_SelectedIndexChanged);
+            // 
+            // CBEMAIL
+            // 
+            this.CBEMAIL.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBEMAIL.FormattingEnabled = true;
+            this.CBEMAIL.Location = new System.Drawing.Point(818, 162);
+            this.CBEMAIL.Name = "CBEMAIL";
+            this.CBEMAIL.Size = new System.Drawing.Size(408, 32);
+            this.CBEMAIL.TabIndex = 135;
+            this.CBEMAIL.SelectedIndexChanged += new System.EventHandler(this.CBEMAIL_SelectedIndexChanged);
+            // 
             // SearchCompanyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.BtnClose;
-            this.ClientSize = new System.Drawing.Size(1400, 988);
+            this.ClientSize = new System.Drawing.Size(1362, 741);
+            this.Controls.Add(this.CBNAME);
             this.Controls.Add(this.RBDesc);
             this.Controls.Add(this.RBAsc);
             this.Controls.Add(this.label5);
@@ -336,15 +341,14 @@
             this.Controls.Add(this.BtnClose);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.TBID);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.TBEmail);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.TBNumber);
-            this.Controls.Add(this.TBName);
             this.Controls.Add(this.DGVSearchCompany);
             this.Controls.Add(this.LblName);
+            this.Controls.Add(this.CBID);
+            this.Controls.Add(this.CBNUMBER);
+            this.Controls.Add(this.CBEMAIL);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "SearchCompanyForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -363,13 +367,9 @@
         #endregion
 
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox TBNumber;
-        private System.Windows.Forms.TextBox TBName;
         private System.Windows.Forms.DataGridView DGVSearchCompany;
         private System.Windows.Forms.Label LblName;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox TBEmail;
-        private System.Windows.Forms.TextBox TBID;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem sitaraHilalToolStripMenuItem;
@@ -384,5 +384,9 @@
         private System.Windows.Forms.RadioButton RBAsc;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox CBOrderBy;
+        private System.Windows.Forms.ComboBox CBNAME;
+        private System.Windows.Forms.ComboBox CBID;
+        private System.Windows.Forms.ComboBox CBNUMBER;
+        private System.Windows.Forms.ComboBox CBEMAIL;
     }
 }

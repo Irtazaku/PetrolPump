@@ -53,7 +53,6 @@
             // CBCustomer
             // 
             this.CBCustomer.DropDownHeight = 205;
-            this.CBCustomer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.CBCustomer.FormattingEnabled = true;
             this.CBCustomer.IntegralHeight = false;

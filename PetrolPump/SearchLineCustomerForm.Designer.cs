@@ -28,13 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label4 = new System.Windows.Forms.Label();
-            this.TBVehicle = new System.Windows.Forms.TextBox();
-            this.TBName = new System.Windows.Forms.TextBox();
             this.DGVSearchCustomer = new System.Windows.Forms.DataGridView();
             this.DGVID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DGVName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,13 +42,15 @@
             this.RBAsc = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
             this.CBOrderBy = new System.Windows.Forms.ComboBox();
-            this.TBID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.sitaraHilalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inventoryManagementToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.label3 = new System.Windows.Forms.Label();
             this.BtnClose = new System.Windows.Forms.Button();
+            this.CBName = new System.Windows.Forms.ComboBox();
+            this.CBVehicle = new System.Windows.Forms.ComboBox();
+            this.CBID = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.DGVSearchCustomer)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -65,24 +65,6 @@
             this.label4.TabIndex = 89;
             this.label4.Text = "Vehicle No";
             // 
-            // TBVehicle
-            // 
-            this.TBVehicle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.TBVehicle.Location = new System.Drawing.Point(834, 112);
-            this.TBVehicle.Name = "TBVehicle";
-            this.TBVehicle.Size = new System.Drawing.Size(408, 35);
-            this.TBVehicle.TabIndex = 3;
-            this.TBVehicle.TextChanged += new System.EventHandler(this.TBVehicle_TextChanged);
-            // 
-            // TBName
-            // 
-            this.TBName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.TBName.Location = new System.Drawing.Point(243, 112);
-            this.TBName.Name = "TBName";
-            this.TBName.Size = new System.Drawing.Size(408, 35);
-            this.TBName.TabIndex = 1;
-            this.TBName.TextChanged += new System.EventHandler(this.TBName_TextChanged);
-            // 
             // DGVSearchCustomer
             // 
             this.DGVSearchCustomer.AllowUserToAddRows = false;
@@ -91,42 +73,42 @@
             this.DGVSearchCustomer.AllowUserToResizeRows = false;
             this.DGVSearchCustomer.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DGVSearchCustomer.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVSearchCustomer.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVSearchCustomer.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.DGVSearchCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVSearchCustomer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DGVID,
             this.DGVName,
             this.DGVVehicle});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(234)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVSearchCustomer.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(234)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVSearchCustomer.DefaultCellStyle = dataGridViewCellStyle14;
             this.DGVSearchCustomer.Location = new System.Drawing.Point(12, 214);
             this.DGVSearchCustomer.Name = "DGVSearchCustomer";
             this.DGVSearchCustomer.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(234)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVSearchCustomer.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(234)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVSearchCustomer.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.DGVSearchCustomer.RowHeadersVisible = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5, 6, 0, 6);
-            this.DGVSearchCustomer.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.Padding = new System.Windows.Forms.Padding(5, 6, 0, 6);
+            this.DGVSearchCustomer.RowsDefaultCellStyle = dataGridViewCellStyle16;
             this.DGVSearchCustomer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGVSearchCustomer.Size = new System.Drawing.Size(1376, 762);
             this.DGVSearchCustomer.TabIndex = 7;
@@ -214,14 +196,6 @@
             this.CBOrderBy.Sorted = true;
             this.CBOrderBy.TabIndex = 4;
             // 
-            // TBID
-            // 
-            this.TBID.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBID.Location = new System.Drawing.Point(243, 162);
-            this.TBID.Name = "TBID";
-            this.TBID.Size = new System.Drawing.Size(207, 35);
-            this.TBID.TabIndex = 2;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -242,7 +216,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.menuStrip1.Size = new System.Drawing.Size(1400, 46);
+            this.menuStrip1.Size = new System.Drawing.Size(1362, 46);
             this.menuStrip1.TabIndex = 138;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -290,12 +264,42 @@
             this.BtnClose.UseVisualStyleBackColor = false;
             this.BtnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
+            // CBName
+            // 
+            this.CBName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBName.FormattingEnabled = true;
+            this.CBName.Location = new System.Drawing.Point(243, 115);
+            this.CBName.Name = "CBName";
+            this.CBName.Size = new System.Drawing.Size(408, 32);
+            this.CBName.TabIndex = 141;
+            this.CBName.SelectedIndexChanged += new System.EventHandler(this.CBName_SelectedIndexChanged);
+            // 
+            // CBVehicle
+            // 
+            this.CBVehicle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBVehicle.FormattingEnabled = true;
+            this.CBVehicle.Location = new System.Drawing.Point(834, 115);
+            this.CBVehicle.Name = "CBVehicle";
+            this.CBVehicle.Size = new System.Drawing.Size(408, 32);
+            this.CBVehicle.TabIndex = 142;
+            this.CBVehicle.SelectedIndexChanged += new System.EventHandler(this.CBVehicle_SelectedIndexChanged);
+            // 
+            // CBID
+            // 
+            this.CBID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBID.FormattingEnabled = true;
+            this.CBID.Location = new System.Drawing.Point(243, 162);
+            this.CBID.Name = "CBID";
+            this.CBID.Size = new System.Drawing.Size(207, 32);
+            this.CBID.TabIndex = 143;
+            this.CBID.SelectedIndexChanged += new System.EventHandler(this.CBID_SelectedIndexChanged);
+            // 
             // SearchLineCustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.BtnClose;
-            this.ClientSize = new System.Drawing.Size(1400, 988);
+            this.ClientSize = new System.Drawing.Size(1362, 741);
             this.Controls.Add(this.BtnClose);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.menuStrip1);
@@ -303,13 +307,13 @@
             this.Controls.Add(this.RBAsc);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.CBOrderBy);
-            this.Controls.Add(this.TBID);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.TBVehicle);
-            this.Controls.Add(this.TBName);
             this.Controls.Add(this.DGVSearchCustomer);
             this.Controls.Add(this.LblName);
+            this.Controls.Add(this.CBName);
+            this.Controls.Add(this.CBVehicle);
+            this.Controls.Add(this.CBID);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "SearchLineCustomerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -328,15 +332,12 @@
         #endregion
 
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox TBVehicle;
-        private System.Windows.Forms.TextBox TBName;
         private System.Windows.Forms.DataGridView DGVSearchCustomer;
         private System.Windows.Forms.Label LblName;
         private System.Windows.Forms.RadioButton RBDesc;
         private System.Windows.Forms.RadioButton RBAsc;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox CBOrderBy;
-        private System.Windows.Forms.TextBox TBID;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem sitaraHilalToolStripMenuItem;
@@ -346,5 +347,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DGVName;
         private System.Windows.Forms.DataGridViewTextBoxColumn DGVVehicle;
         private System.Windows.Forms.Button BtnClose;
+        private System.Windows.Forms.ComboBox CBName;
+        private System.Windows.Forms.ComboBox CBVehicle;
+        private System.Windows.Forms.ComboBox CBID;
     }
 }

@@ -34,10 +34,18 @@ namespace PetrolPump
             RBNumber.Checked = true;
 
             foreach (int ID in LineCustomer.ID)
+            {
+                CBID.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                CBID.AutoCompleteSource = AutoCompleteSource.ListItems;
                 CBID.Items.Add(ID + "");
+            }
 
             foreach (string Name in LineCustomer.Number)
+            {
+                CBNumber.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                CBNumber.AutoCompleteSource = AutoCompleteSource.ListItems;
                 CBNumber.Items.Add(Name + "");
+            }
 
             if (CBID.Items.Count > 0)
                 CBID.SelectedIndex = 0;

@@ -203,7 +203,11 @@ namespace PetrolPump
         private void AddLineCreditForm_Load(object sender, EventArgs e)
         {
             foreach (string Name in LineCustomer.Number)
+            {
+                CBCustomer.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                CBCustomer.AutoCompleteSource = AutoCompleteSource.ListItems;
                 CBCustomer.Items.Add(Name);
+            }
 
             foreach (string Item in Inventory.Name)
                 CBType.Items.Add(Item);

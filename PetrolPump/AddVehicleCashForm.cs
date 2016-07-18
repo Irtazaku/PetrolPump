@@ -26,7 +26,11 @@ namespace PetrolPump
         private void AddVehicleCashForm_Load(object sender, EventArgs e)
         {
             foreach (string Name in Company.Name)
+            {
+                CBCompany.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                CBCompany.AutoCompleteSource = AutoCompleteSource.ListItems;
                 CBCompany.Items.Add(Name);
+            }
 
             if (CBCompany.Items.Count > 0)
                 CBCompany.SelectedIndex = 0;

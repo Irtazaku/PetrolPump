@@ -28,13 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label4 = new System.Windows.Forms.Label();
-            this.TBVehicle = new System.Windows.Forms.TextBox();
-            this.TBCompany = new System.Windows.Forms.TextBox();
             this.DGVSearchVehicle = new System.Windows.Forms.DataGridView();
             this.DGVID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DGVName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,11 +47,13 @@
             this.RBAsc = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
             this.CBOrderBy = new System.Windows.Forms.ComboBox();
-            this.TBID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.TBDriver = new System.Windows.Forms.TextBox();
             this.BtnClose = new System.Windows.Forms.Button();
+            this.CBID = new System.Windows.Forms.ComboBox();
+            this.CBVehicle = new System.Windows.Forms.ComboBox();
+            this.CBDriver = new System.Windows.Forms.ComboBox();
+            this.CBCompany = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.DGVSearchVehicle)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -68,24 +68,6 @@
             this.label4.TabIndex = 94;
             this.label4.Text = "Vehicle No";
             // 
-            // TBVehicle
-            // 
-            this.TBVehicle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.TBVehicle.Location = new System.Drawing.Point(290, 162);
-            this.TBVehicle.Name = "TBVehicle";
-            this.TBVehicle.Size = new System.Drawing.Size(303, 35);
-            this.TBVehicle.TabIndex = 2;
-            this.TBVehicle.TextChanged += new System.EventHandler(this.TBVehicle_TextChanged);
-            // 
-            // TBCompany
-            // 
-            this.TBCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.TBCompany.Location = new System.Drawing.Point(844, 112);
-            this.TBCompany.Name = "TBCompany";
-            this.TBCompany.Size = new System.Drawing.Size(403, 35);
-            this.TBCompany.TabIndex = 3;
-            this.TBCompany.TextChanged += new System.EventHandler(this.TBName_TextChanged);
-            // 
             // DGVSearchVehicle
             // 
             this.DGVSearchVehicle.AllowUserToAddRows = false;
@@ -94,43 +76,43 @@
             this.DGVSearchVehicle.AllowUserToResizeRows = false;
             this.DGVSearchVehicle.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DGVSearchVehicle.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVSearchVehicle.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVSearchVehicle.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.DGVSearchVehicle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVSearchVehicle.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DGVID,
             this.DGVName,
             this.DGVVehicle,
             this.DGVCName});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(234)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVSearchVehicle.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(234)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVSearchVehicle.DefaultCellStyle = dataGridViewCellStyle6;
             this.DGVSearchVehicle.Location = new System.Drawing.Point(7, 264);
             this.DGVSearchVehicle.Name = "DGVSearchVehicle";
             this.DGVSearchVehicle.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(234)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVSearchVehicle.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(234)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVSearchVehicle.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.DGVSearchVehicle.RowHeadersVisible = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5, 6, 0, 6);
-            this.DGVSearchVehicle.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(5, 6, 0, 6);
+            this.DGVSearchVehicle.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.DGVSearchVehicle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGVSearchVehicle.Size = new System.Drawing.Size(1381, 712);
             this.DGVSearchVehicle.TabIndex = 8;
@@ -195,7 +177,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.menuStrip1.Size = new System.Drawing.Size(1400, 46);
+            this.menuStrip1.Size = new System.Drawing.Size(1362, 46);
             this.menuStrip1.TabIndex = 140;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -270,15 +252,6 @@
             this.CBOrderBy.TabIndex = 5;
             this.CBOrderBy.SelectedIndexChanged += new System.EventHandler(this.CBOrderBy_SelectedIndexChanged);
             // 
-            // TBID
-            // 
-            this.TBID.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBID.Location = new System.Drawing.Point(290, 112);
-            this.TBID.Name = "TBID";
-            this.TBID.Size = new System.Drawing.Size(303, 35);
-            this.TBID.TabIndex = 1;
-            this.TBID.TextChanged += new System.EventHandler(this.TBID_TextChanged);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -299,15 +272,6 @@
             this.label2.TabIndex = 149;
             this.label2.Text = "Driver Name";
             // 
-            // TBDriver
-            // 
-            this.TBDriver.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.TBDriver.Location = new System.Drawing.Point(844, 162);
-            this.TBDriver.Name = "TBDriver";
-            this.TBDriver.Size = new System.Drawing.Size(403, 35);
-            this.TBDriver.TabIndex = 4;
-            this.TBDriver.TextChanged += new System.EventHandler(this.TBDriver_TextChanged);
-            // 
             // BtnClose
             // 
             this.BtnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(27)))), ((int)(((byte)(28)))));
@@ -324,28 +288,68 @@
             this.BtnClose.UseVisualStyleBackColor = false;
             this.BtnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
+            // CBID
+            // 
+            this.CBID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBID.FormattingEnabled = true;
+            this.CBID.Location = new System.Drawing.Point(290, 112);
+            this.CBID.Name = "CBID";
+            this.CBID.Size = new System.Drawing.Size(303, 32);
+            this.CBID.TabIndex = 151;
+            this.CBID.SelectedIndexChanged += new System.EventHandler(this.CBID_SelectedIndexChanged);
+            // 
+            // CBVehicle
+            // 
+            this.CBVehicle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBVehicle.FormattingEnabled = true;
+            this.CBVehicle.Location = new System.Drawing.Point(290, 165);
+            this.CBVehicle.Name = "CBVehicle";
+            this.CBVehicle.Size = new System.Drawing.Size(303, 32);
+            this.CBVehicle.TabIndex = 152;
+            this.CBVehicle.SelectedIndexChanged += new System.EventHandler(this.CBVehicle_SelectedIndexChanged_1);
+            // 
+            // CBDriver
+            // 
+            this.CBDriver.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBDriver.FormattingEnabled = true;
+            this.CBDriver.Location = new System.Drawing.Point(844, 162);
+            this.CBDriver.Name = "CBDriver";
+            this.CBDriver.Size = new System.Drawing.Size(403, 32);
+            this.CBDriver.TabIndex = 153;
+            this.CBDriver.SelectedIndexChanged += new System.EventHandler(this.CBDriver_SelectedIndexChanged);
+            // 
+            // CBCompany
+            // 
+            this.CBCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBCompany.FormattingEnabled = true;
+            this.CBCompany.Location = new System.Drawing.Point(844, 112);
+            this.CBCompany.Name = "CBCompany";
+            this.CBCompany.Size = new System.Drawing.Size(403, 32);
+            this.CBCompany.TabIndex = 154;
+            this.CBCompany.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // SearchVehicleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.BtnClose;
-            this.ClientSize = new System.Drawing.Size(1400, 988);
+            this.ClientSize = new System.Drawing.Size(1362, 741);
             this.Controls.Add(this.BtnClose);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.TBDriver);
             this.Controls.Add(this.RBDesc);
             this.Controls.Add(this.RBAsc);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.CBOrderBy);
-            this.Controls.Add(this.TBID);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.TBVehicle);
-            this.Controls.Add(this.TBCompany);
             this.Controls.Add(this.DGVSearchVehicle);
             this.Controls.Add(this.LblName);
+            this.Controls.Add(this.CBID);
+            this.Controls.Add(this.CBVehicle);
+            this.Controls.Add(this.CBDriver);
+            this.Controls.Add(this.CBCompany);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "SearchVehicleForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -363,8 +367,6 @@
         #endregion
 
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox TBVehicle;
-        private System.Windows.Forms.TextBox TBCompany;
         private System.Windows.Forms.DataGridView DGVSearchVehicle;
         private System.Windows.Forms.Label LblName;
         private System.Windows.Forms.Label label3;
@@ -375,14 +377,16 @@
         private System.Windows.Forms.RadioButton RBAsc;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox CBOrderBy;
-        private System.Windows.Forms.TextBox TBID;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox TBDriver;
         private System.Windows.Forms.DataGridViewTextBoxColumn DGVID;
         private System.Windows.Forms.DataGridViewTextBoxColumn DGVName;
         private System.Windows.Forms.DataGridViewTextBoxColumn DGVVehicle;
         private System.Windows.Forms.DataGridViewTextBoxColumn DGVCName;
         private System.Windows.Forms.Button BtnClose;
+        private System.Windows.Forms.ComboBox CBID;
+        private System.Windows.Forms.ComboBox CBVehicle;
+        private System.Windows.Forms.ComboBox CBDriver;
+        private System.Windows.Forms.ComboBox CBCompany;
     }
 }

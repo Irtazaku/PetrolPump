@@ -21,7 +21,7 @@ namespace PetrolPump
         private void SearchCustomer()
         {
             DGVSearchCustomer.Rows.Clear();
-            string Query = "select * from linecustomers where Name like '%" + TBName.Text + "%' and vehicleNumber like '%" + TBVehicle.Text + "%'";
+            string Query = "select * from linecustomers where Name like '%" + CBName.Text + "%' and vehicleNumber like '%" + CBVehicle.Text + "%'";
             if (CBOrderBy.Text == "Vehicle No")
                 Query += " order by vehiclenumber " + (RBAsc.Checked ? "asc" : "desc");
             else
@@ -41,6 +41,33 @@ namespace PetrolPump
 
             this.MinimumSize = this.Size;
             this.MaximumSize = this.Size;
+
+            foreach (string Number in LineCustomer.Number)
+            {
+                CBVehicle.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                CBVehicle.AutoCompleteSource = AutoCompleteSource.ListItems;
+                CBVehicle.Items.Add(Number);
+            }
+            if (CBVehicle.Items.Count > 0)
+                CBVehicle.SelectedIndex = 0;
+
+            foreach (string Name in LineCustomer.Name)
+            {
+                CBName.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                CBName.AutoCompleteSource = AutoCompleteSource.ListItems;
+                CBName.Items.Add(Name);
+            }
+            if (CBName.Items.Count > 0)
+                CBName.SelectedIndex = 0;
+
+            foreach (int ID in LineCustomer.ID)
+            {
+                CBID.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                CBID.AutoCompleteSource = AutoCompleteSource.ListItems;
+                CBID.Items.Add(ID);
+            }
+            if (CBID.Items.Count > 0)
+                CBID.SelectedIndex = 0;
         }
 
         private void TBName_TextChanged(object sender, EventArgs e)
@@ -61,6 +88,21 @@ namespace PetrolPump
         private void BtnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void CBName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SearchCustomer();
+        }
+
+        private void CBVehicle_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SearchCustomer();
+        }
+
+        private void CBID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SearchCustomer();
         }
     }
 }

@@ -21,7 +21,7 @@ namespace PetrolPump
         private void SearchVehicle()
         {
             DGVSearchVehicle.Rows.Clear();
-            string Query = "select vehicles.ID as ID, vehicles.Name as VName,vehicles.Number as VNumber,companies.Name as CName from vehicles inner join companies on companies.ID = vehicles.companyID where vehicles.Name like '%" + TBDriver.Text + "%' and vehicles.number like '%" + TBVehicle.Text + "%' and companies.name like '%" + TBCompany.Text + "%' and vehicles.id like '%" + TBID.Text + "%'";
+            string Query = "select vehicles.ID as ID, vehicles.Name as VName,vehicles.Number as VNumber,companies.Name as CName from vehicles inner join companies on companies.ID = vehicles.companyID where vehicles.Name like '%" + CBCompany.Text + "%' and vehicles.number like '%" + CBVehicle.Text + "%' and companies.name like '%" + CBCompany.Text + "%' and vehicles.id like '%" + CBID.Text + "%'";
             if (CBOrderBy.Text == "Driver Name")
                 Query += " order by vehicles.Name";
             else if (CBOrderBy.Text == "Vehicle No")
@@ -46,29 +46,17 @@ namespace PetrolPump
 
             this.MinimumSize = this.Size;
             this.MaximumSize = this.Size;
-        }
-
-        private void TBName_TextChanged(object sender, EventArgs e)
-        {
-            SearchVehicle();
-        }
-
-        private void TBVehicle_TextChanged(object sender, EventArgs e)
-        {
-            SearchVehicle();
+            foreach (string Name in Company.Name)
+            {
+                CBCompany.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                CBCompany.AutoCompleteSource = AutoCompleteSource.ListItems;
+                CBCompany.Items.Add(Name);
+            }
+            if (CBCompany.Items.Count > 0)
+                CBCompany.SelectedIndex = 0;
         }
 
         private void CBOrderBy_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            SearchVehicle();
-        }
-
-        private void TBID_TextChanged(object sender, EventArgs e)
-        {
-            SearchVehicle();
-        }
-
-        private void TBDriver_TextChanged(object sender, EventArgs e)
         {
             SearchVehicle();
         }
@@ -81,6 +69,63 @@ namespace PetrolPump
         private void BtnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void CBVehicle_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SearchVehicle();
+        }
+
+        private void CBID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SearchVehicle();
+        }
+
+        private void CBVehicle_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            SearchVehicle();
+        }
+
+        private void CBDriver_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SearchVehicle();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CBVehicle.Items.Clear();
+            foreach (string Number in Company.Vehicles[CBCompany.SelectedIndex].Number)
+            {
+                CBVehicle.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                CBVehicle.AutoCompleteSource = AutoCompleteSource.ListItems;
+                CBVehicle.Items.Add(Number);
+            }
+            if (CBVehicle.Items.Count > 0)
+                CBVehicle.SelectedIndex = 0;
+
+            CBID.Items.Clear();
+            foreach (int ID in Company.Vehicles[CBCompany.SelectedIndex].ID)
+            {
+                CBID.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                CBID.AutoCompleteSource = AutoCompleteSource.ListItems;
+                CBID.Items.Add(ID);
+            }
+            if (CBID.Items.Count > 0)
+                CBID.SelectedIndex = 0;
+
+            CBDriver.Items.Clear();
+            foreach (string Driver in Company.Vehicles[CBCompany.SelectedIndex].Name)
+            {
+                CBDriver.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                CBDriver.AutoCompleteSource = AutoCompleteSource.ListItems;
+                CBDriver.Items.Add(Driver);
+            }
+            if (CBDriver.Items.Count > 0)
+                CBDriver.SelectedIndex = 0;
+            
+            SearchVehicle();
+
+            
         }
     }
 }

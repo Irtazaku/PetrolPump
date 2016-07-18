@@ -21,7 +21,7 @@ namespace PetrolPump
         private void SearchInventory()
         {
             DGVSearchInventory.Rows.Clear();
-            string Query="select * from inventory where Name like '%" + TBName.Text + "%' and Rate like '%" + TBRate.Text + "%' and Quantity like '%" + TBQuantity.Text + "%' order by " + CBOrderBy.Text + " " + (RBAsc.Checked ? "asc" : "desc");
+            string Query="select * from inventory where Name like '%" + CBName.Text + "%' and Rate like '%" + TBRate.Text + "%' and Quantity like '%" + TBQuantity.Text + "%' order by " + CBOrderBy.Text + " " + (RBAsc.Checked ? "asc" : "desc");
             MySql.Data.MySqlClient.MySqlDataReader Reader = Func.SelectQuery(Query);
             while (Reader.Read())
                 DGVSearchInventory.Rows.Add(Reader["Name"].ToString(), Reader["Rate"].ToString(), Reader["Quantity"].ToString());
@@ -61,6 +61,15 @@ namespace PetrolPump
 
             this.MinimumSize = this.Size;
             this.MaximumSize = this.Size;
+            foreach (string Item in Inventory.Name)
+            {
+                CBName.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                CBName.AutoCompleteSource = AutoCompleteSource.ListItems;
+                CBName.Items.Add(Item);
+            }
+            if (CBName.Items.Count > 0)
+                CBName.SelectedIndex = 0;
+
         }
 
         private void SearchInventoryForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -71,6 +80,11 @@ namespace PetrolPump
         private void BtnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void CBName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SearchInventory();
         }
     }
 }
