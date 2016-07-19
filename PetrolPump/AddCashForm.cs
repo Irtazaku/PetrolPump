@@ -113,7 +113,8 @@ namespace PetrolPump
                 PDocument.PrintController = PController;
                 PDocument.PrinterSettings.PrinterName = Inventory.PrinterName;
                 PDocument.PrintPage += new PrintPageEventHandler(PDocument_PrintPage);
-                PDocument.Print();
+                //for (int i = 0; i < 3; i++)
+                    PDocument.Print();
             }
 
             MessageBox.Show("Cash sale recorded at ID: " + InsertID, "Operation Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -165,20 +166,56 @@ namespace PetrolPump
             Offset += 25;
             PGraphics.DrawLine(DashedPen, X, Y + Offset, MaxX, Y + Offset);
             Offset += 20;
-            PGraphics.DrawString("Liter: " + TBLiter.Text + " L", new Font(FontName, 12), new SolidBrush(Color.Black), new PointF(X+ 500, Y + Offset));
-            if (TBName.Text != "")
+
+            if (TBName.Text != "" && TBVehicleNumber.Text != "") //both entered
             {
                 PGraphics.DrawString("Driver Name: " + TBName.Text, new Font(FontName, 12), new SolidBrush(Color.Black), new PointF(X, Y + Offset));
+                PGraphics.DrawString("Liter: " + TBLiter.Text + " L", new Font(FontName, 12), new SolidBrush(Color.Black), new PointF(X + 500, Y + Offset));
                 Offset += 30;
+
+                PGraphics.DrawString("Vehicle No: " + TBVehicleNumber.Text, new Font(FontName, 12), new SolidBrush(Color.Black), new PointF(X, Y + Offset));
+                PGraphics.DrawString(LblRate.Text, new Font(FontName, 12), new SolidBrush(Color.Black), new PointF(X + 500, Y + Offset));
+                Offset += 30;
+
+                PGraphics.DrawString("Type: " + CBType.Text, new Font(FontName, 12), new SolidBrush(Color.Black), new PointF(X, Y + Offset));
+                PGraphics.DrawString(LblAmount.Text, new Font(FontName, 14, FontStyle.Bold), new SolidBrush(Color.Black), new PointF(X + 500, Y + Offset));
             }
-            PGraphics.DrawString(LblRate.Text, new Font(FontName, 12), new SolidBrush(Color.Black), new PointF(X+ 500, Y + Offset));
-            if (TBVehicleNumber.Text != "")
+
+            else if (TBName.Text != "") //only name entered
+            {
+                PGraphics.DrawString("Driver Name: " + TBName.Text, new Font(FontName, 12), new SolidBrush(Color.Black), new PointF(X, Y + Offset));
+                PGraphics.DrawString("Liter: " + TBLiter.Text + " L", new Font(FontName, 12), new SolidBrush(Color.Black), new PointF(X + 500, Y + Offset));
+                Offset += 30;
+
+                PGraphics.DrawString("Type: " + CBType.Text, new Font(FontName, 12), new SolidBrush(Color.Black), new PointF(X, Y + Offset));
+                PGraphics.DrawString(LblRate.Text, new Font(FontName, 12), new SolidBrush(Color.Black), new PointF(X + 500, Y + Offset));
+                Offset += 30;
+
+                PGraphics.DrawString(LblAmount.Text, new Font(FontName, 14, FontStyle.Bold), new SolidBrush(Color.Black), new PointF(X + 500, Y + Offset));
+            }
+
+            else if (TBVehicleNumber.Text != "") //only number entered
             {
                 PGraphics.DrawString("Vehicle No: " + TBVehicleNumber.Text, new Font(FontName, 12), new SolidBrush(Color.Black), new PointF(X, Y + Offset));
+                PGraphics.DrawString("Liter: " + TBLiter.Text + " L", new Font(FontName, 12), new SolidBrush(Color.Black), new PointF(X + 500, Y + Offset));
                 Offset += 30;
+
+                PGraphics.DrawString("Type: " + CBType.Text, new Font(FontName, 12), new SolidBrush(Color.Black), new PointF(X, Y + Offset));
+                PGraphics.DrawString(LblRate.Text, new Font(FontName, 12), new SolidBrush(Color.Black), new PointF(X + 500, Y + Offset));
+                Offset += 30;
+
+                PGraphics.DrawString(LblAmount.Text, new Font(FontName, 14, FontStyle.Bold), new SolidBrush(Color.Black), new PointF(X + 500, Y + Offset));
             }
-            PGraphics.DrawString("Type: " + CBType.Text, new Font(FontName, 12), new SolidBrush(Color.Black), new PointF(X, Y + Offset));
-            PGraphics.DrawString(LblAmount.Text, new Font(FontName, 14, FontStyle.Bold), new SolidBrush(Color.Black), new PointF(X + 500, Y + Offset));
+
+            else if (TBName.Text == "" && TBVehicleNumber.Text == "") //both not entered
+            {
+                PGraphics.DrawString("Type: " + CBType.Text, new Font(FontName, 12), new SolidBrush(Color.Black), new PointF(X, Y + Offset));
+                PGraphics.DrawString(LblRate.Text, new Font(FontName, 12), new SolidBrush(Color.Black), new PointF(X + 500, Y + Offset));
+                Offset += 30;
+
+                PGraphics.DrawString("Liter: " + TBLiter.Text + " L", new Font(FontName, 12), new SolidBrush(Color.Black), new PointF(X, Y + Offset));
+                PGraphics.DrawString(LblAmount.Text, new Font(FontName, 14, FontStyle.Bold), new SolidBrush(Color.Black), new PointF(X + 500, Y + Offset));
+            }
 
             Offset += 30;
             PGraphics.DrawLine(DashedPen, X, Y + Offset, MaxX, Y + Offset);

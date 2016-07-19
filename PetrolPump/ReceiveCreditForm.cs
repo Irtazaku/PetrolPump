@@ -155,7 +155,8 @@ namespace PetrolPump
                 PDocument.PrintController = PController;
                 PDocument.PrinterSettings.PrinterName = Inventory.PrinterName;
                 PDocument.PrintPage += new PrintPageEventHandler(PDocument_PrintPage);
-                PDocument.Print();
+                for (int i = 0; i < 3; i++)
+                    PDocument.Print();
             }
 
             MessageBox.Show("Credit successfully received", "Operation Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);

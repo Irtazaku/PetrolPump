@@ -477,32 +477,36 @@ namespace PetrolPump
 
                 CashSale.Close();
                 LineSale.Close();
-                CreditSale.Close();     
+                CreditSale.Close();
 
-                double CashClosing = Math.Round(Convert.ToDouble(Func.ScalarString("SELECT coalesce(sum(Amount),0) as 'Amount' FROM cash where " + DateClause )), 2);
+                double CashClosing = Math.Round(Convert.ToDouble(Func.ScalarString("SELECT coalesce(sum(Amount),0) as 'Amount' FROM cash where " + DateClause)), 2);
+                double CashWithdraw = Math.Round(Convert.ToDouble(Func.ScalarString("SELECT coalesce(sum(Amount),0) FROM withdraw where " + DateClause)), 2);
 
                 worksheet.Cells[Row, 2].Value = "Cash";
                 worksheet.Cells[Row, 2].Style.Font.Bold = true;
                 worksheet.Cells[Row, 2, Row + 1, 2].Merge = true;
                 worksheet.Cells[Row, 2].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
                 worksheet.Cells[Row, 2].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
-                worksheet.Cells[Row, 3].Value = "Opening";
-                worksheet.Cells[Row, 4].Value = "Sales";
-                worksheet.Cells[Row, 5].Value = "Closing";
+                worksheet.Cells[Row, 3].Value = "BL";
+                worksheet.Cells[Row, 4].Value = "Credit";
+                worksheet.Cells[Row, 5].Value = "Debit";
+                worksheet.Cells[Row, 6].Value = "CF";
 
                 Row++;
 
                 worksheet.Cells[Row, 3].Value = (CashClosing - CashGrandTotal) + "";
                 worksheet.Cells[Row, 4].Value = CashGrandTotal + "";
-                worksheet.Cells[Row, 5].Value = CashClosing + "";
+                worksheet.Cells[Row, 5].Value = CashWithdraw + "";
+                worksheet.Cells[Row, 6].Value = (CashClosing + CashWithdraw) + "";
 
-                worksheet.Cells[Row - 1, 2, Row, 5].Style.Border.Right.Style = ExcelBorderStyle.Thin;
-                worksheet.Cells[Row - 1, 2, Row, 5].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
-                worksheet.Cells[Row - 1, 2, Row, 5].Style.Border.BorderAround(ExcelBorderStyle.Medium);
+                worksheet.Cells[Row - 1, 2, Row, 6].Style.Border.Right.Style = ExcelBorderStyle.Thin;
+                worksheet.Cells[Row - 1, 2, Row, 6].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+                worksheet.Cells[Row - 1, 2, Row, 6].Style.Border.BorderAround(ExcelBorderStyle.Medium);
 
                 Row += 4;
 
-                string ReceiptQuery = "select temp.*, accounts.accountnumber from (SELECT sum(creditreceived.amount), creditreceived.type, companies.name,creditreceived.datetime, creditreceived.accountid from creditreceived inner join credit on credit.id = creditreceived.creditid inner join companies on companies.id = credit.companyid group by creditreceived.type, companies.name,accountid union all SELECT sum(vehiclecashreceived.amount), vehiclecashreceived.type, companies.name,vehiclecashreceived.datetime, vehiclecashreceived.accountid from vehiclecashreceived inner join vehiclecash on vehiclecash.id = vehiclecashreceived.vehiclecashid inner join companies on companies.id = vehiclecash.companyid group by vehiclecashreceived.type, companies.name,accountid union all SELECT sum(linecreditreceived.amount), 'Cash', linecustomers.vehiclenumber,linecreditreceived.datetime,null from linecreditreceived inner join linecredit on linecredit.id = linecreditreceived.linecreditid inner join linecustomers on linecustomers.id = linecredit.customerid group by linecustomers.vehiclenumber) as temp left join accounts on accounts.id = temp.accountid where " + DateClause;
+                //string ReceiptQuery = "select temp.*, accounts.accountnumber from (SELECT sum(creditreceived.amount), creditreceived.type, companies.name,creditreceived.datetime, creditreceived.accountid, 'Credit' from creditreceived inner join credit on credit.id = creditreceived.creditid inner join companies on companies.id = credit.companyid group by creditreceived.type, companies.name,accountid union all SELECT sum(vehiclecashreceived.amount), vehiclecashreceived.type, companies.name,vehiclecashreceived.datetime, vehiclecashreceived.accountid, 'Vehicle Cash' from vehiclecashreceived inner join vehiclecash on vehiclecash.id = vehiclecashreceived.vehiclecashid inner join companies on companies.id = vehiclecash.companyid group by vehiclecashreceived.type, companies.name,accountid union all SELECT sum(linecreditreceived.amount), 'Cash', linecustomers.vehiclenumber,linecreditreceived.datetime,null, 'Line Credit' from linecreditreceived inner join linecredit on linecredit.id = linecreditreceived.linecreditid inner join linecustomers on linecustomers.id = linecredit.customerid group by linecustomers.vehiclenumber) as temp left join accounts on accounts.id = temp.accountid where " + DateClause;
+                string ReceiptQuery = "select temp.*, accounts.accountnumber from (SELECT sum(creditreceived.amount), creditreceived.type, companies.name,creditreceived.datetime, creditreceived.accountid, credit.id, 'Credit' from creditreceived inner join credit on credit.id = creditreceived.creditid inner join companies on companies.id = credit.companyid group by credit.id,accountid union all SELECT sum(vehiclecashreceived.amount), vehiclecashreceived.type, companies.name,vehiclecashreceived.datetime, vehiclecashreceived.accountid, vehiclecash.id, 'Vehicle Cash' from vehiclecashreceived inner join vehiclecash on vehiclecash.id = vehiclecashreceived.vehiclecashid inner join companies on companies.id = vehiclecash.companyid group by vehiclecash.id,accountid union all SELECT sum(linecreditreceived.amount), 'Cash', linecustomers.vehiclenumber,linecreditreceived.datetime,null, linecredit.id, 'Line Credit' from linecreditreceived inner join linecredit on linecredit.id = linecreditreceived.linecreditid inner join linecustomers on linecustomers.id = linecredit.customerid group by linecredit.id) as temp left join accounts on accounts.id = temp.accountid where " + DateClause;
                 if (ReportType == "Cash")
                     ReceiptQuery += " and type='Cash' ";
                 if (ReportType == "Bank")
@@ -511,7 +515,7 @@ namespace PetrolPump
                 MySqlDataReader Receipts = Func.SelectQuery(ReceiptQuery);
 
                 worksheet.Cells[Row, 2].Value = "Receipts";
-                worksheet.Cells[Row, 2, Row, 5].Merge = true;
+                worksheet.Cells[Row, 2, Row, 8].Merge = true;
                 worksheet.Cells[Row, 2].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
                 worksheet.Cells[Row, 2].Style.Font.Size = 14;
                 worksheet.Cells[Row, 2].Style.Font.Bold = true;
@@ -524,41 +528,54 @@ namespace PetrolPump
                 Row += 2;
                 TableStart = Row;
 
-                worksheet.Cells[Row, 2].Value = "Description";
-                worksheet.Cells[Row, 3].Value = "Account";
-                worksheet.Cells[Row, 4].Value = "Cash/Bank";
-                worksheet.Cells[Row, 5].Value = "Amount";
-                worksheet.Cells[Row, 2, Row, 5].Style.Font.Bold = true;
+                worksheet.Cells[Row, 2].Value = "Date";
+                worksheet.Cells[Row, 3].Value = "Slip No";
+                worksheet.Cells[Row, 4].Value = "Type";
+                worksheet.Cells[Row, 5].Value = "Description";
+                worksheet.Cells[Row, 6].Value = "Account";
+                worksheet.Cells[Row, 7].Value = "Cash/Bank";
+                worksheet.Cells[Row, 8].Value = "Amount";
+                worksheet.Cells[Row, 2, Row, 8].Style.Font.Bold = true;
 
                 Row++;
 
                 if (Receipts.HasRows)
                 {
+                    double ReceiptAmount = 0;
                     while (Receipts.Read())
                     {
-                        worksheet.Cells[Row, 2].Value = Receipts[2].ToString();
+                        worksheet.Cells[Row, 2].Value = Receipts[3].ToString().Split(' ')[0];
                         worksheet.Cells[Row, 3].Value = Receipts[5].ToString();
+                        worksheet.Cells[Row, 4].Value = Receipts[6].ToString();
+                        worksheet.Cells[Row, 5].Value = Receipts[2].ToString();
+                        worksheet.Cells[Row, 6].Value = Receipts[7].ToString();
                         if (Receipts[1].ToString() == "Cheque")
-                            worksheet.Cells[Row, 4].Value = "Bank";
+                            worksheet.Cells[Row, 7].Value = "Bank";
                         else
-                            worksheet.Cells[Row, 4].Value = "Cash";
-                        worksheet.Cells[Row, 5].Value = Math.Round(Convert.ToDouble(Receipts[0].ToString()), 2) + "";
+                            worksheet.Cells[Row, 7].Value = "Cash";
+
+                        double Temp = Math.Round(Convert.ToDouble(Receipts[0].ToString()), 2);
+                        worksheet.Cells[Row, 8].Value = Temp + "";
+                        ReceiptAmount += Temp;
 
                         Row++;
                     }
+
+                    worksheet.Cells[Row, 6].Value = "Total Amount";
+                    worksheet.Cells[Row, 6, Row, 7].Merge = true;
+                    worksheet.Cells[Row, 8].Value = ReceiptAmount;
+                    worksheet.Cells[Row, 6, Row, 8].Style.Font.Bold = true;
                 }
 
-                Row--;
-
-                worksheet.Cells[TableStart, 2, Row, 5].Style.Border.Right.Style = ExcelBorderStyle.Thin;
-                worksheet.Cells[TableStart, 2, Row, 5].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
-                worksheet.Cells[TableStart, 2, Row, 5].Style.Border.BorderAround(ExcelBorderStyle.Medium);
+                worksheet.Cells[TableStart, 2, Row, 8].Style.Border.Right.Style = ExcelBorderStyle.Thin;
+                worksheet.Cells[TableStart, 2, Row, 8].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+                worksheet.Cells[TableStart, 2, Row, 8].Style.Border.BorderAround(ExcelBorderStyle.Medium);
 
                 Row += 4;
 
                 Receipts.Close();
 
-                string PaymentQuery = "select amount, description, type, accounts.accountnumber from  expense left join accounts on accounts.id = expense.accountid where " + DateClause;
+                string PaymentQuery = "select amount, description, type, accounts.accountnumber, datetime from  expense left join accounts on accounts.id = expense.accountid where " + DateClause;
                 if (ReportType == "Cash")
                     PaymentQuery += " and type='Cash' ";
                 if (ReportType == "Bank")
@@ -567,7 +584,7 @@ namespace PetrolPump
                 MySqlDataReader Payments = Func.SelectQuery(PaymentQuery);
 
                 worksheet.Cells[Row, 2].Value = "Payments";
-                worksheet.Cells[Row, 2, Row, 5].Merge = true;
+                worksheet.Cells[Row, 2, Row, 6].Merge = true;
                 worksheet.Cells[Row, 2].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
                 worksheet.Cells[Row, 2].Style.Font.Size = 14;
                 worksheet.Cells[Row, 2].Style.Font.Bold = true;
@@ -580,35 +597,44 @@ namespace PetrolPump
                 Row += 2;
                 TableStart = Row;
 
-                worksheet.Cells[Row, 2].Value = "Description";
-                worksheet.Cells[Row, 3].Value = "Account";
-                worksheet.Cells[Row, 4].Value = "Cash/Bank";
-                worksheet.Cells[Row, 5].Value = "Amount";
-                worksheet.Cells[Row, 2, Row, 5].Style.Font.Bold = true;
+                worksheet.Cells[Row, 2].Value = "Date";
+                worksheet.Cells[Row, 3].Value = "Description";
+                worksheet.Cells[Row, 4].Value = "Account";
+                worksheet.Cells[Row, 5].Value = "Cash/Bank";
+                worksheet.Cells[Row, 6].Value = "Amount";
+                worksheet.Cells[Row, 2, Row, 6].Style.Font.Bold = true;
 
                 Row++;
 
                 if (Payments.HasRows)
                 {
+                    double PaymentAmount = 0;
                     while (Payments.Read())
                     {
-                        worksheet.Cells[Row, 2].Value = Payments[1].ToString();
-                        worksheet.Cells[Row, 3].Value = Payments[3].ToString();
+                        worksheet.Cells[Row, 2].Value = Payments[4].ToString().Split(' ')[0];
+                        worksheet.Cells[Row, 3].Value = Payments[1].ToString();
+                        worksheet.Cells[Row, 4].Value = Payments[3].ToString();
                         if (Payments[2].ToString() == "Cheque")
-                            worksheet.Cells[Row, 4].Value = "Bank";
+                            worksheet.Cells[Row, 5].Value = "Bank";
                         else
-                            worksheet.Cells[Row, 4].Value = "Cash";
-                        worksheet.Cells[Row, 5].Value = Math.Round(Convert.ToDouble(Payments[0].ToString()), 2) + "";
+                            worksheet.Cells[Row, 5].Value = "Cash";
+
+                        double Temp = Math.Round(Convert.ToDouble(Payments[0].ToString()), 2);
+                        worksheet.Cells[Row, 6].Value = Temp + "";
+                        PaymentAmount += Temp;
 
                         Row++;
                     }
+
+                    worksheet.Cells[Row, 4].Value = "Total Amount";
+                    worksheet.Cells[Row, 4, Row, 5].Merge = true;
+                    worksheet.Cells[Row, 6].Value = PaymentAmount;
+                    worksheet.Cells[Row, 4, Row, 6].Style.Font.Bold = true;
                 }
 
-                Row--;
-
-                worksheet.Cells[TableStart, 2, Row , 5].Style.Border.Right.Style = ExcelBorderStyle.Thin;
-                worksheet.Cells[TableStart, 2, Row , 5].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
-                worksheet.Cells[TableStart, 2, Row , 5].Style.Border.BorderAround(ExcelBorderStyle.Medium);
+                worksheet.Cells[TableStart, 2, Row , 6].Style.Border.Right.Style = ExcelBorderStyle.Thin;
+                worksheet.Cells[TableStart, 2, Row , 6].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+                worksheet.Cells[TableStart, 2, Row , 6].Style.Border.BorderAround(ExcelBorderStyle.Medium);
 
                 Row += 2;
                 

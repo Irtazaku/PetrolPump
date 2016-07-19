@@ -171,6 +171,7 @@
             this.CheckBoxPrint.Size = new System.Drawing.Size(170, 33);
             this.CheckBoxPrint.TabIndex = 5;
             this.CheckBoxPrint.Text = "Print Reciept";
+            this.CheckBoxPrint.Checked = true;
             this.CheckBoxPrint.UseVisualStyleBackColor = true;
             // 
             // menuStrip1
