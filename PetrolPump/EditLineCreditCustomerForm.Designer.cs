@@ -104,7 +104,6 @@
             this.CBNumber.Location = new System.Drawing.Point(220, 112);
             this.CBNumber.Name = "CBNumber";
             this.CBNumber.Size = new System.Drawing.Size(408, 37);
-            this.CBNumber.Sorted = true;
             this.CBNumber.TabIndex = 1;
             this.CBNumber.SelectedIndexChanged += new System.EventHandler(this.CBID_SelectedIndexChanged);
             // 

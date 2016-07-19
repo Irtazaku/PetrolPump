@@ -142,9 +142,9 @@
             this.DGVReceiveLineCredit.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGVReceiveLineCredit.Size = new System.Drawing.Size(1376, 654);
             this.DGVReceiveLineCredit.TabIndex = 6;
-            this.DGVReceiveLineCredit.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVReceiveLineCredit_CellContentClick);
             this.DGVReceiveLineCredit.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVReceiveLineCredit_CellValueChanged);
             this.DGVReceiveLineCredit.SelectionChanged += new System.EventHandler(this.DGVReceiveLineCredit_SelectionChanged);
+            this.DGVReceiveLineCredit.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVReceiveLineCredit_CellContentClick);
             // 
             // DGVCBSelect
             // 
@@ -281,6 +281,7 @@
             this.RBID.TabStop = true;
             this.RBID.Text = "Customer ID";
             this.RBID.UseVisualStyleBackColor = true;
+            this.RBID.CheckedChanged += new System.EventHandler(this.RBID_CheckedChanged);
             // 
             // CBID
             // 

@@ -64,7 +64,6 @@
             this.CBVehicle.Location = new System.Drawing.Point(164, 112);
             this.CBVehicle.Name = "CBVehicle";
             this.CBVehicle.Size = new System.Drawing.Size(408, 37);
-            this.CBVehicle.Sorted = true;
             this.CBVehicle.TabIndex = 1;
             // 
             // LblType

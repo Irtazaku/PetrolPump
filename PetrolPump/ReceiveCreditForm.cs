@@ -158,7 +158,6 @@ namespace PetrolPump
                 PDocument.Print();
             }
 
-            Application.Exit();
             MessageBox.Show("Credit successfully received", "Operation Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             TBAmount.Text = "";

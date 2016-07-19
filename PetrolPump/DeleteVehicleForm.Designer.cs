@@ -67,7 +67,6 @@
             this.CBVehicle.Location = new System.Drawing.Point(164, 162);
             this.CBVehicle.Name = "CBVehicle";
             this.CBVehicle.Size = new System.Drawing.Size(408, 37);
-            this.CBVehicle.Sorted = true;
             this.CBVehicle.TabIndex = 2;
             // 
             // LblType
@@ -133,7 +132,6 @@
             this.CBCompany.Location = new System.Drawing.Point(164, 112);
             this.CBCompany.Name = "CBCompany";
             this.CBCompany.Size = new System.Drawing.Size(408, 37);
-            this.CBCompany.Sorted = true;
             this.CBCompany.TabIndex = 1;
             this.CBCompany.SelectedIndexChanged += new System.EventHandler(this.CBCompany_SelectedIndexChanged);
             // 

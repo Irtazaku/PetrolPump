@@ -94,7 +94,6 @@
             this.CBCompany.Location = new System.Drawing.Point(162, 113);
             this.CBCompany.Name = "CBCompany";
             this.CBCompany.Size = new System.Drawing.Size(408, 37);
-            this.CBCompany.Sorted = true;
             this.CBCompany.TabIndex = 116;
             // 
             // label1

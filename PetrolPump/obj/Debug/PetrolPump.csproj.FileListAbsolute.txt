@@ -27,7 +27,6 @@ D:\BSCS\Projects\PetrolPump\PetrolPump\obj\Debug\PetrolPump.EditVehicleForm.reso
 D:\BSCS\Projects\PetrolPump\PetrolPump\bin\Debug\PetrolPump.exe.config
 D:\BSCS\Projects\PetrolPump\PetrolPump\bin\Debug\PetrolPump.exe
 D:\BSCS\Projects\PetrolPump\PetrolPump\bin\Debug\PetrolPump.pdb
-D:\BSCS\Projects\PetrolPump\PetrolPump\bin\Debug\MySqlBackup.dll
 D:\BSCS\Projects\PetrolPump\PetrolPump\obj\Debug\PetrolPump.SearchCompanyForm.resources
 D:\BSCS\Projects\PetrolPump\PetrolPump\obj\Debug\PetrolPump.SearchVehicleForm.resources
 D:\BSCS\Projects\PetrolPump\PetrolPump\obj\Debug\PetrolPump.exe
@@ -112,7 +111,6 @@ D:\BSCS\Projects\backuo\PetrolPump\PetrolPump\PetrolPump\obj\Debug\PetrolPump.Se
 D:\BSCS\Projects\backuo\PetrolPump\PetrolPump\PetrolPump\obj\Debug\PetrolPump.csproj.GenerateResource.Cache
 D:\BSCS\Projects\backuo\PetrolPump\PetrolPump\PetrolPump\bin\Debug\EPPlus.dll
 D:\BSCS\Projects\PetrolPump\PetrolPump\obj\Debug\PetrolPump.AccountsManagementForm.resources
-D:\BSCS\Projects\PetrolPump\PetrolPump\obj\Debug\PetrolPump.SummaryForm.resources
 C:\Users\Saad\Documents\Visual Studio 2010\Projects\PetrolPump\PetrolPump\obj\Debug\PetrolPump.AccountsManagementForm.resources
 C:\Users\Saad\Documents\Visual Studio 2010\Projects\PetrolPump\PetrolPump\obj\Debug\PetrolPump.SummaryForm.resources
 C:\Users\Saad\Documents\Visual Studio 2010\Projects\PetrolPump\PetrolPump\bin\Debug\EPPlus.dll
@@ -197,3 +195,5 @@ C:\Users\Irtaza\Documents\Visual Studio 2013\Projects\PetrolPump\PetrolPump\obj\
 C:\Users\Irtaza\Documents\Visual Studio 2013\Projects\PetrolPump\PetrolPump\obj\Debug\PetrolPump.BillForm.resources
 C:\Users\Irtaza\Documents\Visual Studio 2013\Projects\PetrolPump\PetrolPump\obj\Debug\PetrolPump.csproj.GenerateResource.Cache
 C:\Users\Irtaza\Documents\Visual Studio 2013\Projects\PetrolPump\PetrolPump\obj\Debug\PetrolPump.csprojResolveAssemblyReference.cache
+D:\BSCS\Projects\PetrolPump\PetrolPump\obj\Debug\PetrolPump.CombinedReport.resources
+D:\BSCS\Projects\PetrolPump\PetrolPump\obj\Debug\PetrolPump.BillForm.resources

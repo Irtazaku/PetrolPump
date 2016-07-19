@@ -64,7 +64,6 @@
             this.CBCompany.Location = new System.Drawing.Point(148, 112);
             this.CBCompany.Name = "CBCompany";
             this.CBCompany.Size = new System.Drawing.Size(408, 37);
-            this.CBCompany.Sorted = true;
             this.CBCompany.TabIndex = 1;
             // 
             // LblType

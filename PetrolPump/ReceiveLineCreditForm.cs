@@ -241,5 +241,10 @@ namespace PetrolPump
         {
             DGVReceiveLineCredit.ClearSelection();
         }
+
+        private void RBID_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

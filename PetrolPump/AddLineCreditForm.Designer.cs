@@ -59,7 +59,6 @@
             this.CBCustomer.Location = new System.Drawing.Point(167, 112);
             this.CBCustomer.Name = "CBCustomer";
             this.CBCustomer.Size = new System.Drawing.Size(408, 37);
-            this.CBCustomer.Sorted = true;
             this.CBCustomer.TabIndex = 1;
             // 
             // label2

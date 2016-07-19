@@ -106,7 +106,6 @@
             this.CBName.Location = new System.Drawing.Point(167, 112);
             this.CBName.Name = "CBName";
             this.CBName.Size = new System.Drawing.Size(408, 37);
-            this.CBName.Sorted = true;
             this.CBName.TabIndex = 1;
             this.CBName.SelectedIndexChanged += new System.EventHandler(this.CBID_SelectedIndexChanged);
             // 
