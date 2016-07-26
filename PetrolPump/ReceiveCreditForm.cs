@@ -17,6 +17,7 @@ namespace PetrolPump
     {
         int CompanyID;
         DateTime ReceivingTime;
+        double TotalAmountReceivable;
 
         public ReceiveCreditForm()
         {
@@ -87,13 +88,18 @@ namespace PetrolPump
             {
                 TBAmount.BackColor = Color.White;
             }
+            
+            double TotalAmountReceived = Convert.ToDouble(TBAmount.Text);
+            if (TotalAmountReceived > TotalAmountReceivable)
+            {
+                MessageBox.Show("Can not receive more than " + TotalAmountReceivable + " Rs", "Operation Unsuccessful", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             if (MessageBox.Show("Receive Credit:\n\nCompany Name: " + CBName.Text + "\nAmount Receiving: " + TBAmount.Text + " Rs", "Confirm Operation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
                 return;
 
             ReceivingTime = DateTime.Now;
-
-            double TotalAmountReceived = Convert.ToDouble(TBAmount.Text);
 
             MySqlFunctions Func = new MySqlFunctions();
 
@@ -268,9 +274,9 @@ namespace PetrolPump
             MySqlFunctions Func = new MySqlFunctions();
 
             CompanyID = Func.ScalarInt("select ID from companies where name='" + CBName.Text + "'");
-
-            double AmountReceivable = Math.Round(Convert.ToDouble(Func.ScalarString("SELECT Coalesce(SUM( AmountReceivable ),0)  FROM ( SELECT vehiclecash.Amount - SUM( COALESCE( vehiclecashreceived.Amount, 0 ) ) AS AmountReceivable FROM vehiclecash LEFT JOIN vehiclecashreceived ON vehiclecash.ID = vehiclecashreceived.vehiclecashID WHERE vehiclecash.CompanyID = '" + CompanyID + "' GROUP BY vehiclecash.id union all SELECT Coalesce(SUM( AmountReceivable ),0)  FROM ( SELECT credit.Amount - SUM( COALESCE( creditreceived.Amount, 0 ) ) AS AmountReceivable FROM credit LEFT JOIN creditreceived ON credit.ID = creditreceived.CreditID WHERE credit.CompanyID = '" + CompanyID + "' GROUP BY credit.id ) AS Temp ) AS Temp")), 2);
-            LblAmount.Text = "Amount Receivable: " + AmountReceivable + " Rs";
+            
+            TotalAmountReceivable = Math.Round(Convert.ToDouble(Func.ScalarString("SELECT Coalesce(SUM( AmountReceivable ),0)  FROM ( SELECT vehiclecash.Amount - SUM( COALESCE( vehiclecashreceived.Amount, 0 ) ) AS AmountReceivable FROM vehiclecash LEFT JOIN vehiclecashreceived ON vehiclecash.ID = vehiclecashreceived.vehiclecashID WHERE vehiclecash.CompanyID = '" + CompanyID + "' GROUP BY vehiclecash.id union all SELECT Coalesce(SUM( AmountReceivable ),0)  FROM ( SELECT credit.Amount - SUM( COALESCE( creditreceived.Amount, 0 ) ) AS AmountReceivable FROM credit LEFT JOIN creditreceived ON credit.ID = creditreceived.CreditID WHERE credit.CompanyID = '" + CompanyID + "' GROUP BY credit.id ) AS Temp ) AS Temp")), 2);
+            LblAmount.Text = "Amount Receivable: " + TotalAmountReceivable + " Rs";
         }
 
         private void RBCashPayment_CheckedChanged(object sender, EventArgs e)
