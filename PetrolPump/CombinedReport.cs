@@ -487,10 +487,10 @@ namespace PetrolPump
                 worksheet.Cells[Row, 2, Row + 1, 2].Merge = true;
                 worksheet.Cells[Row, 2].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
                 worksheet.Cells[Row, 2].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
-                worksheet.Cells[Row, 3].Value = "BL";
-                worksheet.Cells[Row, 4].Value = "Credit";
-                worksheet.Cells[Row, 5].Value = "Debit";
-                worksheet.Cells[Row, 6].Value = "CF";
+                worksheet.Cells[Row, 3].Value = "Opennig";
+                worksheet.Cells[Row, 4].Value = "Sales";
+                worksheet.Cells[Row, 5].Value = "Withdraw";
+                worksheet.Cells[Row, 6].Value = "Closing";
 
                 Row++;
 

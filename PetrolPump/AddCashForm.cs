@@ -32,7 +32,28 @@ namespace PetrolPump
             }
 
             bool Errors = false;
+             //validation for inventory
+            MySqlFunctions Func = new MySqlFunctions();
+            string Query = "select Quantity from inventory where Name like '%" + CBType.Text + "%'";
+            MySql.Data.MySqlClient.MySqlDataReader Reader = Func.SelectQuery(Query);
+
+            while (Reader.Read())
+            {
+                Quantity = int.Parse(Reader["Quantity"].ToString());
+            }
+            Reader.Close();
             if (!Regex.IsMatch(TBLiter.Text, "^[0-9]*[.]{0,1}[0-9]{1,2}$"))
+            {
+                TBLiter.BackColor = Color.FromArgb(255, 207, 207);
+                Errors = true;
+            }
+            else if (Quantity < int.Parse(TBLiter.Text))
+            {
+                TBLiter.BackColor = Color.FromArgb(255, 207, 207);
+                Errors = true;
+                MessageBox.Show("No enough quantity available", "Operation Unsuccessful", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (int.Parse(TBLiter.Text) <= 0)
             {
                 TBLiter.BackColor = Color.FromArgb(255, 207, 207);
                 Errors = true;
@@ -46,38 +67,6 @@ namespace PetrolPump
             {
                 MessageBox.Show("No fuel type selected", "Operation Unsuccessful", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Errors = true;
-            }
-
-            //validation for inventory
-            MySqlFunctions Func = new MySqlFunctions();
-            string Query = "select Quantity from inventory where Name like '%" + CBType.Text + "%'";
-            MySql.Data.MySqlClient.MySqlDataReader Reader = Func.SelectQuery(Query);
-
-            while (Reader.Read())
-            {
-                Quantity = int.Parse(Reader["Quantity"].ToString());
-            }
-            Reader.Close();
-
-            if (Quantity < int.Parse(TBLiter.Text))
-            {
-                TBLiter.BackColor = Color.FromArgb(255, 207, 207);
-                Errors = true;
-                MessageBox.Show("No enough quantity available", "Operation Unsuccessful", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                TBLiter.BackColor = Color.White;
-            }
-
-            if (int.Parse(TBLiter.Text) <= 0)
-            {
-                TBLiter.BackColor = Color.FromArgb(255, 207, 207);
-                Errors = true;
-            }
-            else
-            {
-                TBLiter.BackColor = Color.White;
             }
 
             if (Errors)
@@ -190,7 +179,7 @@ namespace PetrolPump
              Offset += 30;*/
             PGraphics.FillRectangle(new SolidBrush(Color.Black), X, Y + Offset, MaxX, 3);
             Offset += 10;
-            PGraphics.DrawString("CASH SALE RECEIPT", new Font(FontName, 14), new SolidBrush(Color.Black), new PointF(X + ((MaxX - PGraphics.MeasureString("CASH SALE RECEIPT", new Font(FontName, 14)).Width) / 2), Y + Offset));
+            PGraphics.DrawString("Cash Sale Receipt", new Font(FontName, 14), new SolidBrush(Color.Black), new PointF(X + ((MaxX - PGraphics.MeasureString("Cash Sale Receipt", new Font(FontName, 14)).Width) / 2), Y + Offset));
             Offset += 30;
             PGraphics.DrawLine(DashedPen, X, Y + Offset, MaxX, Y + Offset);
             Offset += 8;

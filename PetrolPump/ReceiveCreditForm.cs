@@ -205,7 +205,7 @@ namespace PetrolPump
             //PGraphics.FillRectangle(new SolidBrush(Color.Black), X, MaxY, MaxX, 3);
             PGraphics.FillRectangle(new SolidBrush(Color.Black), X, Y + Offset, MaxX, 3);
             Offset += 10;
-            PGraphics.DrawString("CREDIT RECEIVED", new Font(FontName, 14), new SolidBrush(Color.Black), new PointF(X + ((MaxX - PGraphics.MeasureString("CREDIT RECEIVED", new Font(FontName, 14)).Width) / 2), Y + Offset));
+            PGraphics.DrawString("Credit Received", new Font(FontName, 14), new SolidBrush(Color.Black), new PointF(X + ((MaxX - PGraphics.MeasureString("Credit Received", new Font(FontName, 14)).Width) / 2), Y + Offset));
             Offset += 30;
             PGraphics.DrawLine(DashedPen, X, Y + Offset, MaxX, Y + Offset);
             Offset += 8;

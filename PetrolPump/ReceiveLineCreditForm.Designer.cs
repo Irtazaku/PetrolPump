@@ -142,9 +142,9 @@
             this.DGVReceiveLineCredit.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGVReceiveLineCredit.Size = new System.Drawing.Size(1376, 654);
             this.DGVReceiveLineCredit.TabIndex = 6;
+            this.DGVReceiveLineCredit.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVReceiveLineCredit_CellContentClick);
             this.DGVReceiveLineCredit.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVReceiveLineCredit_CellValueChanged);
             this.DGVReceiveLineCredit.SelectionChanged += new System.EventHandler(this.DGVReceiveLineCredit_SelectionChanged);
-            this.DGVReceiveLineCredit.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVReceiveLineCredit_CellContentClick);
             // 
             // DGVCBSelect
             // 
@@ -249,13 +249,14 @@
             // CheckBoxPrint
             // 
             this.CheckBoxPrint.AutoSize = true;
+            this.CheckBoxPrint.Checked = true;
+            this.CheckBoxPrint.CheckState = System.Windows.Forms.CheckState.Checked;
             this.CheckBoxPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.CheckBoxPrint.Location = new System.Drawing.Point(556, 839);
             this.CheckBoxPrint.Name = "CheckBoxPrint";
             this.CheckBoxPrint.Size = new System.Drawing.Size(170, 33);
             this.CheckBoxPrint.TabIndex = 7;
             this.CheckBoxPrint.Text = "Print Reciept";
-            this.CheckBoxPrint.Checked = true;
             this.CheckBoxPrint.UseVisualStyleBackColor = true;
             // 
             // RBNumber
