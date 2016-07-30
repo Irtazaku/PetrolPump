@@ -17,7 +17,7 @@ namespace PetrolPump
     {
         int InsertID;
         DateTime InsertTime;
-
+        int Quantity;
         public AddCreditForm()
         {
             InitializeComponent();
@@ -119,13 +119,47 @@ namespace PetrolPump
                 Errors = true;
             }
 
+            //validation for inventory
+            MySqlFunctions Func = new MySqlFunctions();
+            string Query = "select Quantity from inventory where Name like '%" + CBType.Text + "%'";
+            MySql.Data.MySqlClient.MySqlDataReader Reader = Func.SelectQuery(Query);
+
+            while (Reader.Read())
+            {
+                Quantity = int.Parse(Reader["Quantity"].ToString());
+            }
+            Reader.Close();
+            if (Quantity < int.Parse(TBLiter.Text))
+            {
+                TBLiter.BackColor = Color.FromArgb(255, 207, 207);
+                Errors = true;
+                MessageBox.Show("No enough quantity available", "Operation Unsuccessful", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                TBLiter.BackColor = Color.White;
+            }
+
+            if (int.Parse(TBLiter.Text) <= 0)
+            {
+                TBLiter.BackColor = Color.FromArgb(255, 207, 207);
+                Errors = true;
+            }
+            else
+            {
+                TBLiter.BackColor = Color.White;
+            }
+
             if (Errors)
                 return;
+            
+            
+
 
             if (MessageBox.Show("Add Credit Entry For:\n\nCompany Name: " + CBCompany.Text + "\nVehicle Number: " + CBVehicle.Text + "\nFuel Type: " + CBType.Text + "\nLiter / Qty: " + TBLiter.Text + "\n" + LblRate.Text + "\nDiscount: " + (Regex.IsMatch(TBDiscount.Text, "^[0-9]{0,2}[.]{0,1}[0-9]{1,2}$") ? TBDiscount.Text : "0") + "%\n" + LblAmount.Text, "Confirm Operation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
                 return;
 
-            MySqlFunctions Func = new MySqlFunctions();
+            
 
             double Rate = Math.Round(Inventory.GetRate(CBType.Text),2);
             double Amount = Convert.ToDouble(Rate) * Convert.ToDouble(TBLiter.Text);

@@ -86,13 +86,14 @@
             // CheckBoxPrint
             // 
             this.CheckBoxPrint.AutoSize = true;
+            this.CheckBoxPrint.Checked = true;
+            this.CheckBoxPrint.CheckState = System.Windows.Forms.CheckState.Checked;
             this.CheckBoxPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.CheckBoxPrint.Location = new System.Drawing.Point(192, 3);
             this.CheckBoxPrint.Name = "CheckBoxPrint";
             this.CheckBoxPrint.Size = new System.Drawing.Size(170, 33);
             this.CheckBoxPrint.TabIndex = 8;
             this.CheckBoxPrint.Text = "Print Reciept";
-            this.CheckBoxPrint.Checked = true;
             this.CheckBoxPrint.UseVisualStyleBackColor = true;
             // 
             // RBChequePayment
@@ -256,6 +257,7 @@
             this.TBAmount.Name = "TBAmount";
             this.TBAmount.Size = new System.Drawing.Size(266, 41);
             this.TBAmount.TabIndex = 2;
+
             // 
             // panel1
             // 

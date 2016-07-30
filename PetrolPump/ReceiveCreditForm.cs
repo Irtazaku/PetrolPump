@@ -88,6 +88,16 @@ namespace PetrolPump
             {
                 TBAmount.BackColor = Color.White;
             }
+
+            if (int.Parse(TBAmount.Text) <= 0)
+            {
+                TBAmount.BackColor = Color.FromArgb(255, 207, 207);
+                return;
+            }
+            else
+            {
+                TBAmount.BackColor = Color.White;
+            }
             
             double TotalAmountReceived = Convert.ToDouble(TBAmount.Text);
             if (TotalAmountReceived > TotalAmountReceivable)
@@ -306,5 +316,6 @@ namespace PetrolPump
             if (CBAccountNo.Items.Count > 0)
                 CBAccountNo.SelectedIndex = 0;
         }
+
     }
 }

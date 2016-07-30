@@ -66,6 +66,16 @@ namespace PetrolPump
                 TBAmount.BackColor = Color.White;
             }
 
+            if (int.Parse(TBAmount.Text) <= 0)
+            {
+                TBAmount.BackColor = Color.FromArgb(255, 207, 207);
+                Errors = true;
+            }
+            else
+            {
+                TBAmount.BackColor = Color.White;
+            }
+
             if (CBCompany.Items.Count == 0)
             {
                 MessageBox.Show("No company selected", "Operation Unsuccessful", MessageBoxButtons.OK, MessageBoxIcon.Error);

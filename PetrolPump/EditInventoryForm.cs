@@ -37,7 +37,12 @@ namespace PetrolPump
                 TBName.BackColor = Color.White;
             }
 
-            if (!Regex.IsMatch(TBLiter.Text, "^(\\+|\\-|)[0-9]*[.]{0,1}[0-9]{1,2}$"))
+            if (!Regex.IsMatch(TBLiter.Text, "^[0-9]*[.]{0,1}[0-9]{1,2}$"))
+            {
+                TBLiter.BackColor = Color.FromArgb(255, 207, 207);
+                Errors = true;
+            }
+            else if (int.Parse(TBLiter.Text) <= 0)
             {
                 TBLiter.BackColor = Color.FromArgb(255, 207, 207);
                 Errors = true;
@@ -48,6 +53,11 @@ namespace PetrolPump
             }
 
             if (!Regex.IsMatch(TBRate.Text, "^[0-9]*[.]{0,1}[0-9]{1,2}$"))
+            {
+                TBRate.BackColor = Color.FromArgb(255, 207, 207);
+                Errors = true;
+            }
+            else if (int.Parse(TBRate.Text) <= 0)
             {
                 TBRate.BackColor = Color.FromArgb(255, 207, 207);
                 Errors = true;

@@ -194,6 +194,6 @@ C:\Users\Irtaza\Documents\Visual Studio 2013\Projects\PetrolPump\PetrolPump\obj\
 C:\Users\Irtaza\Documents\Visual Studio 2013\Projects\PetrolPump\PetrolPump\obj\Debug\PetrolPump.SearchVehicleForm.resources
 C:\Users\Irtaza\Documents\Visual Studio 2013\Projects\PetrolPump\PetrolPump\obj\Debug\PetrolPump.BillForm.resources
 C:\Users\Irtaza\Documents\Visual Studio 2013\Projects\PetrolPump\PetrolPump\obj\Debug\PetrolPump.csproj.GenerateResource.Cache
-C:\Users\Irtaza\Documents\Visual Studio 2013\Projects\PetrolPump\PetrolPump\obj\Debug\PetrolPump.csprojResolveAssemblyReference.cache
 D:\BSCS\Projects\PetrolPump\PetrolPump\obj\Debug\PetrolPump.CombinedReport.resources
 D:\BSCS\Projects\PetrolPump\PetrolPump\obj\Debug\PetrolPump.BillForm.resources
+C:\Users\Irtaza\Documents\Visual Studio 2013\Projects\PetrolPump\PetrolPump\obj\Debug\PetrolPump.csprojResolveAssemblyReference.cache
