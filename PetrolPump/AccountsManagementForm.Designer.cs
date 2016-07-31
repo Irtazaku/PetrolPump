@@ -777,10 +777,10 @@
             this.Controls.Add(this.button4);
             this.Controls.Add(this.menuStrip2);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.PanelAccount);
             this.Controls.Add(this.PanelDeposit);
             this.Controls.Add(this.PanelWithdraw);
             this.Controls.Add(this.PanelExpense);
-            this.Controls.Add(this.PanelAccount);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

@@ -328,9 +328,9 @@ namespace PetrolPump
             MySqlFunctions Func2 = new MySqlFunctions();
 
             if (RBNewBank.Checked)
-                Func2.NonReturnQuery("insert into accounts set bankname='" + TBBankName.Text + "', accountnumber='" + TBAccountNo.Text + "', initialbalance='" + TBInitialBalance.Text + "'");
+                Func2.NonReturnQuery("insert into accounts set bankname='" + TBBankName.Text + "', accountnumber='" + TBAccountNo.Text + "', initialbalance='" + TBInitialBalance.Text + "', Date_Created='" + DateTime.Now.ToString("yyyy-MM-dd H:mm:ss") + @"'");
             else
-                Func2.NonReturnQuery("insert into accounts set bankname='" + CBBankName.Text + "', accountnumber='" + TBAccountNo.Text + "', initialbalance='" + TBInitialBalance.Text + "'");
+                Func2.NonReturnQuery("insert into accounts set bankname='" + CBBankName.Text + "', accountnumber='" + TBAccountNo.Text + "', initialbalance='" + TBInitialBalance.Text + "', Date_Created='" + DateTime.Now.ToString("yyyy-MM-dd H:mm:ss") + @"'");
 
             Accounts.Add(Func2.ScalarInt("SELECT LAST_INSERT_ID();"), TBBankName.Text, TBAccountNo.Text);
 

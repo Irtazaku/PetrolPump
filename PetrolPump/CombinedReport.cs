@@ -479,31 +479,103 @@ namespace PetrolPump
                 LineSale.Close();
                 CreditSale.Close();
 
-                double CashClosing = Math.Round(Convert.ToDouble(Func.ScalarString("SELECT coalesce(sum(Amount),0) as 'Amount' FROM cash where " + DateClause)), 2);
-                double CashWithdraw = Math.Round(Convert.ToDouble(Func.ScalarString("SELECT coalesce(sum(Amount),0) FROM withdraw where " + DateClause)), 2);
+                //for opennign balances
+                string openingdateclause = " date(datetime) < '" + DPFrom.Value.ToString("yyyy-MM-dd") + "' ";
+                double CashSalesOpening = Math.Round(Convert.ToDouble(Func.ScalarString("SELECT coalesce(sum(Amount),0) as 'Amount' FROM cash where " + openingdateclause)), 2);
+                double CreditSalesOpening = Math.Round(Convert.ToDouble(Func.ScalarString("SELECT coalesce(sum(Amount),0) as 'Amount' FROM creditreceived where " + openingdateclause + "  and creditreceived.Type like 'Cash' ")), 2);
+                double LineCreditSalesOpening = Math.Round(Convert.ToDouble(Func.ScalarString("SELECT coalesce(sum(Amount),0) as 'Amount' FROM linecreditreceived where " + openingdateclause)), 2);
+                double VehicleCashSalesOpening = Math.Round(Convert.ToDouble(Func.ScalarString("SELECT coalesce(sum(Amount),0) as 'Amount' FROM vehiclecashreceived where " + openingdateclause + "  and vehiclecashreceived.Type like 'Cash' ")), 2);
 
+                double CashDebitOpening = Math.Round(Convert.ToDouble(Func.ScalarString("SELECT coalesce(sum(Amount),0) FROM expense where " + openingdateclause + "  and expense.Type like 'Cash' ")), 2);
+                double CashOpening = CashSalesOpening + CreditSalesOpening + LineCreditSalesOpening + VehicleCashSalesOpening - CashDebitOpening;
+
+                //end opening balance
+
+                //credit and debit between given dates
+                double CashSales = Math.Round(Convert.ToDouble(Func.ScalarString("SELECT coalesce(sum(Amount),0) as 'Amount' FROM cash where " + DateClause)), 2);
+                double CreditSales = Math.Round(Convert.ToDouble(Func.ScalarString("SELECT coalesce(sum(Amount),0) as 'Amount' FROM creditreceived where " + DateClause + "  and creditreceived.Type like 'Cash' ")), 2);
+                double LineCreditSales = Math.Round(Convert.ToDouble(Func.ScalarString("SELECT coalesce(sum(Amount),0) as 'Amount' FROM linecreditreceived where " + DateClause)), 2);
+                double VehicleCashSales = Math.Round(Convert.ToDouble(Func.ScalarString("SELECT coalesce(sum(Amount),0) as 'Amount' FROM vehiclecashreceived where " + DateClause + "  and vehiclecashreceived.Type like 'Cash' ")), 2);
+
+                double CashCredit = CashSales + CreditSales + LineCreditSales + VehicleCashSales;
+                double CashDebit = Math.Round(Convert.ToDouble(Func.ScalarString("SELECT coalesce(sum(Amount),0) FROM expense where " + DateClause +"  and expense.Type like 'Cash' ")), 2);
+                //end credit and debit between given dates
                 worksheet.Cells[Row, 2].Value = "Cash";
                 worksheet.Cells[Row, 2].Style.Font.Bold = true;
                 worksheet.Cells[Row, 2, Row + 1, 2].Merge = true;
                 worksheet.Cells[Row, 2].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
                 worksheet.Cells[Row, 2].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
                 worksheet.Cells[Row, 3].Value = "Opennig";
-                worksheet.Cells[Row, 4].Value = "Sales";
-                worksheet.Cells[Row, 5].Value = "Withdraw";
+                worksheet.Cells[Row, 4].Value = "Debit";
+                worksheet.Cells[Row, 5].Value = "Credit";
                 worksheet.Cells[Row, 6].Value = "Closing";
 
                 Row++;
 
-                worksheet.Cells[Row, 3].Value = (CashClosing - CashGrandTotal) + "";
-                worksheet.Cells[Row, 4].Value = CashGrandTotal + "";
-                worksheet.Cells[Row, 5].Value = CashWithdraw + "";
-                worksheet.Cells[Row, 6].Value = (CashClosing + CashWithdraw) + "";
+                worksheet.Cells[Row, 3].Value = (CashOpening) + "";
+                worksheet.Cells[Row, 4].Value = CashCredit + "";
+                worksheet.Cells[Row, 5].Value = CashDebit + "";
+                worksheet.Cells[Row, 6].Value = (CashOpening + CashCredit - CashDebit) + "";
+
+                worksheet.Cells[Row - 1, 2, Row, 6].Style.Border.Right.Style = ExcelBorderStyle.Thin;
+                worksheet.Cells[Row - 1, 2, Row, 6].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+                worksheet.Cells[Row - 1, 2, Row, 6].Style.Border.BorderAround(ExcelBorderStyle.Medium);
+
+                Row += 2;
+
+
+                //bank reports
+
+                //for opennign balances
+                double BankInitBalance = Math.Round(Convert.ToDouble(Func.ScalarString("SELECT coalesce(sum(InitialBalance),0) as 'InitialBalance' FROM accounts where date(Date_Created) <= '" + DPTo.Value.ToString("yyyy-MM-dd") + "' ")), 2);
+                double BankCreditSalesOpening = Math.Round(Convert.ToDouble(Func.ScalarString("SELECT coalesce(sum(Amount),0) as 'Amount' FROM creditreceived where " + openingdateclause + "  and creditreceived.Type like 'Bank' ")), 2);
+                double BankVehicleCashSalesOpening = Math.Round(Convert.ToDouble(Func.ScalarString("SELECT coalesce(sum(Amount),0) as 'Amount' FROM vehiclecashreceived where " + openingdateclause + "  and vehiclecashreceived.Type like 'Bank' ")), 2);
+                double BankDepositOpening = Math.Round(Convert.ToDouble(Func.ScalarString("SELECT coalesce(sum(Amount),0) as 'Amount' FROM deposit where " + openingdateclause)), 2);
+
+                double BankExpenceOpening = Math.Round(Convert.ToDouble(Func.ScalarString("SELECT coalesce(sum(Amount),0) FROM expense where " + openingdateclause + "  and expense.Type like 'Bank' ")), 2);
+                double BankWithdrawOpening = Math.Round(Convert.ToDouble(Func.ScalarString("SELECT coalesce(sum(Amount),0) FROM withdraw where " + openingdateclause)), 2);
+                double BankOpening = BankInitBalance + BankCreditSalesOpening + BankVehicleCashSalesOpening + BankDepositOpening - BankExpenceOpening - BankWithdrawOpening;
+
+                //end opening balance
+
+                //credit and debit between given dates
+                double BankCreditSales = Math.Round(Convert.ToDouble(Func.ScalarString("SELECT coalesce(sum(Amount),0) as 'Amount' FROM creditreceived where " + DateClause + "  and creditreceived.Type like 'Bank' ")), 2);
+                double BankVehicleCashSales = Math.Round(Convert.ToDouble(Func.ScalarString("SELECT coalesce(sum(Amount),0) as 'Amount' FROM vehiclecashreceived where " + DateClause + "  and vehiclecashreceived.Type like 'Bank' ")), 2);
+                double BankDeposit = Math.Round(Convert.ToDouble(Func.ScalarString("SELECT coalesce(sum(Amount),0) as 'Amount' FROM deposit where " + DateClause)), 2);
+
+                double BankCredit = BankCreditSales + BankVehicleCashSales + BankDeposit;
+
+                double BankExpence = Math.Round(Convert.ToDouble(Func.ScalarString("SELECT coalesce(sum(Amount),0) FROM expense where " + DateClause + "  and expense.Type like 'Bank' ")), 2);
+                double BankWithdraw = Math.Round(Convert.ToDouble(Func.ScalarString("SELECT coalesce(sum(Amount),0) FROM withdraw where " + DateClause)), 2);
+
+                double BankDebit = BankExpence + BankWithdraw;
+
+                
+                //end credit and debit between given dates
+                worksheet.Cells[Row, 2].Value = "Bank";
+                worksheet.Cells[Row, 2].Style.Font.Bold = true;
+                worksheet.Cells[Row, 2, Row + 1, 2].Merge = true;
+                worksheet.Cells[Row, 2].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                worksheet.Cells[Row, 2].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+                worksheet.Cells[Row, 3].Value = "Opennig";
+                worksheet.Cells[Row, 4].Value = "Debit";
+                worksheet.Cells[Row, 5].Value = "Credit";
+                worksheet.Cells[Row, 6].Value = "Closing";
+
+                Row++;
+
+                worksheet.Cells[Row, 3].Value = (BankOpening) + "";
+                worksheet.Cells[Row, 4].Value = BankCredit + "";
+                worksheet.Cells[Row, 5].Value = BankDebit + "";
+                worksheet.Cells[Row, 6].Value = (BankOpening + BankCredit - BankDebit) + "";
 
                 worksheet.Cells[Row - 1, 2, Row, 6].Style.Border.Right.Style = ExcelBorderStyle.Thin;
                 worksheet.Cells[Row - 1, 2, Row, 6].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
                 worksheet.Cells[Row - 1, 2, Row, 6].Style.Border.BorderAround(ExcelBorderStyle.Medium);
 
                 Row += 4;
+
+
 
                 //string ReceiptQuery = "select temp.*, accounts.accountnumber from (SELECT sum(creditreceived.amount), creditreceived.type, companies.name,creditreceived.datetime, creditreceived.accountid, 'Credit' from creditreceived inner join credit on credit.id = creditreceived.creditid inner join companies on companies.id = credit.companyid group by creditreceived.type, companies.name,accountid union all SELECT sum(vehiclecashreceived.amount), vehiclecashreceived.type, companies.name,vehiclecashreceived.datetime, vehiclecashreceived.accountid, 'Vehicle Cash' from vehiclecashreceived inner join vehiclecash on vehiclecash.id = vehiclecashreceived.vehiclecashid inner join companies on companies.id = vehiclecash.companyid group by vehiclecashreceived.type, companies.name,accountid union all SELECT sum(linecreditreceived.amount), 'Cash', linecustomers.vehiclenumber,linecreditreceived.datetime,null, 'Line Credit' from linecreditreceived inner join linecredit on linecredit.id = linecreditreceived.linecreditid inner join linecustomers on linecustomers.id = linecredit.customerid group by linecustomers.vehiclenumber) as temp left join accounts on accounts.id = temp.accountid where " + DateClause;
                 string ReceiptQuery = "select temp.*, accounts.accountnumber from (SELECT sum(creditreceived.amount), creditreceived.type, companies.name,creditreceived.datetime, creditreceived.accountid, credit.id, 'Credit' from creditreceived inner join credit on credit.id = creditreceived.creditid inner join companies on companies.id = credit.companyid group by credit.id,accountid union all SELECT sum(vehiclecashreceived.amount), vehiclecashreceived.type, companies.name,vehiclecashreceived.datetime, vehiclecashreceived.accountid, vehiclecash.id, 'Vehicle Cash' from vehiclecashreceived inner join vehiclecash on vehiclecash.id = vehiclecashreceived.vehiclecashid inner join companies on companies.id = vehiclecash.companyid group by vehiclecash.id,accountid union all SELECT sum(linecreditreceived.amount), 'Cash', linecustomers.vehiclenumber,linecreditreceived.datetime,null, linecredit.id, 'Line Credit' from linecreditreceived inner join linecredit on linecredit.id = linecreditreceived.linecreditid inner join linecustomers on linecustomers.id = linecredit.customerid group by linecredit.id) as temp left join accounts on accounts.id = temp.accountid where " + DateClause;
