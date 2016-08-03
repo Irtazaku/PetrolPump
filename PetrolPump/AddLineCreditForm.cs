@@ -54,13 +54,13 @@ namespace PetrolPump
                 TBLiter.BackColor = Color.FromArgb(255, 207, 207);
                 Errors = true;
             }
-            else if (Quantity < int.Parse(TBLiter.Text))
+            else if (Quantity < double.Parse(TBLiter.Text))
             {
                 TBLiter.BackColor = Color.FromArgb(255, 207, 207);
                 Errors = true;
                 MessageBox.Show("No enough quantity available", "Operation Unsuccessful", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (int.Parse(TBLiter.Text) <= 0)
+            else if (double.Parse(TBLiter.Text) <= 0)
             {
                 TBLiter.BackColor = Color.FromArgb(255, 207, 207);
                 Errors = true;

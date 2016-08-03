@@ -42,7 +42,7 @@ namespace PetrolPump
                 TBLiter.BackColor = Color.FromArgb(255, 207, 207);
                 Errors = true;
             }
-            else if (int.Parse(TBLiter.Text) <= 0)
+            else if (double.Parse(TBLiter.Text) <= 0)
             {
                 TBLiter.BackColor = Color.FromArgb(255, 207, 207);
                 Errors = true;
@@ -57,7 +57,7 @@ namespace PetrolPump
                 TBRate.BackColor = Color.FromArgb(255, 207, 207);
                 Errors = true;
             }
-            else if (int.Parse(TBRate.Text) <= 0)
+            else if (double.Parse(TBRate.Text) <= 0)
             {
                 TBRate.BackColor = Color.FromArgb(255, 207, 207);
                 Errors = true;

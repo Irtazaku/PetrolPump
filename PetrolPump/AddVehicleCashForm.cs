@@ -61,7 +61,7 @@ namespace PetrolPump
                 TBAmount.BackColor = Color.FromArgb(255, 207, 207);
                 Errors = true;
             }
-            else if (int.Parse(TBAmount.Text) <= 0)
+            else if (double.Parse(TBAmount.Text) <= 0)
             {
                 TBAmount.BackColor = Color.FromArgb(255, 207, 207);
                 Errors = true;
