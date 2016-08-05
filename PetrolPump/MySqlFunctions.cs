@@ -49,7 +49,10 @@ namespace PetrolPump
         public string ScalarString(string Query)
         {
             MySqlCommand cmd = new MySqlCommand(Query, Conn);
-            return cmd.ExecuteScalar() + "";
+            string output = cmd.ExecuteScalar() + "";
+            if (output != "")
+                return output;
+            else return "0";
         }
 
         public int ScalarInt(string Query)

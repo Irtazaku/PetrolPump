@@ -209,8 +209,8 @@ namespace PetrolPump
 
                 Row++;
 
-                double BalanceCredit = Math.Round(Convert.ToDouble(Func.ScalarString("SELECT sum(amount) FROM credit where companyid = '" + Company.ID[CBCompany.SelectedIndex] + "'")), 2);
-                double BalanceVehicleCash = Math.Round(Convert.ToDouble(Func.ScalarString("SELECT sum(amount) FROM vehiclecash where companyid = '" + Company.ID[CBCompany.SelectedIndex] + "'")), 2);
+                double BalanceCredit = Math.Round(Convert.ToDouble(Func.ScalarString("SELECT sum(amount) FROM credit where companyid = '" + Company.ID[CBCompany.SelectedIndex] + "'").ToString()), 2);
+                double BalanceVehicleCash = Math.Round(Convert.ToDouble(Func.ScalarString("SELECT sum(amount) FROM vehiclecash where companyid = '" + Company.ID[CBCompany.SelectedIndex] + "'").ToString()), 2);
                 double Balance = BalanceCredit + BalanceVehicleCash;
                 worksheet.Cells[Row, 4].Value = "BALANCE";
                 worksheet.Cells[Row, 4, Row, 7].Merge = true;
