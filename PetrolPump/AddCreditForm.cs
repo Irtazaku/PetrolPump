@@ -17,7 +17,7 @@ namespace PetrolPump
     {
         int InsertID;
         DateTime InsertTime;
-        int Quantity;
+        double Quantity;
         public AddCreditForm()
         {
             InitializeComponent();
@@ -89,7 +89,7 @@ namespace PetrolPump
 
             while (Reader.Read())
             {
-                Quantity = int.Parse(Reader["Quantity"].ToString());
+                Quantity = double.Parse(Reader["Quantity"].ToString());
             }
             Reader.Close();
             if (!Regex.IsMatch(TBLiter.Text, "^[0-9]*[.]{0,1}[0-9]{1,2}$"))

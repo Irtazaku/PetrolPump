@@ -17,7 +17,7 @@ namespace PetrolPump
     {
         int InsertID;
         DateTime InsertTime;
-        int Quantity;
+        double Quantity;
         public AddLineCreditForm()
         {
             InitializeComponent();
@@ -45,7 +45,7 @@ namespace PetrolPump
 
             while (Reader.Read())
             {
-                Quantity = int.Parse(Reader["Quantity"].ToString());
+                Quantity = double.Parse(Reader["Quantity"].ToString());
             }
             Reader.Close();
 

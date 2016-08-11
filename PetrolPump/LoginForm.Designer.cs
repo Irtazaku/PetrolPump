@@ -47,7 +47,7 @@
             this.TBID.Name = "TBID";
             this.TBID.Size = new System.Drawing.Size(294, 35);
             this.TBID.TabIndex = 1;
-            this.TBID.Text = "1";
+            this.TBID.Text = "";
             this.TBID.TextChanged += new System.EventHandler(this.TBID_TextChanged);
             // 
             // TBPassword
@@ -57,7 +57,7 @@
             this.TBPassword.Name = "TBPassword";
             this.TBPassword.Size = new System.Drawing.Size(294, 35);
             this.TBPassword.TabIndex = 2;
-            this.TBPassword.Text = "test";
+            this.TBPassword.Text = "";
             this.TBPassword.UseSystemPasswordChar = true;
             // 
             // menuStrip1
