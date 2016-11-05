@@ -37,15 +37,16 @@ namespace PetrolPump
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            string DateClause = " date(datetime) between '" + DPFrom.Value.ToString("yyyy-MM-dd") + "' and '" + DateTime.Today.ToString("yyyy-MM-dd") + "' ";
+            //string DateClause = " date(datetime) between '" + DPFrom.Value.ToString("yyyy-MM-dd") + "' and '" + DateTime.Today.ToString("yyyy-MM-dd") + "' ";
+            string DateClause = " date(datetime) between '" + DPFrom.Value.ToString("yyyy-MM-dd") + "' and '" + DPTo.Value.ToString("yyyy-MM-dd") + "' ";
 
             if (CBCompany.Items.Count == 0)
             {
                 MessageBox.Show("No company selected", "Operation Unsuccessful", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
-            FileInfo newFile = new FileInfo("Bill - " + CBCompany.Text + " - " + DPFrom.Value.ToString("dd MMM yyyy") + " to " + DateTime.Today.ToString("dd MMM yyyy") + ".xlsx");
+            string fileName = "Bill - " + CBCompany.Text + " - " + DPFrom.Value.ToString("dd MMM yyyy") + " to " + DPTo.Value.ToString("yyyy-MM-dd");
+            FileInfo newFile = new FileInfo( fileName + ".xlsx");
             //if (newFile.Exists)
             int FileNum = 0;
             while (newFile.Exists)
@@ -54,14 +55,14 @@ namespace PetrolPump
                 {
                     newFile.Delete();
                     if (FileNum == 0)
-                        newFile = new FileInfo("Bill - " + CBCompany.Text + " - " + DPFrom.Value.ToString("dd MMM yyyy") + " to " + DateTime.Today.ToString("dd MMM yyyy") + ".xlsx");
+                        newFile = new FileInfo(fileName + ".xlsx");
                     else
-                        newFile = new FileInfo("Bill - " + CBCompany.Text + " - " + DPFrom.Value.ToString("dd MMM yyyy") + " to " + DateTime.Today.ToString("dd MMM yyyy") + " (" + FileNum + ").xlsx");
+                        newFile = new FileInfo(fileName + " (" + FileNum + ").xlsx");
                 }
                 catch (Exception)
                 {
                     FileNum++;
-                    newFile = new FileInfo("Bill - " + CBCompany.Text + " - " + DPFrom.Value.ToString("dd MMM yyyy") + " to " + DateTime.Today.ToString("dd MMM yyyy") + " (" + FileNum + ").xlsx");
+                    newFile = new FileInfo(fileName + " (" + FileNum + ").xlsx");
                 }
             }
             using (ExcelPackage package = new ExcelPackage(newFile))
@@ -249,16 +250,21 @@ namespace PetrolPump
                 // add the page number to the footer plus the total number of pages
                 worksheet.HeaderFooter.OddFooter.RightAlignedText = string.Format("Page " + ExcelHeaderFooter.PageNumber + " of " + ExcelHeaderFooter.NumberOfPages);
 
-                worksheet.HeaderFooter.OddFooter.LeftAlignedText = "Bill - " + CBCompany.Text + " - " + DPFrom.Value.ToString("dd MMM yyyy") + " to " + DateTime.Today.ToString("dd MMM yyyy");
+                worksheet.HeaderFooter.OddFooter.LeftAlignedText = fileName;
 
                 worksheet.Cells.AutoFitColumns(200);
 
                 package.Save();
                 if (FileNum == 0)
-                    System.Diagnostics.Process.Start("Bill - " + CBCompany.Text + " - " + DPFrom.Value.ToString("dd MMM yyyy") + " to " + DateTime.Today.ToString("dd MMM yyyy") + ".xlsx");
+                    System.Diagnostics.Process.Start(fileName + ".xlsx");
                 else
-                    System.Diagnostics.Process.Start("Bill - " + CBCompany.Text + " - " + DPFrom.Value.ToString("dd MMM yyyy") + " to " + DateTime.Today.ToString("dd MMM yyyy") + " (" + FileNum + ").xlsx");
+                    System.Diagnostics.Process.Start(fileName + " (" + FileNum + ").xlsx");
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

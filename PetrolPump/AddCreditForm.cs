@@ -25,6 +25,8 @@ namespace PetrolPump
 
         private void AddCreditForm_Load(object sender, EventArgs e)
         {
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.CustomFormat = "MM dd yyyy hh mm ss";
             foreach (string Name in Company.Name)
             {
                 CBCompany.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
@@ -157,7 +159,7 @@ namespace PetrolPump
             if (Regex.IsMatch(TBDiscount.Text, "^([0-9]{1,2}|[.][0-9]{1,2}|[0-9]{1,2}[.][0-9]{1,2})$"))
                 Amount -= Math.Round((Amount * Convert.ToDouble(TBDiscount.Text)) / 100, 2);
 
-            InsertTime = DateTime.Now;
+            InsertTime = dateTimePicker1.Value;
             int SlipNo = Func.ScalarInt("Select Value from settings where type='Slip Number'");
 
             if (CBMachine.Items.Count == 0)
@@ -338,6 +340,10 @@ namespace PetrolPump
         private void label6_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
         }
     }
 }

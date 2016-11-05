@@ -50,6 +50,8 @@
             this.CBAccountNo = new System.Windows.Forms.ComboBox();
             this.CBBankName = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label8 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -61,7 +63,7 @@
             this.CBName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.CBName.FormattingEnabled = true;
             this.CBName.IntegralHeight = false;
-            this.CBName.Location = new System.Drawing.Point(148, 112);
+            this.CBName.Location = new System.Drawing.Point(148, 137);
             this.CBName.Name = "CBName";
             this.CBName.Size = new System.Drawing.Size(408, 37);
             this.CBName.Sorted = true;
@@ -100,7 +102,7 @@
             // 
             this.RBChequePayment.AutoSize = true;
             this.RBChequePayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.RBChequePayment.Location = new System.Drawing.Point(232, 274);
+            this.RBChequePayment.Location = new System.Drawing.Point(232, 299);
             this.RBChequePayment.Name = "RBChequePayment";
             this.RBChequePayment.Size = new System.Drawing.Size(215, 33);
             this.RBChequePayment.TabIndex = 4;
@@ -112,7 +114,7 @@
             // 
             this.RBCashPayment.AutoSize = true;
             this.RBCashPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.RBCashPayment.Location = new System.Drawing.Point(32, 274);
+            this.RBCashPayment.Location = new System.Drawing.Point(32, 299);
             this.RBCashPayment.Name = "RBCashPayment";
             this.RBCashPayment.Size = new System.Drawing.Size(185, 33);
             this.RBCashPayment.TabIndex = 3;
@@ -221,7 +223,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.label4.Location = new System.Drawing.Point(27, 115);
+            this.label4.Location = new System.Drawing.Point(27, 140);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(115, 29);
             this.label4.TabIndex = 135;
@@ -232,7 +234,7 @@
             this.LblAmount.AutoSize = true;
             this.LblAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
             this.LblAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
-            this.LblAmount.Location = new System.Drawing.Point(26, 165);
+            this.LblAmount.Location = new System.Drawing.Point(26, 190);
             this.LblAmount.Name = "LblAmount";
             this.LblAmount.Size = new System.Drawing.Size(351, 36);
             this.LblAmount.TabIndex = 137;
@@ -243,7 +245,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
-            this.label7.Location = new System.Drawing.Point(26, 219);
+            this.label7.Location = new System.Drawing.Point(26, 244);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(258, 36);
             this.label7.TabIndex = 136;
@@ -253,11 +255,10 @@
             // 
             this.TBAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
             this.TBAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
-            this.TBAmount.Location = new System.Drawing.Point(290, 214);
+            this.TBAmount.Location = new System.Drawing.Point(290, 239);
             this.TBAmount.Name = "TBAmount";
             this.TBAmount.Size = new System.Drawing.Size(266, 41);
             this.TBAmount.TabIndex = 2;
-
             // 
             // panel1
             // 
@@ -267,7 +268,7 @@
             this.panel1.Controls.Add(this.CBAccountNo);
             this.panel1.Controls.Add(this.CBBankName);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Location = new System.Drawing.Point(17, 315);
+            this.panel1.Location = new System.Drawing.Point(17, 340);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(554, 141);
             this.panel1.TabIndex = 138;
@@ -304,10 +305,27 @@
             this.panel2.Controls.Add(this.BtnReceive);
             this.panel2.Controls.Add(this.CheckBoxPrint);
             this.panel2.Controls.Add(this.BtnClose);
-            this.panel2.Location = new System.Drawing.Point(17, 465);
+            this.panel2.Location = new System.Drawing.Point(17, 490);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(554, 116);
             this.panel2.TabIndex = 139;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(148, 105);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(408, 20);
+            this.dateTimePicker1.TabIndex = 141;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.label8.Location = new System.Drawing.Point(27, 96);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(119, 29);
+            this.label8.TabIndex = 140;
+            this.label8.Text = "DateTime";
             // 
             // ReceiveCreditForm
             // 
@@ -315,7 +333,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.BtnClose;
-            this.ClientSize = new System.Drawing.Size(583, 600);
+            this.ClientSize = new System.Drawing.Size(583, 615);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.TBAmount);
@@ -369,5 +389,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ComboBox CBAccountNo;
         private System.Windows.Forms.ComboBox CBBankName;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label8;
     }
 }

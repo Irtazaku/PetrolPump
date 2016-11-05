@@ -25,6 +25,8 @@ namespace PetrolPump
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.CustomFormat = "MM dd yyyy hh mm ss";
             if (CBCustomer.Items.Count == 0)
             {
                 MessageBox.Show("No vehicle selected", "Operation Unsuccessful", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -104,7 +106,7 @@ namespace PetrolPump
             if (Regex.IsMatch(TBDiscount.Text, "^([0-9]{1,2}|[.][0-9]{1,2}|[0-9]{1,2}[.][0-9]{1,2})$"))
                 Amount -= Math.Round((Amount * Convert.ToDouble(TBDiscount.Text)) / 100, 2);
 
-            InsertTime = DateTime.Now;
+            InsertTime = dateTimePicker1.Value;
             int SlipNo = Func.ScalarInt("Select Value from settings where type='Slip Number'");
 
             if (CBMachine.Items.Count == 0)

@@ -21,10 +21,13 @@ namespace PetrolPump
         public AddVehicleCashForm()
         {
             InitializeComponent();
+            
         }
 
         private void AddVehicleCashForm_Load(object sender, EventArgs e)
         {
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.CustomFormat = "MM dd yyyy hh mm ss";
             foreach (string Name in Company.Name)
             {
                 CBCompany.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
@@ -85,7 +88,7 @@ namespace PetrolPump
             
             MySqlFunctions Func = new MySqlFunctions();
 
-            InsertTime = DateTime.Now;
+            InsertTime = dateTimePicker1.Value;
             int SlipNo = Func.ScalarInt("Select Value from settings where type='Slip Number'");
 
             InsertID = Func.ScalarInt(@"
@@ -173,6 +176,16 @@ namespace PetrolPump
         private void BtnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

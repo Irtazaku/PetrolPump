@@ -25,6 +25,8 @@ namespace PetrolPump
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.CustomFormat = "MM dd yyyy hh mm ss";
             if (CBType.Items.Count == 0)
             {
                 MessageBox.Show("No fuel type selected", "Operation Unsuccessful", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -79,7 +81,7 @@ namespace PetrolPump
 
             double Rate = Math.Round(Inventory.GetRate(CBType.Text),2);
             double Amount = Convert.ToDouble(Rate) * Convert.ToDouble(TBLiter.Text);
-            InsertTime = DateTime.Now;
+            InsertTime = dateTimePicker1.Value;
             int SlipNo = Func.ScalarInt("Select Value from settings where type='Slip Number'");
 
             if (CBMachine.Items.Count == 0)

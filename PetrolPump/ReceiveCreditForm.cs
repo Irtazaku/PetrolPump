@@ -26,6 +26,8 @@ namespace PetrolPump
 
         private void ReceiveCreditForm_Load(object sender, EventArgs e)
         {
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.CustomFormat = "MM dd yyyy hh mm ss";
             RBCashPayment.Checked = true;
 
             foreach (string Name in Company.Name)
@@ -109,7 +111,7 @@ namespace PetrolPump
             if (MessageBox.Show("Receive Credit:\n\nCompany Name: " + CBName.Text + "\nAmount Receiving: " + TBAmount.Text + " Rs", "Confirm Operation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
                 return;
 
-            ReceivingTime = DateTime.Now;
+            ReceivingTime = dateTimePicker1.Value;
 
             MySqlFunctions Func = new MySqlFunctions();
 

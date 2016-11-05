@@ -41,6 +41,8 @@
             this.sitaraHilalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inventoryManagementToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.BtnClose = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label8 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +52,7 @@
             this.CBCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.CBCompany.FormattingEnabled = true;
             this.CBCompany.IntegralHeight = false;
-            this.CBCompany.Location = new System.Drawing.Point(203, 112);
+            this.CBCompany.Location = new System.Drawing.Point(203, 157);
             this.CBCompany.Name = "CBCompany";
             this.CBCompany.Size = new System.Drawing.Size(408, 37);
             this.CBCompany.TabIndex = 1;
@@ -63,7 +65,7 @@
             this.BtnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
             this.BtnAdd.ForeColor = System.Drawing.Color.White;
-            this.BtnAdd.Location = new System.Drawing.Point(169, 314);
+            this.BtnAdd.Location = new System.Drawing.Point(169, 359);
             this.BtnAdd.Name = "BtnAdd";
             this.BtnAdd.Size = new System.Drawing.Size(301, 56);
             this.BtnAdd.TabIndex = 5;
@@ -75,7 +77,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.label4.Location = new System.Drawing.Point(27, 217);
+            this.label4.Location = new System.Drawing.Point(27, 262);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(94, 29);
             this.label4.TabIndex = 49;
@@ -85,7 +87,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.label3.Location = new System.Drawing.Point(27, 165);
+            this.label3.Location = new System.Drawing.Point(27, 210);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(172, 29);
             this.label3.TabIndex = 48;
@@ -95,7 +97,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.label2.Location = new System.Drawing.Point(27, 115);
+            this.label2.Location = new System.Drawing.Point(27, 160);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(115, 29);
             this.label2.TabIndex = 47;
@@ -104,7 +106,7 @@
             // TBAmount
             // 
             this.TBAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.TBAmount.Location = new System.Drawing.Point(203, 214);
+            this.TBAmount.Location = new System.Drawing.Point(203, 259);
             this.TBAmount.Name = "TBAmount";
             this.TBAmount.Size = new System.Drawing.Size(408, 35);
             this.TBAmount.TabIndex = 3;
@@ -123,19 +125,20 @@
             // CheckBoxPrint
             // 
             this.CheckBoxPrint.AutoSize = true;
+            this.CheckBoxPrint.Checked = true;
+            this.CheckBoxPrint.CheckState = System.Windows.Forms.CheckState.Checked;
             this.CheckBoxPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.CheckBoxPrint.Location = new System.Drawing.Point(234, 264);
+            this.CheckBoxPrint.Location = new System.Drawing.Point(234, 309);
             this.CheckBoxPrint.Name = "CheckBoxPrint";
             this.CheckBoxPrint.Size = new System.Drawing.Size(170, 33);
             this.CheckBoxPrint.TabIndex = 4;
             this.CheckBoxPrint.Text = "Print Reciept";
-            this.CheckBoxPrint.Checked = true;
             this.CheckBoxPrint.UseVisualStyleBackColor = true;
             // 
             // TBReceiverName
             // 
             this.TBReceiverName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.TBReceiverName.Location = new System.Drawing.Point(203, 162);
+            this.TBReceiverName.Location = new System.Drawing.Point(203, 207);
             this.TBReceiverName.Name = "TBReceiverName";
             this.TBReceiverName.Size = new System.Drawing.Size(408, 35);
             this.TBReceiverName.TabIndex = 2;
@@ -181,12 +184,31 @@
             this.BtnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
             this.BtnClose.ForeColor = System.Drawing.Color.White;
             this.BtnClose.Image = global::PetrolPump.Properties.Resources.icon_close_circled_128__2_;
-            this.BtnClose.Location = new System.Drawing.Point(561, 320);
+            this.BtnClose.Location = new System.Drawing.Point(561, 365);
             this.BtnClose.Name = "BtnClose";
             this.BtnClose.Size = new System.Drawing.Size(50, 50);
             this.BtnClose.TabIndex = 6;
             this.BtnClose.UseVisualStyleBackColor = false;
             this.BtnClose.Click += new System.EventHandler(this.BtnClose_Click);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(203, 121);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(408, 20);
+            this.dateTimePicker1.TabIndex = 85;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.label8.Location = new System.Drawing.Point(27, 115);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(119, 29);
+            this.label8.TabIndex = 84;
+            this.label8.Text = "DateTime";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // AddVehicleCashForm
             // 
@@ -194,7 +216,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.BtnClose;
-            this.ClientSize = new System.Drawing.Size(638, 397);
+            this.ClientSize = new System.Drawing.Size(638, 440);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.BtnClose);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.TBReceiverName);
@@ -235,5 +259,7 @@
         private System.Windows.Forms.ToolStripMenuItem sitaraHilalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inventoryManagementToolStripMenuItem1;
         private System.Windows.Forms.Button BtnClose;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label8;
     }
 }

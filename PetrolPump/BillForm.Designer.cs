@@ -38,6 +38,8 @@
             this.DPFrom = new System.Windows.Forms.DateTimePicker();
             this.BtnClose = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.DPTo = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,7 +93,7 @@
             this.CBCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.CBCompany.FormattingEnabled = true;
             this.CBCompany.IntegralHeight = false;
-            this.CBCompany.Location = new System.Drawing.Point(162, 113);
+            this.CBCompany.Location = new System.Drawing.Point(162, 109);
             this.CBCompany.Name = "CBCompany";
             this.CBCompany.Size = new System.Drawing.Size(408, 37);
             this.CBCompany.TabIndex = 116;
@@ -100,7 +102,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.label1.Location = new System.Drawing.Point(25, 116);
+            this.label1.Location = new System.Drawing.Point(25, 112);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(115, 29);
             this.label1.TabIndex = 121;
@@ -114,7 +116,7 @@
             this.BtnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
             this.BtnAdd.ForeColor = System.Drawing.Color.White;
-            this.BtnAdd.Location = new System.Drawing.Point(181, 218);
+            this.BtnAdd.Location = new System.Drawing.Point(181, 255);
             this.BtnAdd.Name = "BtnAdd";
             this.BtnAdd.Size = new System.Drawing.Size(237, 56);
             this.BtnAdd.TabIndex = 118;
@@ -126,7 +128,7 @@
             // 
             this.LblType.AutoSize = true;
             this.LblType.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.LblType.Location = new System.Drawing.Point(25, 166);
+            this.LblType.Location = new System.Drawing.Point(25, 162);
             this.LblType.Name = "LblType";
             this.LblType.Size = new System.Drawing.Size(126, 29);
             this.LblType.TabIndex = 120;
@@ -135,7 +137,7 @@
             // DPFrom
             // 
             this.DPFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.DPFrom.Location = new System.Drawing.Point(162, 166);
+            this.DPFrom.Location = new System.Drawing.Point(162, 162);
             this.DPFrom.Name = "DPFrom";
             this.DPFrom.Size = new System.Drawing.Size(408, 29);
             this.DPFrom.TabIndex = 122;
@@ -149,7 +151,7 @@
             this.BtnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
             this.BtnClose.ForeColor = System.Drawing.Color.White;
             this.BtnClose.Image = global::PetrolPump.Properties.Resources.icon_close_circled_128__2_;
-            this.BtnClose.Location = new System.Drawing.Point(1325, 59);
+            this.BtnClose.Location = new System.Drawing.Point(1325, 96);
             this.BtnClose.Name = "BtnClose";
             this.BtnClose.Size = new System.Drawing.Size(50, 50);
             this.BtnClose.TabIndex = 98;
@@ -164,19 +166,38 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = global::PetrolPump.Properties.Resources.icon_close_circled_128__2_;
-            this.button1.Location = new System.Drawing.Point(520, 224);
+            this.button1.Location = new System.Drawing.Point(520, 261);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(50, 50);
             this.button1.TabIndex = 119;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // DPTo
+            // 
+            this.DPTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.DPTo.Location = new System.Drawing.Point(162, 203);
+            this.DPTo.Name = "DPTo";
+            this.DPTo.Size = new System.Drawing.Size(408, 29);
+            this.DPTo.TabIndex = 124;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.label2.Location = new System.Drawing.Point(25, 203);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(99, 29);
+            this.label2.TabIndex = 123;
+            this.label2.Text = "To Date";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
             // BillForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.BtnClose;
-            this.ClientSize = new System.Drawing.Size(599, 293);
+            this.ClientSize = new System.Drawing.Size(599, 333);
             this.Controls.Add(this.DPFrom);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.CBCompany);
@@ -186,6 +207,8 @@
             this.Controls.Add(this.BillLabel);
             this.Controls.Add(this.BtnClose);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.DPTo);
+            this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "BillForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -211,5 +234,7 @@
         private System.Windows.Forms.Button BtnAdd;
         private System.Windows.Forms.Label LblType;
         private System.Windows.Forms.DateTimePicker DPFrom;
+        private System.Windows.Forms.DateTimePicker DPTo;
+        private System.Windows.Forms.Label label2;
     }
 }

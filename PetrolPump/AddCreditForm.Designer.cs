@@ -49,19 +49,22 @@
             this.TBDiscount = new System.Windows.Forms.TextBox();
             this.CBMachine = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // CheckBoxPrint
             // 
             this.CheckBoxPrint.AutoSize = true;
+            this.CheckBoxPrint.Checked = true;
+            this.CheckBoxPrint.CheckState = System.Windows.Forms.CheckState.Checked;
             this.CheckBoxPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.CheckBoxPrint.Location = new System.Drawing.Point(216, 430);
+            this.CheckBoxPrint.Location = new System.Drawing.Point(216, 467);
             this.CheckBoxPrint.Name = "CheckBoxPrint";
             this.CheckBoxPrint.Size = new System.Drawing.Size(170, 33);
             this.CheckBoxPrint.TabIndex = 6;
             this.CheckBoxPrint.Text = "Print Reciept";
-            this.CheckBoxPrint.Checked = true;
             this.CheckBoxPrint.UseVisualStyleBackColor = true;
             // 
             // CBType
@@ -70,7 +73,7 @@
             this.CBType.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.CBType.FormattingEnabled = true;
             this.CBType.IntegralHeight = false;
-            this.CBType.Location = new System.Drawing.Point(166, 216);
+            this.CBType.Location = new System.Drawing.Point(166, 253);
             this.CBType.Name = "CBType";
             this.CBType.Size = new System.Drawing.Size(408, 37);
             this.CBType.Sorted = true;
@@ -84,7 +87,7 @@
             this.BtnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
             this.BtnAdd.ForeColor = System.Drawing.Color.White;
-            this.BtnAdd.Location = new System.Drawing.Point(176, 482);
+            this.BtnAdd.Location = new System.Drawing.Point(176, 519);
             this.BtnAdd.Name = "BtnAdd";
             this.BtnAdd.Size = new System.Drawing.Size(250, 56);
             this.BtnAdd.TabIndex = 7;
@@ -97,7 +100,7 @@
             this.LblAmount.AutoSize = true;
             this.LblAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
             this.LblAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
-            this.LblAmount.Location = new System.Drawing.Point(263, 380);
+            this.LblAmount.Location = new System.Drawing.Point(263, 417);
             this.LblAmount.Name = "LblAmount";
             this.LblAmount.Size = new System.Drawing.Size(118, 36);
             this.LblAmount.TabIndex = 37;
@@ -108,7 +111,7 @@
             this.LblRate.AutoSize = true;
             this.LblRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
             this.LblRate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(138)))), ((int)(((byte)(0)))));
-            this.LblRate.Location = new System.Drawing.Point(26, 380);
+            this.LblRate.Location = new System.Drawing.Point(26, 417);
             this.LblRate.Name = "LblRate";
             this.LblRate.Size = new System.Drawing.Size(77, 36);
             this.LblRate.TabIndex = 36;
@@ -118,7 +121,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.label4.Location = new System.Drawing.Point(27, 274);
+            this.label4.Location = new System.Drawing.Point(27, 311);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(115, 29);
             this.label4.TabIndex = 35;
@@ -128,7 +131,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.label3.Location = new System.Drawing.Point(27, 219);
+            this.label3.Location = new System.Drawing.Point(27, 256);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 29);
             this.label3.TabIndex = 34;
@@ -138,7 +141,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.label2.Location = new System.Drawing.Point(27, 115);
+            this.label2.Location = new System.Drawing.Point(27, 152);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(115, 29);
             this.label2.TabIndex = 33;
@@ -147,7 +150,7 @@
             // TBLiter
             // 
             this.TBLiter.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.TBLiter.Location = new System.Drawing.Point(166, 271);
+            this.TBLiter.Location = new System.Drawing.Point(166, 308);
             this.TBLiter.Name = "TBLiter";
             this.TBLiter.Size = new System.Drawing.Size(146, 35);
             this.TBLiter.TabIndex = 4;
@@ -170,7 +173,7 @@
             this.CBVehicle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.CBVehicle.FormattingEnabled = true;
             this.CBVehicle.IntegralHeight = false;
-            this.CBVehicle.Location = new System.Drawing.Point(166, 164);
+            this.CBVehicle.Location = new System.Drawing.Point(166, 201);
             this.CBVehicle.Name = "CBVehicle";
             this.CBVehicle.Size = new System.Drawing.Size(408, 37);
             this.CBVehicle.TabIndex = 2;
@@ -181,7 +184,7 @@
             this.CBCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.CBCompany.FormattingEnabled = true;
             this.CBCompany.IntegralHeight = false;
-            this.CBCompany.Location = new System.Drawing.Point(166, 112);
+            this.CBCompany.Location = new System.Drawing.Point(166, 149);
             this.CBCompany.Name = "CBCompany";
             this.CBCompany.Size = new System.Drawing.Size(408, 37);
             this.CBCompany.TabIndex = 1;
@@ -191,7 +194,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.label5.Location = new System.Drawing.Point(27, 167);
+            this.label5.Location = new System.Drawing.Point(27, 204);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(93, 29);
             this.label5.TabIndex = 44;
@@ -238,7 +241,7 @@
             this.BtnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
             this.BtnClose.ForeColor = System.Drawing.Color.White;
             this.BtnClose.Image = global::PetrolPump.Properties.Resources.icon_close_circled_128__2_;
-            this.BtnClose.Location = new System.Drawing.Point(525, 488);
+            this.BtnClose.Location = new System.Drawing.Point(525, 525);
             this.BtnClose.Name = "BtnClose";
             this.BtnClose.Size = new System.Drawing.Size(50, 50);
             this.BtnClose.TabIndex = 8;
@@ -249,7 +252,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.label6.Location = new System.Drawing.Point(27, 324);
+            this.label6.Location = new System.Drawing.Point(27, 361);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(134, 29);
             this.label6.TabIndex = 64;
@@ -259,7 +262,7 @@
             // TBDiscount
             // 
             this.TBDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.TBDiscount.Location = new System.Drawing.Point(167, 321);
+            this.TBDiscount.Location = new System.Drawing.Point(167, 358);
             this.TBDiscount.Name = "TBDiscount";
             this.TBDiscount.Size = new System.Drawing.Size(408, 35);
             this.TBDiscount.TabIndex = 5;
@@ -274,7 +277,7 @@
             this.CBMachine.ForeColor = System.Drawing.Color.Black;
             this.CBMachine.FormattingEnabled = true;
             this.CBMachine.IntegralHeight = false;
-            this.CBMachine.Location = new System.Drawing.Point(422, 271);
+            this.CBMachine.Location = new System.Drawing.Point(422, 308);
             this.CBMachine.Name = "CBMachine";
             this.CBMachine.Size = new System.Drawing.Size(153, 37);
             this.CBMachine.Sorted = true;
@@ -284,11 +287,29 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.label7.Location = new System.Drawing.Point(318, 274);
+            this.label7.Location = new System.Drawing.Point(318, 311);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(104, 29);
             this.label7.TabIndex = 65;
             this.label7.Text = "Machine";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.label8.Location = new System.Drawing.Point(27, 109);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(119, 29);
+            this.label8.TabIndex = 68;
+            this.label8.Text = "DateTime";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(167, 115);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(407, 20);
+            this.dateTimePicker1.TabIndex = 69;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // AddCreditForm
             // 
@@ -296,7 +317,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.BtnClose;
-            this.ClientSize = new System.Drawing.Size(602, 565);
+            this.ClientSize = new System.Drawing.Size(602, 585);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.CBMachine);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -353,5 +376,7 @@
         private System.Windows.Forms.TextBox TBDiscount;
         private System.Windows.Forms.ComboBox CBMachine;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
