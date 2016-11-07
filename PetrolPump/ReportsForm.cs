@@ -610,8 +610,8 @@ namespace PetrolPump
             if (CBCreditVehicleCashOrder.Items.Count > 0)
                 CBCreditVehicleCashOrder.SelectedIndex = 0;
 
-            this.MinimumSize = this.Size;
-            this.MaximumSize = this.Size;
+            //this.MinimumSize = this.Size;
+            //this.MaximumSize = this.Size;
 
             ClickedItem = 0;
         }

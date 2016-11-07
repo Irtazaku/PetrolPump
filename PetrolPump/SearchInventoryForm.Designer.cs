@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DGVSearchInventory = new System.Windows.Forms.DataGridView();
             this.DGVName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DGVRate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,46 +61,49 @@
             this.DGVSearchInventory.AllowUserToDeleteRows = false;
             this.DGVSearchInventory.AllowUserToResizeColumns = false;
             this.DGVSearchInventory.AllowUserToResizeRows = false;
+            this.DGVSearchInventory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DGVSearchInventory.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DGVSearchInventory.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVSearchInventory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVSearchInventory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DGVSearchInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVSearchInventory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DGVName,
             this.DGVRate,
             this.DGVQuantity});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(234)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVSearchInventory.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(234)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVSearchInventory.DefaultCellStyle = dataGridViewCellStyle2;
             this.DGVSearchInventory.Location = new System.Drawing.Point(12, 212);
             this.DGVSearchInventory.Name = "DGVSearchInventory";
             this.DGVSearchInventory.ReadOnly = true;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(234)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVSearchInventory.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(234)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVSearchInventory.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.DGVSearchInventory.RowHeadersVisible = false;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(5, 6, 0, 6);
-            this.DGVSearchInventory.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5, 6, 0, 6);
+            this.DGVSearchInventory.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.DGVSearchInventory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGVSearchInventory.Size = new System.Drawing.Size(1376, 764);
+            this.DGVSearchInventory.Size = new System.Drawing.Size(1334, 513);
             this.DGVSearchInventory.TabIndex = 7;
             // 
             // DGVName
@@ -126,9 +129,10 @@
             // 
             // LblRate
             // 
+            this.LblRate.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.LblRate.AutoSize = true;
             this.LblRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.LblRate.Location = new System.Drawing.Point(571, 165);
+            this.LblRate.Location = new System.Drawing.Point(550, 165);
             this.LblRate.Name = "LblRate";
             this.LblRate.Size = new System.Drawing.Size(63, 29);
             this.LblRate.TabIndex = 79;
@@ -136,9 +140,10 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.label4.Location = new System.Drawing.Point(194, 165);
+            this.label4.Location = new System.Drawing.Point(173, 165);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(115, 29);
             this.label4.TabIndex = 78;
@@ -146,9 +151,10 @@
             // 
             // LblName
             // 
+            this.LblName.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.LblName.AutoSize = true;
             this.LblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.LblName.Location = new System.Drawing.Point(194, 115);
+            this.LblName.Location = new System.Drawing.Point(173, 115);
             this.LblName.Name = "LblName";
             this.LblName.Size = new System.Drawing.Size(78, 29);
             this.LblName.TabIndex = 76;
@@ -156,8 +162,9 @@
             // 
             // TBRate
             // 
+            this.TBRate.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TBRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.TBRate.Location = new System.Drawing.Point(640, 162);
+            this.TBRate.Location = new System.Drawing.Point(619, 162);
             this.TBRate.Name = "TBRate";
             this.TBRate.Size = new System.Drawing.Size(200, 35);
             this.TBRate.TabIndex = 4;
@@ -165,8 +172,9 @@
             // 
             // TBQuantity
             // 
+            this.TBQuantity.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TBQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.TBQuantity.Location = new System.Drawing.Point(315, 162);
+            this.TBQuantity.Location = new System.Drawing.Point(294, 162);
             this.TBQuantity.Name = "TBQuantity";
             this.TBQuantity.Size = new System.Drawing.Size(200, 35);
             this.TBQuantity.TabIndex = 3;
@@ -174,6 +182,7 @@
             // 
             // CBOrderBy
             // 
+            this.CBOrderBy.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.CBOrderBy.DropDownHeight = 205;
             this.CBOrderBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBOrderBy.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
@@ -183,7 +192,7 @@
             "Name",
             "Quantity",
             "Rate"});
-            this.CBOrderBy.Location = new System.Drawing.Point(936, 112);
+            this.CBOrderBy.Location = new System.Drawing.Point(915, 112);
             this.CBOrderBy.Name = "CBOrderBy";
             this.CBOrderBy.Size = new System.Drawing.Size(270, 37);
             this.CBOrderBy.Sorted = true;
@@ -192,9 +201,10 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.label1.Location = new System.Drawing.Point(821, 115);
+            this.label1.Location = new System.Drawing.Point(800, 115);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(109, 29);
             this.label1.TabIndex = 81;
@@ -202,9 +212,10 @@
             // 
             // RBDesc
             // 
+            this.RBDesc.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.RBDesc.AutoSize = true;
             this.RBDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.RBDesc.Location = new System.Drawing.Point(1046, 163);
+            this.RBDesc.Location = new System.Drawing.Point(1025, 163);
             this.RBDesc.Name = "RBDesc";
             this.RBDesc.Size = new System.Drawing.Size(160, 33);
             this.RBDesc.TabIndex = 6;
@@ -213,10 +224,11 @@
             // 
             // RBAsc
             // 
+            this.RBAsc.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.RBAsc.AutoSize = true;
             this.RBAsc.Checked = true;
             this.RBAsc.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.RBAsc.Location = new System.Drawing.Point(896, 163);
+            this.RBAsc.Location = new System.Drawing.Point(875, 163);
             this.RBAsc.Name = "RBAsc";
             this.RBAsc.Size = new System.Drawing.Size(144, 33);
             this.RBAsc.TabIndex = 5;
@@ -235,7 +247,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.menuStrip1.Size = new System.Drawing.Size(1362, 46);
+            this.menuStrip1.Size = new System.Drawing.Size(1358, 46);
             this.menuStrip1.TabIndex = 100;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -258,10 +270,11 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(135)))));
-            this.label3.Location = new System.Drawing.Point(563, 59);
+            this.label3.Location = new System.Drawing.Point(542, 59);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(274, 39);
             this.label3.TabIndex = 129;
@@ -269,6 +282,7 @@
             // 
             // BtnClose
             // 
+            this.BtnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(27)))), ((int)(((byte)(28)))));
             this.BtnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.BtnClose.FlatAppearance.BorderSize = 0;
@@ -276,7 +290,7 @@
             this.BtnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
             this.BtnClose.ForeColor = System.Drawing.Color.White;
             this.BtnClose.Image = global::PetrolPump.Properties.Resources.icon_close_circled_128__2_;
-            this.BtnClose.Location = new System.Drawing.Point(1325, 59);
+            this.BtnClose.Location = new System.Drawing.Point(1296, 59);
             this.BtnClose.Name = "BtnClose";
             this.BtnClose.Size = new System.Drawing.Size(50, 50);
             this.BtnClose.TabIndex = 130;
@@ -285,9 +299,10 @@
             // 
             // CBName
             // 
+            this.CBName.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.CBName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBName.FormattingEnabled = true;
-            this.CBName.Location = new System.Drawing.Point(315, 112);
+            this.CBName.Location = new System.Drawing.Point(294, 112);
             this.CBName.Name = "CBName";
             this.CBName.Size = new System.Drawing.Size(450, 32);
             this.CBName.TabIndex = 131;
@@ -313,7 +328,6 @@
             this.Controls.Add(this.DGVSearchInventory);
             this.Controls.Add(this.LblName);
             this.Controls.Add(this.CBName);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "SearchInventoryForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Search Inventory - Sitara Hilal Petroleum Service";

@@ -28,8 +28,8 @@ namespace PetrolPump
 
         private void ReceiveLineCreditForm_Load(object sender, EventArgs e)
         {
-            this.MinimumSize = this.Size;
-            this.MaximumSize = this.Size;
+            //this.MinimumSize = this.Size;
+            //this.MaximumSize = this.Size;
             
             RBNumber.Checked = true;
 
@@ -244,6 +244,21 @@ namespace PetrolPump
         }
 
         private void RBID_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void inventoryManagementToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LblAmount_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CheckBoxPrint_CheckedChanged(object sender, EventArgs e)
         {
 
         }

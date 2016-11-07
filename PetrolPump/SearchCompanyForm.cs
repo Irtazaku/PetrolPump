@@ -35,8 +35,8 @@ namespace PetrolPump
             CBOrderBy.SelectedIndex = 0;
             SearchCompany();
 
-            this.MinimumSize = this.Size;
-            this.MaximumSize = this.Size;
+            //this.MinimumSize = this.Size;
+            //this.MaximumSize = this.Size;
             foreach (string Name in Company.Name)
             {
                 CBNAME.AutoCompleteMode = AutoCompleteMode.SuggestAppend;

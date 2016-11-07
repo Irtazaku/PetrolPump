@@ -25,6 +25,7 @@ namespace PetrolPump
             BtnAddCustomer.Visible = false;
             BtnSearchInventory.Visible = false;
             BtnBackup.Visible = false;
+            BtnLogoutCashier.Visible = false;
         }
 
         private void CashierUser()
@@ -36,20 +37,23 @@ namespace PetrolPump
             BtnAdminPanel.Visible = false;
             BtnMoneyManagement.Visible = false;
             BtnCombinedReport.Visible = false;
+            BtnLogout.Visible = false;
             //BtnCompanyManagement.Location = new Point(BtnCompanyManagement.Location.X + 158, 469);
             BtnCompanyManagement.Location = new Point(BtnCompanyManagement.Location.X, BtnCompanyManagement.Location.Y + 104);
+            tableLayoutPanel1.RowStyles.RemoveAt(4);
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            //MessageBox.Show(this.Size.Height + " - " + this.Size.Width);
             if (MySqlFunctions.CashierType == "Admin")
                 AdminUser();
             else
                 CashierUser();
 
             //this.Size = new Size(1406, 1016);
-            this.MinimumSize = this.Size;
-            this.MaximumSize = this.Size;
+            //this.MinimumSize = this.Size;
+            //this.MaximumSize = this.Size;
 
             this.BringToFront();
         }
@@ -192,6 +196,11 @@ namespace PetrolPump
         {
             if (!Forms.IsOpened("CombinedReport"))
                 new CombinedReport().Show();
+        }
+
+        private void BtnLogoutCashier_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
