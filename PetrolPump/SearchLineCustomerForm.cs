@@ -39,8 +39,8 @@ namespace PetrolPump
             CBOrderBy.SelectedIndex = 0;
             SearchCustomer();
 
-            this.MinimumSize = this.Size;
-            this.MaximumSize = this.Size;
+            //this.MinimumSize = this.Size;
+            //this.MaximumSize = this.Size;
 
             foreach (string Number in LineCustomer.Number)
             {

@@ -59,8 +59,8 @@ namespace PetrolPump
             if (CBOrderBy.Items.Count > 0)
             CBOrderBy.SelectedIndex = 0;
 
-            this.MinimumSize = this.Size;
-            this.MaximumSize = this.Size;
+            //this.MinimumSize = this.Size;
+            //this.MaximumSize = this.Size;
             foreach (string Item in Inventory.Name)
             {
                 CBName.AutoCompleteMode = AutoCompleteMode.SuggestAppend;

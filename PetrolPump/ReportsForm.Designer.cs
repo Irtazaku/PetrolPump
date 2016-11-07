@@ -147,6 +147,9 @@
             // 
             this.DGVReports.AllowUserToAddRows = false;
             this.DGVReports.AllowUserToOrderColumns = true;
+            this.DGVReports.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DGVReports.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGVReports.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DGVReports.BackgroundColor = System.Drawing.Color.White;
@@ -174,15 +177,16 @@
             dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(5, 6, 0, 6);
             this.DGVReports.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.DGVReports.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGVReports.Size = new System.Drawing.Size(1376, 712);
+            this.DGVReports.Size = new System.Drawing.Size(1266, 465);
             this.DGVReports.TabIndex = 77;
             this.DGVReports.SelectionChanged += new System.EventHandler(this.DGVReports_SelectionChanged);
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label4.Location = new System.Drawing.Point(68, 61);
+            this.label4.Location = new System.Drawing.Point(13, 61);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(115, 24);
             this.label4.TabIndex = 86;
@@ -190,9 +194,10 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label2.Location = new System.Drawing.Point(620, 61);
+            this.label2.Location = new System.Drawing.Point(565, 61);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(104, 24);
             this.label2.TabIndex = 85;
@@ -200,9 +205,10 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label3.Location = new System.Drawing.Point(68, 102);
+            this.label3.Location = new System.Drawing.Point(13, 102);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(96, 24);
             this.label3.TabIndex = 84;
@@ -210,29 +216,32 @@
             // 
             // TBCashNumber
             // 
+            this.TBCashNumber.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TBCashNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.TBCashNumber.Location = new System.Drawing.Point(730, 58);
+            this.TBCashNumber.Location = new System.Drawing.Point(675, 58);
             this.TBCashNumber.Name = "TBCashNumber";
             this.TBCashNumber.Size = new System.Drawing.Size(408, 29);
             this.TBCashNumber.TabIndex = 3;
             // 
             // TBCashName
             // 
+            this.TBCashName.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TBCashName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.TBCashName.Location = new System.Drawing.Point(189, 58);
+            this.TBCashName.Location = new System.Drawing.Point(134, 58);
             this.TBCashName.Name = "TBCashName";
             this.TBCashName.Size = new System.Drawing.Size(408, 29);
             this.TBCashName.TabIndex = 1;
             // 
             // BtnCashGet
             // 
+            this.BtnCashGet.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.BtnCashGet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(135)))));
             this.BtnCashGet.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.BtnCashGet.FlatAppearance.BorderSize = 0;
             this.BtnCashGet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCashGet.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.BtnCashGet.ForeColor = System.Drawing.Color.White;
-            this.BtnCashGet.Location = new System.Drawing.Point(1154, 68);
+            this.BtnCashGet.Location = new System.Drawing.Point(1099, 68);
             this.BtnCashGet.Name = "BtnCashGet";
             this.BtnCashGet.Size = new System.Drawing.Size(154, 46);
             this.BtnCashGet.TabIndex = 7;
@@ -242,10 +251,11 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(135)))));
-            this.label1.Location = new System.Drawing.Point(584, 7);
+            this.label1.Location = new System.Drawing.Point(529, 7);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(208, 39);
             this.label1.TabIndex = 79;
@@ -286,6 +296,8 @@
             // 
             this.DGVVisibleColumns.AllowUserToAddRows = false;
             this.DGVVisibleColumns.AllowUserToOrderColumns = true;
+            this.DGVVisibleColumns.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DGVVisibleColumns.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DGVVisibleColumns.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -308,7 +320,7 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DGVVisibleColumns.DefaultCellStyle = dataGridViewCellStyle5;
-            this.DGVVisibleColumns.Location = new System.Drawing.Point(1207, 264);
+            this.DGVVisibleColumns.Location = new System.Drawing.Point(1097, 264);
             this.DGVVisibleColumns.Name = "DGVVisibleColumns";
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
@@ -323,7 +335,7 @@
             dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(5, 6, 0, 6);
             this.DGVVisibleColumns.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.DGVVisibleColumns.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGVVisibleColumns.Size = new System.Drawing.Size(181, 712);
+            this.DGVVisibleColumns.Size = new System.Drawing.Size(181, 465);
             this.DGVVisibleColumns.TabIndex = 79;
             this.DGVVisibleColumns.Visible = false;
             this.DGVVisibleColumns.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVVisibleColumns_CellContentClick);
@@ -442,7 +454,7 @@
             this.inventoryManagementToolStripMenuItem1.ForeColor = System.Drawing.Color.White;
             this.inventoryManagementToolStripMenuItem1.Name = "inventoryManagementToolStripMenuItem1";
             this.inventoryManagementToolStripMenuItem1.ShortcutKeyDisplayString = "";
-            this.inventoryManagementToolStripMenuItem1.Size = new System.Drawing.Size(86, 36);
+            this.inventoryManagementToolStripMenuItem1.Size = new System.Drawing.Size(85, 36);
             this.inventoryManagementToolStripMenuItem1.Text = "Reports";
             // 
             // menuStrip2
@@ -500,7 +512,7 @@
             this.vehicleCashToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.vehicleCashToolStripMenuItem.Name = "vehicleCashToolStripMenuItem";
             this.vehicleCashToolStripMenuItem.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            this.vehicleCashToolStripMenuItem.Size = new System.Drawing.Size(144, 39);
+            this.vehicleCashToolStripMenuItem.Size = new System.Drawing.Size(143, 39);
             this.vehicleCashToolStripMenuItem.Text = "Vehicle Cash";
             this.vehicleCashToolStripMenuItem.Click += new System.EventHandler(this.vehicleCashToolStripMenuItem_Click);
             // 
@@ -510,7 +522,7 @@
             this.CreditVehicleCashToolStripMenuItem1.ForeColor = System.Drawing.Color.White;
             this.CreditVehicleCashToolStripMenuItem1.Name = "CreditVehicleCashToolStripMenuItem1";
             this.CreditVehicleCashToolStripMenuItem1.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            this.CreditVehicleCashToolStripMenuItem1.Size = new System.Drawing.Size(237, 39);
+            this.CreditVehicleCashToolStripMenuItem1.Size = new System.Drawing.Size(236, 39);
             this.CreditVehicleCashToolStripMenuItem1.Text = "Credit and Vehicle Cash";
             this.CreditVehicleCashToolStripMenuItem1.Click += new System.EventHandler(this.CreditVehicleCashToolStripMenuItem1_Click);
             // 
@@ -526,6 +538,7 @@
             // 
             // PanelCash
             // 
+            this.PanelCash.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.PanelCash.Controls.Add(this.RBCashDesc);
             this.PanelCash.Controls.Add(this.RBCashAsc);
             this.PanelCash.Controls.Add(this.label7);
@@ -540,14 +553,15 @@
             this.PanelCash.Controls.Add(this.CBCashType);
             this.PanelCash.Location = new System.Drawing.Point(12, 92);
             this.PanelCash.Name = "PanelCash";
-            this.PanelCash.Size = new System.Drawing.Size(1376, 132);
+            this.PanelCash.Size = new System.Drawing.Size(1266, 132);
             this.PanelCash.TabIndex = 111;
             // 
             // RBCashDesc
             // 
+            this.RBCashDesc.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.RBCashDesc.AutoSize = true;
             this.RBCashDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.RBCashDesc.Location = new System.Drawing.Point(1060, 100);
+            this.RBCashDesc.Location = new System.Drawing.Point(1005, 100);
             this.RBCashDesc.Name = "RBCashDesc";
             this.RBCashDesc.Size = new System.Drawing.Size(71, 28);
             this.RBCashDesc.TabIndex = 6;
@@ -556,10 +570,11 @@
             // 
             // RBCashAsc
             // 
+            this.RBCashAsc.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.RBCashAsc.AutoSize = true;
             this.RBCashAsc.Checked = true;
             this.RBCashAsc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.RBCashAsc.Location = new System.Drawing.Point(994, 100);
+            this.RBCashAsc.Location = new System.Drawing.Point(939, 100);
             this.RBCashAsc.Name = "RBCashAsc";
             this.RBCashAsc.Size = new System.Drawing.Size(60, 28);
             this.RBCashAsc.TabIndex = 5;
@@ -569,9 +584,10 @@
             // 
             // label7
             // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label7.Location = new System.Drawing.Point(620, 100);
+            this.label7.Location = new System.Drawing.Point(565, 100);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(85, 24);
             this.label7.TabIndex = 139;
@@ -579,6 +595,7 @@
             // 
             // CBCashOrderBy
             // 
+            this.CBCashOrderBy.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.CBCashOrderBy.DropDownHeight = 205;
             this.CBCashOrderBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBCashOrderBy.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
@@ -591,24 +608,26 @@
             "Name",
             "Amount",
             "Type"});
-            this.CBCashOrderBy.Location = new System.Drawing.Point(730, 97);
+            this.CBCashOrderBy.Location = new System.Drawing.Point(675, 97);
             this.CBCashOrderBy.Name = "CBCashOrderBy";
             this.CBCashOrderBy.Size = new System.Drawing.Size(248, 32);
             this.CBCashOrderBy.TabIndex = 4;
             // 
             // CBCashType
             // 
+            this.CBCashType.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.CBCashType.DropDownHeight = 205;
             this.CBCashType.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.CBCashType.FormattingEnabled = true;
             this.CBCashType.IntegralHeight = false;
-            this.CBCashType.Location = new System.Drawing.Point(189, 97);
+            this.CBCashType.Location = new System.Drawing.Point(134, 97);
             this.CBCashType.Name = "CBCashType";
             this.CBCashType.Size = new System.Drawing.Size(408, 32);
             this.CBCashType.TabIndex = 140;
             // 
             // PanelVehicleCash
             // 
+            this.PanelVehicleCash.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.PanelVehicleCash.Controls.Add(this.RBVehicleCashDesc);
             this.PanelVehicleCash.Controls.Add(this.RBVehicleCashAsc);
             this.PanelVehicleCash.Controls.Add(this.label6);
@@ -621,14 +640,15 @@
             this.PanelVehicleCash.Controls.Add(this.label24);
             this.PanelVehicleCash.Location = new System.Drawing.Point(12, 92);
             this.PanelVehicleCash.Name = "PanelVehicleCash";
-            this.PanelVehicleCash.Size = new System.Drawing.Size(1376, 132);
+            this.PanelVehicleCash.Size = new System.Drawing.Size(1266, 132);
             this.PanelVehicleCash.TabIndex = 88;
             // 
             // RBVehicleCashDesc
             // 
+            this.RBVehicleCashDesc.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.RBVehicleCashDesc.AutoSize = true;
             this.RBVehicleCashDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.RBVehicleCashDesc.Location = new System.Drawing.Point(961, 59);
+            this.RBVehicleCashDesc.Location = new System.Drawing.Point(906, 59);
             this.RBVehicleCashDesc.Name = "RBVehicleCashDesc";
             this.RBVehicleCashDesc.Size = new System.Drawing.Size(71, 28);
             this.RBVehicleCashDesc.TabIndex = 36;
@@ -637,10 +657,11 @@
             // 
             // RBVehicleCashAsc
             // 
+            this.RBVehicleCashAsc.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.RBVehicleCashAsc.AutoSize = true;
             this.RBVehicleCashAsc.Checked = true;
             this.RBVehicleCashAsc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.RBVehicleCashAsc.Location = new System.Drawing.Point(895, 59);
+            this.RBVehicleCashAsc.Location = new System.Drawing.Point(840, 59);
             this.RBVehicleCashAsc.Name = "RBVehicleCashAsc";
             this.RBVehicleCashAsc.Size = new System.Drawing.Size(60, 28);
             this.RBVehicleCashAsc.TabIndex = 35;
@@ -650,9 +671,10 @@
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label6.Location = new System.Drawing.Point(693, 101);
+            this.label6.Location = new System.Drawing.Point(638, 101);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(85, 24);
             this.label6.TabIndex = 143;
@@ -660,6 +682,7 @@
             // 
             // CBVehicleCashOrderBy
             // 
+            this.CBVehicleCashOrderBy.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.CBVehicleCashOrderBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBVehicleCashOrderBy.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.CBVehicleCashOrderBy.FormattingEnabled = true;
@@ -668,16 +691,17 @@
             "Date",
             "Company Name",
             "Receiver Name"});
-            this.CBVehicleCashOrderBy.Location = new System.Drawing.Point(784, 95);
+            this.CBVehicleCashOrderBy.Location = new System.Drawing.Point(729, 95);
             this.CBVehicleCashOrderBy.Name = "CBVehicleCashOrderBy";
             this.CBVehicleCashOrderBy.Size = new System.Drawing.Size(248, 32);
             this.CBVehicleCashOrderBy.TabIndex = 34;
             // 
             // label21
             // 
+            this.label21.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label21.Location = new System.Drawing.Point(175, 61);
+            this.label21.Location = new System.Drawing.Point(120, 61);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(147, 24);
             this.label21.TabIndex = 110;
@@ -685,9 +709,10 @@
             // 
             // label23
             // 
+            this.label23.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label23.Location = new System.Drawing.Point(175, 100);
+            this.label23.Location = new System.Drawing.Point(120, 100);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(141, 24);
             this.label23.TabIndex = 108;
@@ -695,20 +720,22 @@
             // 
             // TBVehicleCashReceiver
             // 
+            this.TBVehicleCashReceiver.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TBVehicleCashReceiver.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.TBVehicleCashReceiver.Location = new System.Drawing.Point(328, 97);
+            this.TBVehicleCashReceiver.Location = new System.Drawing.Point(273, 97);
             this.TBVehicleCashReceiver.Name = "TBVehicleCashReceiver";
             this.TBVehicleCashReceiver.Size = new System.Drawing.Size(354, 29);
             this.TBVehicleCashReceiver.TabIndex = 33;
             // 
             // BtnGetVehicleCash
             // 
+            this.BtnGetVehicleCash.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.BtnGetVehicleCash.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(135)))));
             this.BtnGetVehicleCash.FlatAppearance.BorderSize = 0;
             this.BtnGetVehicleCash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnGetVehicleCash.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.BtnGetVehicleCash.ForeColor = System.Drawing.Color.White;
-            this.BtnGetVehicleCash.Location = new System.Drawing.Point(1047, 68);
+            this.BtnGetVehicleCash.Location = new System.Drawing.Point(992, 68);
             this.BtnGetVehicleCash.Name = "BtnGetVehicleCash";
             this.BtnGetVehicleCash.Size = new System.Drawing.Size(154, 46);
             this.BtnGetVehicleCash.TabIndex = 37;
@@ -718,11 +745,12 @@
             // 
             // CBVehicleCashCompany
             // 
+            this.CBVehicleCashCompany.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.CBVehicleCashCompany.DropDownHeight = 205;
             this.CBVehicleCashCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.CBVehicleCashCompany.FormattingEnabled = true;
             this.CBVehicleCashCompany.IntegralHeight = false;
-            this.CBVehicleCashCompany.Location = new System.Drawing.Point(328, 55);
+            this.CBVehicleCashCompany.Location = new System.Drawing.Point(273, 55);
             this.CBVehicleCashCompany.Name = "CBVehicleCashCompany";
             this.CBVehicleCashCompany.Size = new System.Drawing.Size(550, 32);
             this.CBVehicleCashCompany.Sorted = true;
@@ -730,10 +758,11 @@
             // 
             // label24
             // 
+            this.label24.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
             this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(135)))));
-            this.label24.Location = new System.Drawing.Point(523, 7);
+            this.label24.Location = new System.Drawing.Point(468, 7);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(330, 39);
             this.label24.TabIndex = 103;
@@ -741,6 +770,7 @@
             // 
             // PanelCreditVehicleCash
             // 
+            this.PanelCreditVehicleCash.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.PanelCreditVehicleCash.Controls.Add(this.radioButton1);
             this.PanelCreditVehicleCash.Controls.Add(this.RBCreditVehicleCashAsc);
             this.PanelCreditVehicleCash.Controls.Add(this.label10);
@@ -751,14 +781,15 @@
             this.PanelCreditVehicleCash.Controls.Add(this.CBCreditVehicleCashName);
             this.PanelCreditVehicleCash.Location = new System.Drawing.Point(12, 92);
             this.PanelCreditVehicleCash.Name = "PanelCreditVehicleCash";
-            this.PanelCreditVehicleCash.Size = new System.Drawing.Size(1376, 132);
+            this.PanelCreditVehicleCash.Size = new System.Drawing.Size(1266, 132);
             this.PanelCreditVehicleCash.TabIndex = 140;
             // 
             // radioButton1
             // 
+            this.radioButton1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.radioButton1.AutoSize = true;
             this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.radioButton1.Location = new System.Drawing.Point(801, 98);
+            this.radioButton1.Location = new System.Drawing.Point(746, 98);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(71, 28);
             this.radioButton1.TabIndex = 6;
@@ -767,10 +798,11 @@
             // 
             // RBCreditVehicleCashAsc
             // 
+            this.RBCreditVehicleCashAsc.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.RBCreditVehicleCashAsc.AutoSize = true;
             this.RBCreditVehicleCashAsc.Checked = true;
             this.RBCreditVehicleCashAsc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.RBCreditVehicleCashAsc.Location = new System.Drawing.Point(735, 98);
+            this.RBCreditVehicleCashAsc.Location = new System.Drawing.Point(680, 98);
             this.RBCreditVehicleCashAsc.Name = "RBCreditVehicleCashAsc";
             this.RBCreditVehicleCashAsc.Size = new System.Drawing.Size(60, 28);
             this.RBCreditVehicleCashAsc.TabIndex = 5;
@@ -780,9 +812,10 @@
             // 
             // label10
             // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label10.Location = new System.Drawing.Point(322, 98);
+            this.label10.Location = new System.Drawing.Point(267, 98);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(85, 24);
             this.label10.TabIndex = 139;
@@ -790,6 +823,7 @@
             // 
             // CBCreditVehicleCashOrder
             // 
+            this.CBCreditVehicleCashOrder.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.CBCreditVehicleCashOrder.DropDownHeight = 205;
             this.CBCreditVehicleCashOrder.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBCreditVehicleCashOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
@@ -800,16 +834,17 @@
             "Date",
             "Sale Type",
             "Company Name"});
-            this.CBCreditVehicleCashOrder.Location = new System.Drawing.Point(474, 97);
+            this.CBCreditVehicleCashOrder.Location = new System.Drawing.Point(419, 97);
             this.CBCreditVehicleCashOrder.Name = "CBCreditVehicleCashOrder";
             this.CBCreditVehicleCashOrder.Size = new System.Drawing.Size(248, 32);
             this.CBCreditVehicleCashOrder.TabIndex = 4;
             // 
             // label11
             // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label11.Location = new System.Drawing.Point(322, 61);
+            this.label11.Location = new System.Drawing.Point(267, 61);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(147, 24);
             this.label11.TabIndex = 86;
@@ -817,13 +852,14 @@
             // 
             // BtnGetCreditVehicleCash
             // 
+            this.BtnGetCreditVehicleCash.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.BtnGetCreditVehicleCash.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(135)))));
             this.BtnGetCreditVehicleCash.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.BtnGetCreditVehicleCash.FlatAppearance.BorderSize = 0;
             this.BtnGetCreditVehicleCash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnGetCreditVehicleCash.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.BtnGetCreditVehicleCash.ForeColor = System.Drawing.Color.White;
-            this.BtnGetCreditVehicleCash.Location = new System.Drawing.Point(900, 68);
+            this.BtnGetCreditVehicleCash.Location = new System.Drawing.Point(845, 68);
             this.BtnGetCreditVehicleCash.Name = "BtnGetCreditVehicleCash";
             this.BtnGetCreditVehicleCash.Size = new System.Drawing.Size(154, 46);
             this.BtnGetCreditVehicleCash.TabIndex = 7;
@@ -833,10 +869,11 @@
             // 
             // label13
             // 
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(135)))));
-            this.label13.Location = new System.Drawing.Point(440, 7);
+            this.label13.Location = new System.Drawing.Point(385, 7);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(496, 39);
             this.label13.TabIndex = 79;
@@ -844,17 +881,19 @@
             // 
             // CBCreditVehicleCashName
             // 
+            this.CBCreditVehicleCashName.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.CBCreditVehicleCashName.DropDownHeight = 205;
             this.CBCreditVehicleCashName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.CBCreditVehicleCashName.FormattingEnabled = true;
             this.CBCreditVehicleCashName.IntegralHeight = false;
-            this.CBCreditVehicleCashName.Location = new System.Drawing.Point(474, 57);
+            this.CBCreditVehicleCashName.Location = new System.Drawing.Point(419, 57);
             this.CBCreditVehicleCashName.Name = "CBCreditVehicleCashName";
             this.CBCreditVehicleCashName.Size = new System.Drawing.Size(409, 32);
             this.CBCreditVehicleCashName.TabIndex = 140;
             // 
             // PanelCredit
             // 
+            this.PanelCredit.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.PanelCredit.Controls.Add(this.CBCreditType);
             this.PanelCredit.Controls.Add(this.CBCreditVehicle);
             this.PanelCredit.Controls.Add(this.CBCreditCompany);
@@ -869,16 +908,17 @@
             this.PanelCredit.Controls.Add(this.label32);
             this.PanelCredit.Location = new System.Drawing.Point(12, 92);
             this.PanelCredit.Name = "PanelCredit";
-            this.PanelCredit.Size = new System.Drawing.Size(1376, 132);
+            this.PanelCredit.Size = new System.Drawing.Size(1266, 132);
             this.PanelCredit.TabIndex = 87;
             // 
             // CBCreditType
             // 
+            this.CBCreditType.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.CBCreditType.DropDownHeight = 205;
             this.CBCreditType.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.CBCreditType.FormattingEnabled = true;
             this.CBCreditType.IntegralHeight = false;
-            this.CBCreditType.Location = new System.Drawing.Point(182, 99);
+            this.CBCreditType.Location = new System.Drawing.Point(127, 99);
             this.CBCreditType.Name = "CBCreditType";
             this.CBCreditType.Size = new System.Drawing.Size(408, 32);
             this.CBCreditType.Sorted = true;
@@ -886,11 +926,12 @@
             // 
             // CBCreditVehicle
             // 
+            this.CBCreditVehicle.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.CBCreditVehicle.DropDownHeight = 205;
             this.CBCreditVehicle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.CBCreditVehicle.FormattingEnabled = true;
             this.CBCreditVehicle.IntegralHeight = false;
-            this.CBCreditVehicle.Location = new System.Drawing.Point(723, 58);
+            this.CBCreditVehicle.Location = new System.Drawing.Point(668, 58);
             this.CBCreditVehicle.Name = "CBCreditVehicle";
             this.CBCreditVehicle.Size = new System.Drawing.Size(408, 32);
             this.CBCreditVehicle.Sorted = true;
@@ -899,11 +940,12 @@
             // 
             // CBCreditCompany
             // 
+            this.CBCreditCompany.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.CBCreditCompany.DropDownHeight = 205;
             this.CBCreditCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.CBCreditCompany.FormattingEnabled = true;
             this.CBCreditCompany.IntegralHeight = false;
-            this.CBCreditCompany.Location = new System.Drawing.Point(182, 58);
+            this.CBCreditCompany.Location = new System.Drawing.Point(127, 58);
             this.CBCreditCompany.Name = "CBCreditCompany";
             this.CBCreditCompany.Size = new System.Drawing.Size(408, 32);
             this.CBCreditCompany.Sorted = true;
@@ -912,9 +954,10 @@
             // 
             // RBCreditDesc
             // 
+            this.RBCreditDesc.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.RBCreditDesc.AutoSize = true;
             this.RBCreditDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.RBCreditDesc.Location = new System.Drawing.Point(1053, 100);
+            this.RBCreditDesc.Location = new System.Drawing.Point(998, 100);
             this.RBCreditDesc.Name = "RBCreditDesc";
             this.RBCreditDesc.Size = new System.Drawing.Size(71, 28);
             this.RBCreditDesc.TabIndex = 23;
@@ -923,10 +966,11 @@
             // 
             // RBCreditAsc
             // 
+            this.RBCreditAsc.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.RBCreditAsc.AutoSize = true;
             this.RBCreditAsc.Checked = true;
             this.RBCreditAsc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.RBCreditAsc.Location = new System.Drawing.Point(987, 100);
+            this.RBCreditAsc.Location = new System.Drawing.Point(932, 100);
             this.RBCreditAsc.Name = "RBCreditAsc";
             this.RBCreditAsc.Size = new System.Drawing.Size(60, 28);
             this.RBCreditAsc.TabIndex = 22;
@@ -936,9 +980,10 @@
             // 
             // label8
             // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label8.Location = new System.Drawing.Point(613, 100);
+            this.label8.Location = new System.Drawing.Point(558, 100);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(85, 24);
             this.label8.TabIndex = 143;
@@ -946,6 +991,7 @@
             // 
             // CBCreditOrderBy
             // 
+            this.CBCreditOrderBy.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.CBCreditOrderBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBCreditOrderBy.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.CBCreditOrderBy.FormattingEnabled = true;
@@ -955,16 +1001,17 @@
             "Company Name",
             "Vehicle Number",
             "Type"});
-            this.CBCreditOrderBy.Location = new System.Drawing.Point(723, 97);
+            this.CBCreditOrderBy.Location = new System.Drawing.Point(668, 97);
             this.CBCreditOrderBy.Name = "CBCreditOrderBy";
             this.CBCreditOrderBy.Size = new System.Drawing.Size(248, 32);
             this.CBCreditOrderBy.TabIndex = 21;
             // 
             // label29
             // 
+            this.label29.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label29.Location = new System.Drawing.Point(79, 61);
+            this.label29.Location = new System.Drawing.Point(24, 61);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(91, 24);
             this.label29.TabIndex = 102;
@@ -972,9 +1019,10 @@
             // 
             // label30
             // 
+            this.label30.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label30.Location = new System.Drawing.Point(610, 61);
+            this.label30.Location = new System.Drawing.Point(555, 61);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(104, 24);
             this.label30.TabIndex = 101;
@@ -982,9 +1030,10 @@
             // 
             // label31
             // 
+            this.label31.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label31.Location = new System.Drawing.Point(79, 100);
+            this.label31.Location = new System.Drawing.Point(24, 100);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(96, 24);
             this.label31.TabIndex = 100;
@@ -992,12 +1041,13 @@
             // 
             // BtnGetCredit
             // 
+            this.BtnGetCredit.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.BtnGetCredit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(135)))));
             this.BtnGetCredit.FlatAppearance.BorderSize = 0;
             this.BtnGetCredit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnGetCredit.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.BtnGetCredit.ForeColor = System.Drawing.Color.White;
-            this.BtnGetCredit.Location = new System.Drawing.Point(1143, 68);
+            this.BtnGetCredit.Location = new System.Drawing.Point(1088, 68);
             this.BtnGetCredit.Name = "BtnGetCredit";
             this.BtnGetCredit.Size = new System.Drawing.Size(154, 46);
             this.BtnGetCredit.TabIndex = 24;
@@ -1007,10 +1057,11 @@
             // 
             // label32
             // 
+            this.label32.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
             this.label32.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(135)))));
-            this.label32.Location = new System.Drawing.Point(579, 7);
+            this.label32.Location = new System.Drawing.Point(524, 7);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(219, 39);
             this.label32.TabIndex = 95;
@@ -1018,6 +1069,7 @@
             // 
             // PanelLineCredit
             // 
+            this.PanelLineCredit.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.PanelLineCredit.Controls.Add(this.RBLineCreditDesc);
             this.PanelLineCredit.Controls.Add(this.RBLineCreditAsc);
             this.PanelLineCredit.Controls.Add(this.label9);
@@ -1032,14 +1084,15 @@
             this.PanelLineCredit.Controls.Add(this.CBLineCreditVehicle);
             this.PanelLineCredit.Location = new System.Drawing.Point(12, 92);
             this.PanelLineCredit.Name = "PanelLineCredit";
-            this.PanelLineCredit.Size = new System.Drawing.Size(1376, 132);
+            this.PanelLineCredit.Size = new System.Drawing.Size(1266, 132);
             this.PanelLineCredit.TabIndex = 88;
             // 
             // RBLineCreditDesc
             // 
+            this.RBLineCreditDesc.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.RBLineCreditDesc.AutoSize = true;
             this.RBLineCreditDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.RBLineCreditDesc.Location = new System.Drawing.Point(1048, 100);
+            this.RBLineCreditDesc.Location = new System.Drawing.Point(993, 100);
             this.RBLineCreditDesc.Name = "RBLineCreditDesc";
             this.RBLineCreditDesc.Size = new System.Drawing.Size(71, 28);
             this.RBLineCreditDesc.TabIndex = 30;
@@ -1048,10 +1101,11 @@
             // 
             // RBLineCreditAsc
             // 
+            this.RBLineCreditAsc.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.RBLineCreditAsc.AutoSize = true;
             this.RBLineCreditAsc.Checked = true;
             this.RBLineCreditAsc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.RBLineCreditAsc.Location = new System.Drawing.Point(982, 100);
+            this.RBLineCreditAsc.Location = new System.Drawing.Point(927, 100);
             this.RBLineCreditAsc.Name = "RBLineCreditAsc";
             this.RBLineCreditAsc.Size = new System.Drawing.Size(60, 28);
             this.RBLineCreditAsc.TabIndex = 29;
@@ -1061,9 +1115,10 @@
             // 
             // label9
             // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label9.Location = new System.Drawing.Point(608, 100);
+            this.label9.Location = new System.Drawing.Point(553, 100);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(85, 24);
             this.label9.TabIndex = 143;
@@ -1071,6 +1126,7 @@
             // 
             // CBLineCreditOrderBy
             // 
+            this.CBLineCreditOrderBy.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.CBLineCreditOrderBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBLineCreditOrderBy.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.CBLineCreditOrderBy.FormattingEnabled = true;
@@ -1080,16 +1136,17 @@
             "Customer",
             "Vehicle Number",
             "Type"});
-            this.CBLineCreditOrderBy.Location = new System.Drawing.Point(718, 97);
+            this.CBLineCreditOrderBy.Location = new System.Drawing.Point(663, 97);
             this.CBLineCreditOrderBy.Name = "CBLineCreditOrderBy";
             this.CBLineCreditOrderBy.Size = new System.Drawing.Size(248, 32);
             this.CBLineCreditOrderBy.TabIndex = 28;
             // 
             // label25
             // 
+            this.label25.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label25.Location = new System.Drawing.Point(80, 61);
+            this.label25.Location = new System.Drawing.Point(25, 61);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(91, 24);
             this.label25.TabIndex = 110;
@@ -1097,9 +1154,10 @@
             // 
             // label26
             // 
+            this.label26.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label26.Location = new System.Drawing.Point(608, 61);
+            this.label26.Location = new System.Drawing.Point(553, 61);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(104, 24);
             this.label26.TabIndex = 109;
@@ -1107,9 +1165,10 @@
             // 
             // label27
             // 
+            this.label27.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label27.Location = new System.Drawing.Point(80, 100);
+            this.label27.Location = new System.Drawing.Point(25, 100);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(96, 24);
             this.label27.TabIndex = 108;
@@ -1117,20 +1176,22 @@
             // 
             // TBLineCreditCustomer
             // 
+            this.TBLineCreditCustomer.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TBLineCreditCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.TBLineCreditCustomer.Location = new System.Drawing.Point(182, 58);
+            this.TBLineCreditCustomer.Location = new System.Drawing.Point(127, 58);
             this.TBLineCreditCustomer.Name = "TBLineCreditCustomer";
             this.TBLineCreditCustomer.Size = new System.Drawing.Size(408, 29);
             this.TBLineCreditCustomer.TabIndex = 25;
             // 
             // BtnGetLineCredit
             // 
+            this.BtnGetLineCredit.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.BtnGetLineCredit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(135)))));
             this.BtnGetLineCredit.FlatAppearance.BorderSize = 0;
             this.BtnGetLineCredit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnGetLineCredit.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.BtnGetLineCredit.ForeColor = System.Drawing.Color.White;
-            this.BtnGetLineCredit.Location = new System.Drawing.Point(1142, 68);
+            this.BtnGetLineCredit.Location = new System.Drawing.Point(1087, 68);
             this.BtnGetLineCredit.Name = "BtnGetLineCredit";
             this.BtnGetLineCredit.Size = new System.Drawing.Size(154, 46);
             this.BtnGetLineCredit.TabIndex = 31;
@@ -1140,10 +1201,11 @@
             // 
             // label28
             // 
+            this.label28.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
             this.label28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(135)))));
-            this.label28.Location = new System.Drawing.Point(542, 7);
+            this.label28.Location = new System.Drawing.Point(487, 7);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(293, 39);
             this.label28.TabIndex = 103;
@@ -1151,24 +1213,27 @@
             // 
             // CBLineCreditType
             // 
+            this.CBLineCreditType.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.CBLineCreditType.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.CBLineCreditType.FormattingEnabled = true;
-            this.CBLineCreditType.Location = new System.Drawing.Point(182, 97);
+            this.CBLineCreditType.Location = new System.Drawing.Point(127, 97);
             this.CBLineCreditType.Name = "CBLineCreditType";
             this.CBLineCreditType.Size = new System.Drawing.Size(408, 32);
             this.CBLineCreditType.TabIndex = 144;
             // 
             // CBLineCreditVehicle
             // 
+            this.CBLineCreditVehicle.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.CBLineCreditVehicle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.CBLineCreditVehicle.FormattingEnabled = true;
-            this.CBLineCreditVehicle.Location = new System.Drawing.Point(718, 56);
+            this.CBLineCreditVehicle.Location = new System.Drawing.Point(663, 56);
             this.CBLineCreditVehicle.Name = "CBLineCreditVehicle";
             this.CBLineCreditVehicle.Size = new System.Drawing.Size(408, 32);
             this.CBLineCreditVehicle.TabIndex = 145;
             // 
             // PanelInventoryAdded
             // 
+            this.PanelInventoryAdded.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.PanelInventoryAdded.Controls.Add(this.RBInventoryDesc);
             this.PanelInventoryAdded.Controls.Add(this.RBInventoryAsc);
             this.PanelInventoryAdded.Controls.Add(this.label5);
@@ -1179,14 +1244,15 @@
             this.PanelInventoryAdded.Controls.Add(this.CBInventoryAddType);
             this.PanelInventoryAdded.Location = new System.Drawing.Point(12, 92);
             this.PanelInventoryAdded.Name = "PanelInventoryAdded";
-            this.PanelInventoryAdded.Size = new System.Drawing.Size(1376, 132);
+            this.PanelInventoryAdded.Size = new System.Drawing.Size(1266, 132);
             this.PanelInventoryAdded.TabIndex = 112;
             // 
             // RBInventoryDesc
             // 
+            this.RBInventoryDesc.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.RBInventoryDesc.AutoSize = true;
             this.RBInventoryDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.RBInventoryDesc.Location = new System.Drawing.Point(776, 98);
+            this.RBInventoryDesc.Location = new System.Drawing.Point(721, 98);
             this.RBInventoryDesc.Name = "RBInventoryDesc";
             this.RBInventoryDesc.Size = new System.Drawing.Size(71, 28);
             this.RBInventoryDesc.TabIndex = 41;
@@ -1195,10 +1261,11 @@
             // 
             // RBInventoryAsc
             // 
+            this.RBInventoryAsc.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.RBInventoryAsc.AutoSize = true;
             this.RBInventoryAsc.Checked = true;
             this.RBInventoryAsc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.RBInventoryAsc.Location = new System.Drawing.Point(710, 98);
+            this.RBInventoryAsc.Location = new System.Drawing.Point(655, 98);
             this.RBInventoryAsc.Name = "RBInventoryAsc";
             this.RBInventoryAsc.Size = new System.Drawing.Size(60, 28);
             this.RBInventoryAsc.TabIndex = 40;
@@ -1208,9 +1275,10 @@
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label5.Location = new System.Drawing.Point(348, 100);
+            this.label5.Location = new System.Drawing.Point(293, 100);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(85, 24);
             this.label5.TabIndex = 143;
@@ -1218,6 +1286,7 @@
             // 
             // CBInventoryOrderBy
             // 
+            this.CBInventoryOrderBy.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.CBInventoryOrderBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBInventoryOrderBy.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.CBInventoryOrderBy.FormattingEnabled = true;
@@ -1226,16 +1295,17 @@
             "Quantity",
             "Rate",
             "Date"});
-            this.CBInventoryOrderBy.Location = new System.Drawing.Point(449, 97);
+            this.CBInventoryOrderBy.Location = new System.Drawing.Point(394, 97);
             this.CBInventoryOrderBy.Name = "CBInventoryOrderBy";
             this.CBInventoryOrderBy.Size = new System.Drawing.Size(248, 32);
             this.CBInventoryOrderBy.TabIndex = 39;
             // 
             // label17
             // 
+            this.label17.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label17.Location = new System.Drawing.Point(348, 61);
+            this.label17.Location = new System.Drawing.Point(293, 61);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(96, 24);
             this.label17.TabIndex = 112;
@@ -1243,12 +1313,13 @@
             // 
             // BtnGetInventory
             // 
+            this.BtnGetInventory.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.BtnGetInventory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(135)))));
             this.BtnGetInventory.FlatAppearance.BorderSize = 0;
             this.BtnGetInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnGetInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.BtnGetInventory.ForeColor = System.Drawing.Color.White;
-            this.BtnGetInventory.Location = new System.Drawing.Point(875, 68);
+            this.BtnGetInventory.Location = new System.Drawing.Point(820, 68);
             this.BtnGetInventory.Name = "BtnGetInventory";
             this.BtnGetInventory.Size = new System.Drawing.Size(154, 46);
             this.BtnGetInventory.TabIndex = 42;
@@ -1258,10 +1329,11 @@
             // 
             // label18
             // 
+            this.label18.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
             this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(135)))));
-            this.label18.Location = new System.Drawing.Point(552, 7);
+            this.label18.Location = new System.Drawing.Point(497, 7);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(272, 39);
             this.label18.TabIndex = 109;
@@ -1269,9 +1341,10 @@
             // 
             // CBInventoryAddType
             // 
+            this.CBInventoryAddType.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.CBInventoryAddType.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.CBInventoryAddType.FormattingEnabled = true;
-            this.CBInventoryAddType.Location = new System.Drawing.Point(450, 57);
+            this.CBInventoryAddType.Location = new System.Drawing.Point(395, 57);
             this.CBInventoryAddType.Name = "CBInventoryAddType";
             this.CBInventoryAddType.Size = new System.Drawing.Size(408, 32);
             this.CBInventoryAddType.TabIndex = 144;
@@ -1308,6 +1381,7 @@
             // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(167)))), ((int)(((byte)(96)))));
             this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button1.FlatAppearance.BorderSize = 0;
@@ -1316,7 +1390,7 @@
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = global::PetrolPump.Properties.Resources.MS_Office_2010___Excel__1_;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(1278, 89);
+            this.button1.Location = new System.Drawing.Point(1177, 89);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(101, 41);
             this.button1.TabIndex = 114;
@@ -1327,9 +1401,10 @@
             // 
             // checkBox1
             // 
+            this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBox1.AutoSize = true;
             this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.checkBox1.Location = new System.Drawing.Point(1207, 230);
+            this.checkBox1.Location = new System.Drawing.Point(1121, 230);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(157, 28);
             this.checkBox1.TabIndex = 115;
@@ -1349,14 +1424,13 @@
             this.Controls.Add(this.CBDateMenu);
             this.Controls.Add(this.menuStrip2);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.DGVReports);
             this.Controls.Add(this.PanelCredit);
             this.Controls.Add(this.PanelVehicleCash);
             this.Controls.Add(this.PanelCreditVehicleCash);
             this.Controls.Add(this.PanelCash);
-            this.Controls.Add(this.DGVReports);
             this.Controls.Add(this.PanelLineCredit);
             this.Controls.Add(this.PanelInventoryAdded);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ReportsForm";
             this.Text = "Reports - Sitara Hilal Petroleum Service";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

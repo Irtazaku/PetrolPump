@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label4 = new System.Windows.Forms.Label();
             this.DGVSearchCompany = new System.Windows.Forms.DataGridView();
             this.DGVID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,9 +60,10 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(712, 115);
+            this.label4.Location = new System.Drawing.Point(693, 115);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(100, 29);
             this.label4.TabIndex = 94;
@@ -74,47 +75,50 @@
             this.DGVSearchCompany.AllowUserToDeleteRows = false;
             this.DGVSearchCompany.AllowUserToResizeColumns = false;
             this.DGVSearchCompany.AllowUserToResizeRows = false;
+            this.DGVSearchCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DGVSearchCompany.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DGVSearchCompany.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVSearchCompany.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVSearchCompany.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DGVSearchCompany.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVSearchCompany.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DGVID,
             this.DGVName,
             this.DGVNumber,
             this.DGVEmail});
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(234)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVSearchCompany.DefaultCellStyle = dataGridViewCellStyle18;
-            this.DGVSearchCompany.Location = new System.Drawing.Point(12, 266);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(234)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVSearchCompany.DefaultCellStyle = dataGridViewCellStyle2;
+            this.DGVSearchCompany.Location = new System.Drawing.Point(10, 266);
             this.DGVSearchCompany.Name = "DGVSearchCompany";
             this.DGVSearchCompany.ReadOnly = true;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(234)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVSearchCompany.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(234)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVSearchCompany.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.DGVSearchCompany.RowHeadersVisible = false;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.Padding = new System.Windows.Forms.Padding(5, 6, 0, 6);
-            this.DGVSearchCompany.RowsDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5, 6, 0, 6);
+            this.DGVSearchCompany.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.DGVSearchCompany.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGVSearchCompany.Size = new System.Drawing.Size(1376, 710);
+            this.DGVSearchCompany.Size = new System.Drawing.Size(1338, 459);
             this.DGVSearchCompany.TabIndex = 8;
             // 
             // DGVID
@@ -148,9 +152,10 @@
             // 
             // LblName
             // 
+            this.LblName.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.LblName.AutoSize = true;
             this.LblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblName.Location = new System.Drawing.Point(174, 115);
+            this.LblName.Location = new System.Drawing.Point(155, 115);
             this.LblName.Name = "LblName";
             this.LblName.Size = new System.Drawing.Size(36, 29);
             this.LblName.TabIndex = 93;
@@ -158,9 +163,10 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(712, 165);
+            this.label1.Location = new System.Drawing.Point(693, 165);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 29);
             this.label1.TabIndex = 96;
@@ -168,9 +174,10 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(174, 165);
+            this.label2.Location = new System.Drawing.Point(155, 165);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 29);
             this.label2.TabIndex = 98;
@@ -209,10 +216,11 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(135)))));
-            this.label3.Location = new System.Drawing.Point(560, 59);
+            this.label3.Location = new System.Drawing.Point(541, 59);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(280, 39);
             this.label3.TabIndex = 128;
@@ -220,6 +228,7 @@
             // 
             // BtnClose
             // 
+            this.BtnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(27)))), ((int)(((byte)(28)))));
             this.BtnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.BtnClose.FlatAppearance.BorderSize = 0;
@@ -227,7 +236,7 @@
             this.BtnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
             this.BtnClose.ForeColor = System.Drawing.Color.White;
             this.BtnClose.Image = global::PetrolPump.Properties.Resources.icon_close_circled_128__2_;
-            this.BtnClose.Location = new System.Drawing.Point(1325, 59);
+            this.BtnClose.Location = new System.Drawing.Point(1300, 59);
             this.BtnClose.Name = "BtnClose";
             this.BtnClose.Size = new System.Drawing.Size(50, 50);
             this.BtnClose.TabIndex = 9;
@@ -236,9 +245,10 @@
             // 
             // RBDesc
             // 
+            this.RBDesc.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.RBDesc.AutoSize = true;
             this.RBDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.RBDesc.Location = new System.Drawing.Point(913, 213);
+            this.RBDesc.Location = new System.Drawing.Point(894, 213);
             this.RBDesc.Name = "RBDesc";
             this.RBDesc.Size = new System.Drawing.Size(160, 33);
             this.RBDesc.TabIndex = 7;
@@ -247,10 +257,11 @@
             // 
             // RBAsc
             // 
+            this.RBAsc.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.RBAsc.AutoSize = true;
             this.RBAsc.Checked = true;
             this.RBAsc.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.RBAsc.Location = new System.Drawing.Point(763, 213);
+            this.RBAsc.Location = new System.Drawing.Point(744, 213);
             this.RBAsc.Name = "RBAsc";
             this.RBAsc.Size = new System.Drawing.Size(144, 33);
             this.RBAsc.TabIndex = 6;
@@ -261,9 +272,10 @@
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.label5.Location = new System.Drawing.Point(327, 215);
+            this.label5.Location = new System.Drawing.Point(308, 215);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(109, 29);
             this.label5.TabIndex = 131;
@@ -271,6 +283,7 @@
             // 
             // CBOrderBy
             // 
+            this.CBOrderBy.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.CBOrderBy.DropDownHeight = 205;
             this.CBOrderBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBOrderBy.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
@@ -281,7 +294,7 @@
             "ID",
             "Name",
             "Number"});
-            this.CBOrderBy.Location = new System.Drawing.Point(442, 212);
+            this.CBOrderBy.Location = new System.Drawing.Point(423, 212);
             this.CBOrderBy.Name = "CBOrderBy";
             this.CBOrderBy.Size = new System.Drawing.Size(270, 37);
             this.CBOrderBy.Sorted = true;
@@ -289,9 +302,10 @@
             // 
             // CBNAME
             // 
+            this.CBNAME.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.CBNAME.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBNAME.FormattingEnabled = true;
-            this.CBNAME.Location = new System.Drawing.Point(258, 162);
+            this.CBNAME.Location = new System.Drawing.Point(239, 162);
             this.CBNAME.Name = "CBNAME";
             this.CBNAME.Size = new System.Drawing.Size(408, 32);
             this.CBNAME.TabIndex = 132;
@@ -299,9 +313,10 @@
             // 
             // CBID
             // 
+            this.CBID.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.CBID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBID.FormattingEnabled = true;
-            this.CBID.Location = new System.Drawing.Point(258, 112);
+            this.CBID.Location = new System.Drawing.Point(239, 112);
             this.CBID.Name = "CBID";
             this.CBID.Size = new System.Drawing.Size(408, 32);
             this.CBID.TabIndex = 133;
@@ -309,9 +324,10 @@
             // 
             // CBNUMBER
             // 
+            this.CBNUMBER.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.CBNUMBER.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBNUMBER.FormattingEnabled = true;
-            this.CBNUMBER.Location = new System.Drawing.Point(818, 112);
+            this.CBNUMBER.Location = new System.Drawing.Point(799, 112);
             this.CBNUMBER.Name = "CBNUMBER";
             this.CBNUMBER.Size = new System.Drawing.Size(408, 32);
             this.CBNUMBER.TabIndex = 134;
@@ -319,9 +335,10 @@
             // 
             // CBEMAIL
             // 
+            this.CBEMAIL.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.CBEMAIL.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBEMAIL.FormattingEnabled = true;
-            this.CBEMAIL.Location = new System.Drawing.Point(818, 162);
+            this.CBEMAIL.Location = new System.Drawing.Point(799, 162);
             this.CBEMAIL.Name = "CBEMAIL";
             this.CBEMAIL.Size = new System.Drawing.Size(408, 32);
             this.CBEMAIL.TabIndex = 135;
@@ -349,7 +366,6 @@
             this.Controls.Add(this.CBID);
             this.Controls.Add(this.CBNUMBER);
             this.Controls.Add(this.CBEMAIL);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "SearchCompanyForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Search Company - Sitara Hilal Petroleum Service";
