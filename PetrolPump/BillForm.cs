@@ -45,6 +45,11 @@ namespace PetrolPump
                 MessageBox.Show("No company selected", "Operation Unsuccessful", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            if (DPTo.Value < DPFrom.Value)
+            {
+                MessageBox.Show("Invalide date range.", "Operation Unsuccessful", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             string fileName = "Bill - " + CBCompany.Text + " - " + DPFrom.Value.ToString("dd MMM yyyy") + " to " + DPTo.Value.ToString("yyyy-MM-dd");
             FileInfo newFile = new FileInfo( fileName + ".xlsx");
             //if (newFile.Exists)
@@ -108,12 +113,12 @@ namespace PetrolPump
 
                 Row++;
 
-                worksheet.Cells[Row, 1].Value = "BILLING PERIOD " + DateTime.Today.AddDays(1).Subtract(DPFrom.Value).Days + " DAYS";
+                worksheet.Cells[Row, 1].Value = "BILLING PERIOD " + DPTo.Value.AddDays(1).Subtract(DPFrom.Value).Days + " DAYS";
                 worksheet.Cells[Row, 1].Style.Font.Bold = true;
                 worksheet.Cells[Row, 1, Row, 4].Merge = true;
                 worksheet.Cells[Row, 1].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
 
-                worksheet.Cells[Row, 5].Value = "DATE " + DPFrom.Value.ToString("dd MMM yyyy") + " TO " + DateTime.Today.ToString("dd MMM yyyy");
+                worksheet.Cells[Row, 5].Value = "DATE " + DPFrom.Value.ToString("dd MMM yyyy") + " TO " + DPTo.Value.ToString("dd MMM yyyy");
                 worksheet.Cells[Row, 5].Style.Font.Bold = true;
                 worksheet.Cells[Row, 5, Row, 8].Merge = true;
                 worksheet.Cells[Row, 5].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
@@ -210,8 +215,8 @@ namespace PetrolPump
 
                 Row++;
 
-                double BalanceCredit = Math.Round(Convert.ToDouble(Func.ScalarString("SELECT sum(amount) FROM credit where companyid = '" + Company.ID[CBCompany.SelectedIndex] + "'").ToString()), 2);
-                double BalanceVehicleCash = Math.Round(Convert.ToDouble(Func.ScalarString("SELECT sum(amount) FROM vehiclecash where companyid = '" + Company.ID[CBCompany.SelectedIndex] + "'").ToString()), 2);
+                double BalanceCredit = Math.Round(Convert.ToDouble(Func.ScalarString("SELECT sum(amount) FROM credit where companyid = '" + Company.ID[CBCompany.SelectedIndex] + "'" + "and date(datetime) <= date('" + DPTo.Value.ToString("yyyy-MM-dd")+"')").ToString()), 2);
+                double BalanceVehicleCash = Math.Round(Convert.ToDouble(Func.ScalarString("SELECT sum(amount) FROM vehiclecash where companyid = '" + Company.ID[CBCompany.SelectedIndex] + "'" + "and date(datetime)  <= date('" + DPTo.Value.ToString("yyyy-MM-dd") + "')").ToString()), 2);
                 double Balance = BalanceCredit + BalanceVehicleCash;
                 worksheet.Cells[Row, 4].Value = "BALANCE";
                 worksheet.Cells[Row, 4, Row, 7].Merge = true;
