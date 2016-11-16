@@ -238,3 +238,43 @@ D:\BSCS\PetrolPump\PetrolPump\obj\Debug\PetrolPump.SearchLineCustomerForm.resour
 D:\BSCS\PetrolPump\PetrolPump\obj\Debug\PetrolPump.SearchVehicleForm.resources
 D:\BSCS\PetrolPump\PetrolPump\obj\Debug\PetrolPump.BillForm.resources
 D:\BSCS\PetrolPump\PetrolPump\obj\Debug\PetrolPump.csproj.GenerateResource.Cache
+C:\Users\Irtaza Zaidi\Documents\Visual Studio 2013\Projects\petrolpump\petrolpump\PetrolPump\bin\Debug\PetrolPump.exe.config
+C:\Users\Irtaza Zaidi\Documents\Visual Studio 2013\Projects\petrolpump\petrolpump\PetrolPump\obj\Debug\PetrolPump.exe
+C:\Users\Irtaza Zaidi\Documents\Visual Studio 2013\Projects\petrolpump\petrolpump\PetrolPump\obj\Debug\PetrolPump.pdb
+C:\Users\Irtaza Zaidi\Documents\Visual Studio 2013\Projects\petrolpump\petrolpump\PetrolPump\bin\Debug\PetrolPump.exe
+C:\Users\Irtaza Zaidi\Documents\Visual Studio 2013\Projects\petrolpump\petrolpump\PetrolPump\bin\Debug\PetrolPump.pdb
+C:\Users\Irtaza Zaidi\Documents\Visual Studio 2013\Projects\petrolpump\petrolpump\PetrolPump\obj\Debug\PetrolPump.csprojResolveAssemblyReference.cache
+C:\Users\Irtaza Zaidi\Documents\Visual Studio 2013\Projects\petrolpump\petrolpump\PetrolPump\obj\Debug\PetrolPump.AccountsManagementForm.resources
+C:\Users\Irtaza Zaidi\Documents\Visual Studio 2013\Projects\petrolpump\petrolpump\PetrolPump\obj\Debug\PetrolPump.AddCashForm.resources
+C:\Users\Irtaza Zaidi\Documents\Visual Studio 2013\Projects\petrolpump\petrolpump\PetrolPump\obj\Debug\PetrolPump.AddCompanyForm.resources
+C:\Users\Irtaza Zaidi\Documents\Visual Studio 2013\Projects\petrolpump\petrolpump\PetrolPump\obj\Debug\PetrolPump.AddCreditForm.resources
+C:\Users\Irtaza Zaidi\Documents\Visual Studio 2013\Projects\petrolpump\petrolpump\PetrolPump\obj\Debug\PetrolPump.AddInventoryForm.resources
+C:\Users\Irtaza Zaidi\Documents\Visual Studio 2013\Projects\petrolpump\petrolpump\PetrolPump\obj\Debug\PetrolPump.AddLineCreditCustomerForm.resources
+C:\Users\Irtaza Zaidi\Documents\Visual Studio 2013\Projects\petrolpump\petrolpump\PetrolPump\obj\Debug\PetrolPump.AddLineCreditForm.resources
+C:\Users\Irtaza Zaidi\Documents\Visual Studio 2013\Projects\petrolpump\petrolpump\PetrolPump\obj\Debug\PetrolPump.AddVehicleCashForm.resources
+C:\Users\Irtaza Zaidi\Documents\Visual Studio 2013\Projects\petrolpump\petrolpump\PetrolPump\obj\Debug\PetrolPump.AddVehicleForm.resources
+C:\Users\Irtaza Zaidi\Documents\Visual Studio 2013\Projects\petrolpump\petrolpump\PetrolPump\obj\Debug\PetrolPump.AdminPanelForm.resources
+C:\Users\Irtaza Zaidi\Documents\Visual Studio 2013\Projects\petrolpump\petrolpump\PetrolPump\obj\Debug\PetrolPump.CombinedReport.resources
+C:\Users\Irtaza Zaidi\Documents\Visual Studio 2013\Projects\petrolpump\petrolpump\PetrolPump\obj\Debug\PetrolPump.CompanyManagementForm.resources
+C:\Users\Irtaza Zaidi\Documents\Visual Studio 2013\Projects\petrolpump\petrolpump\PetrolPump\obj\Debug\PetrolPump.DeleteCompanyForm.resources
+C:\Users\Irtaza Zaidi\Documents\Visual Studio 2013\Projects\petrolpump\petrolpump\PetrolPump\obj\Debug\PetrolPump.DeleteInventoryForm.resources
+C:\Users\Irtaza Zaidi\Documents\Visual Studio 2013\Projects\petrolpump\petrolpump\PetrolPump\obj\Debug\PetrolPump.DeleteLineCreditCustomerForm.resources
+C:\Users\Irtaza Zaidi\Documents\Visual Studio 2013\Projects\petrolpump\petrolpump\PetrolPump\obj\Debug\PetrolPump.DeleteVehicleForm.resources
+C:\Users\Irtaza Zaidi\Documents\Visual Studio 2013\Projects\petrolpump\petrolpump\PetrolPump\obj\Debug\PetrolPump.EditCompanyForm.resources
+C:\Users\Irtaza Zaidi\Documents\Visual Studio 2013\Projects\petrolpump\petrolpump\PetrolPump\obj\Debug\PetrolPump.EditInventoryForm.resources
+C:\Users\Irtaza Zaidi\Documents\Visual Studio 2013\Projects\petrolpump\petrolpump\PetrolPump\obj\Debug\PetrolPump.EditLineCreditCustomerForm.resources
+C:\Users\Irtaza Zaidi\Documents\Visual Studio 2013\Projects\petrolpump\petrolpump\PetrolPump\obj\Debug\PetrolPump.EditVehicleForm.resources
+C:\Users\Irtaza Zaidi\Documents\Visual Studio 2013\Projects\petrolpump\petrolpump\PetrolPump\obj\Debug\PetrolPump.InventoryManagementForm.resources
+C:\Users\Irtaza Zaidi\Documents\Visual Studio 2013\Projects\petrolpump\petrolpump\PetrolPump\obj\Debug\PetrolPump.LineCreditCustomersForm.resources
+C:\Users\Irtaza Zaidi\Documents\Visual Studio 2013\Projects\petrolpump\petrolpump\PetrolPump\obj\Debug\PetrolPump.LoginForm.resources
+C:\Users\Irtaza Zaidi\Documents\Visual Studio 2013\Projects\petrolpump\petrolpump\PetrolPump\obj\Debug\PetrolPump.MainForm.resources
+C:\Users\Irtaza Zaidi\Documents\Visual Studio 2013\Projects\petrolpump\petrolpump\PetrolPump\obj\Debug\PetrolPump.Properties.Resources.resources
+C:\Users\Irtaza Zaidi\Documents\Visual Studio 2013\Projects\petrolpump\petrolpump\PetrolPump\obj\Debug\PetrolPump.ReceiveCreditForm.resources
+C:\Users\Irtaza Zaidi\Documents\Visual Studio 2013\Projects\petrolpump\petrolpump\PetrolPump\obj\Debug\PetrolPump.ReceiveLineCreditForm.resources
+C:\Users\Irtaza Zaidi\Documents\Visual Studio 2013\Projects\petrolpump\petrolpump\PetrolPump\obj\Debug\PetrolPump.ReportsForm.resources
+C:\Users\Irtaza Zaidi\Documents\Visual Studio 2013\Projects\petrolpump\petrolpump\PetrolPump\obj\Debug\PetrolPump.SearchCompanyForm.resources
+C:\Users\Irtaza Zaidi\Documents\Visual Studio 2013\Projects\petrolpump\petrolpump\PetrolPump\obj\Debug\PetrolPump.SearchInventoryForm.resources
+C:\Users\Irtaza Zaidi\Documents\Visual Studio 2013\Projects\petrolpump\petrolpump\PetrolPump\obj\Debug\PetrolPump.SearchLineCustomerForm.resources
+C:\Users\Irtaza Zaidi\Documents\Visual Studio 2013\Projects\petrolpump\petrolpump\PetrolPump\obj\Debug\PetrolPump.SearchVehicleForm.resources
+C:\Users\Irtaza Zaidi\Documents\Visual Studio 2013\Projects\petrolpump\petrolpump\PetrolPump\obj\Debug\PetrolPump.BillForm.resources
+C:\Users\Irtaza Zaidi\Documents\Visual Studio 2013\Projects\petrolpump\petrolpump\PetrolPump\obj\Debug\PetrolPump.csproj.GenerateResource.Cache

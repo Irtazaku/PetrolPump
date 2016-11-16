@@ -231,8 +231,8 @@ namespace PetrolPump
 
                 Row++;
 
-                double ReceivedCredit = Math.Round(Convert.ToDouble(Func.ScalarString("SELECT coalesce(sum(creditreceived.amount),0) FROM creditreceived inner join credit on credit.id = creditreceived.creditid where companyid = '" + Company.ID[CBCompany.SelectedIndex] + "'")), 2);
-                double ReceivedVehicleCash = Math.Round(Convert.ToDouble(Func.ScalarString("SELECT coalesce(sum(vehiclecashreceived.amount),0) FROM vehiclecashreceived inner join vehiclecash on vehiclecash.id = vehiclecashreceived.vehiclecashid where companyid = '" + Company.ID[CBCompany.SelectedIndex] + "'")), 2);
+                double ReceivedCredit = Math.Round(Convert.ToDouble(Func.ScalarString("SELECT coalesce(sum(creditreceived.amount),0) FROM creditreceived inner join credit on credit.id = creditreceived.creditid where companyid = '" + Company.ID[CBCompany.SelectedIndex] + "'" + " and " + " date(creditreceived.DateTime) between '" + DPFrom.Value.ToString("yyyy-MM-dd") + "' and '" + DPTo.Value.ToString("yyyy-MM-dd") + "' ")), 2);
+                double ReceivedVehicleCash = Math.Round(Convert.ToDouble(Func.ScalarString("SELECT coalesce(sum(vehiclecashreceived.amount),0) FROM vehiclecashreceived inner join vehiclecash on vehiclecash.id = vehiclecashreceived.vehiclecashid where companyid = '" + Company.ID[CBCompany.SelectedIndex] + "'" + " and " + " date(vehiclecashreceived.DateTime) between '" + DPFrom.Value.ToString("yyyy-MM-dd") + "' and '" + DPTo.Value.ToString("yyyy-MM-dd") + "' ")), 2);
                 double Received = ReceivedCredit + ReceivedVehicleCash;
                 worksheet.Cells[Row, 4].Value = "TOTAL RECEIVED AMOUNT";
                 worksheet.Cells[Row, 4, Row, 7].Merge = true;
