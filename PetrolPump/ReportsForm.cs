@@ -105,7 +105,7 @@ namespace PetrolPump
             DGVReports.Rows.Clear();
             MySqlFunctions Func = new MySqlFunctions();
 
-            string Query = "SELECT linecredit.id,linecredit.datetime as Date, linecustomers.name as `Customer Name`, linecustomers.vehiclenumber as `Vehicle Number`, linecredit.Amount as `Debit`,cashiers.Name as `Cashier Name`, linecredit.Type, Liter, Rate,count(linecreditreceived.linecreditid),linecredit.Amount-sum(linecreditreceived.amount) from linecredit inner join linecustomers on linecustomers.id = linecredit.customerid inner join cashiers on cashiers.id = linecredit.cashierid left join linecreditreceived on linecreditreceived.linecreditid = linecredit.id where linecustomers.name like '%" + TBLineCreditCustomer.Text + "%' and linecustomers.vehiclenumber like '%" + CBLineCreditVehicle.Text + "%' and linecredit.Type like '%" + CBLineCreditType.Text + "%'";
+            string Query = "SELECT linecredit.id as 'Slip #',linecredit.datetime as Date, linecustomers.name as `Customer`, linecustomers.vehiclenumber as `Vehicle`, cashiers.Name as `Cashier`, linecredit.Type as 'Product', Liter as 'Quantity', Rate,linecredit.Amount,count(linecreditreceived.linecreditid),linecredit.Amount-sum(linecreditreceived.amount) from linecredit inner join linecustomers on linecustomers.id = linecredit.customerid inner join cashiers on cashiers.id = linecredit.cashierid left join linecreditreceived on linecreditreceived.linecreditid = linecredit.id where linecustomers.name like '%" + TBLineCreditCustomer.Text + "%' and linecustomers.vehiclenumber like '%" + CBLineCreditVehicle.Text + "%' and linecredit.Type like '%" + CBLineCreditType.Text + "%'";
             AppendQuery(ref Query, "linecredit.datetime");
 
             Query += " group by linecredit.id";
@@ -124,32 +124,33 @@ namespace PetrolPump
             Query += " " + (RBLineCreditAsc.Checked ? " asc" : " desc");
 
             DGVReports.Columns.Clear();
-            DGVReports.Columns.Add("dgvc0", "Slip No");
+            DGVReports.Columns.Add("dgvc0", "Slip #");
             DGVReports.Columns.Add("dgvc1", "Date");
-            DGVReports.Columns.Add("dgvc2", "Customer Name");
-            DGVReports.Columns.Add("dgvc3", "Vehicle Number");
-            DGVReports.Columns.Add("dgvc4", "Amount");
-            DGVReports.Columns.Add("dgvc6", "Cashier Name");
-            DGVReports.Columns.Add("dgvc7", "Remarks");
-            DGVReports.Columns.Add("dgvc8", "Type");
-            DGVReports.Columns.Add("dgvc9", "Liter");
-            DGVReports.Columns.Add("dgvc10", "Rate");
+            DGVReports.Columns.Add("dgvc2", "Customer");
+            DGVReports.Columns.Add("dgvc3", "Vehicle");
+            DGVReports.Columns.Add("dgvc4", "Cashier");
+            DGVReports.Columns.Add("dgvc5", "Product");
+            DGVReports.Columns.Add("dgvc6", "Quantity");
+            DGVReports.Columns.Add("dgvc7", "Rate");
+            DGVReports.Columns.Add("dgvc8", "Amount");
+            DGVReports.Columns.Add("dgvc9", "Remarks");
 
             MySqlDataReader Reader = Func.SelectQuery(Query);
             while (Reader.Read())
             {
-                TotalAmount += Convert.ToDouble(Reader[4].ToString());
+                TotalAmount += Convert.ToDouble(Reader[8].ToString());
 
                 DGVReports.Rows.Add(Reader[0].ToString(),
                                     Reader[1].ToString(),
                                     Reader[2].ToString(),
                                     Reader[3].ToString(),
-                                    string.Format("{0:#,###.##}", Convert.ToDecimal(Reader[4].ToString())),
+                                    Reader[4].ToString(),
                                     Reader[5].ToString(),
-                                    "Amount Receivable",
                                     Reader[6].ToString(),
                                     Reader[7].ToString(),
-                                    Reader[8].ToString());
+                                    string.Format("{0:#,###.##}", Convert.ToDecimal(Reader[8].ToString())),
+                                    "Amount Receivable");
+
                 if (Reader[9].ToString() == "0" || Math.Round(Convert.ToDouble(Reader[10].ToString()), 0) != 0)
                     DGVReports.Rows[DGVReports.Rows.Count - 1].DefaultCellStyle.BackColor = Color.FromArgb(233, 234, 242);
 
@@ -166,19 +167,19 @@ namespace PetrolPump
                                         Reader2[0].ToString(),
                                         Reader[2].ToString(),
                                         Reader[3].ToString(),
-                                        string.Format("{0:#,###.##}", Convert.ToDecimal(Reader2[1].ToString())),
                                         Reader2[2].ToString(),
-                                        "Amount Received",
+                                        Reader[5].ToString(),
                                         Reader[6].ToString(),
                                         Reader[7].ToString(),
-                                        Reader[8].ToString());
+                                        string.Format("{0:#,###.##}", Convert.ToDecimal(Reader2[1].ToString())),
+                                        "Amount Received");
                 }
                 Reader2.Close();
                 Func2.Dest();
             }
 
             DGVReports.Rows.Add();
-            
+
             DGVReports.Rows.Add("", "", "", "Total Amount", string.Format("{0:#,###.##}", Convert.ToDecimal(Math.Round(TotalAmount, 2))));
             DGVReports.Rows.Add("", "", "", "Amount Received", string.Format("{0:#,###.##}", Convert.ToDecimal(Math.Round(Received, 2))));
             DGVReports.Rows.Add("", "", "", "Amount Receivable", string.Format("{0:#,###.##}", Convert.ToDecimal(Math.Round((TotalAmount - Received), 2))));
@@ -195,7 +196,7 @@ namespace PetrolPump
             DGVReports.Rows.Clear();
             MySqlFunctions Func = new MySqlFunctions();
 
-            string Query = "SELECT DateTime as Date, Name, Quantity, Rate from inventoryhistory where Name like '%" + CBInventoryAddType.Text + "%' ";
+            string Query = "SELECT DateTime as Date, Name, Quantity, Rate, (Rate*Quantity) as 'Amount' from inventoryhistory where Name like '%" + CBInventoryAddType.Text + "%' ";
             AppendQuery(ref Query, "datetime");
 
             if (CBInventoryOrderBy.Text == "Date")
@@ -225,7 +226,7 @@ namespace PetrolPump
             DGVReports.Rows.Clear();
             MySqlFunctions Func = new MySqlFunctions();
 
-            string Query = "SELECT vehiclecash.id,vehiclecash.datetime as Date, companies.name as `Company Name`, vehiclecash.receivername as `Receiver Name`, vehiclecash.Amount as `Debit`,cashiers.Name as `Cashier Name`,count(vehiclecashreceived.vehiclecashid),vehiclecash.Amount-sum(vehiclecashreceived.amount) from vehiclecash inner join companies on companies.id = vehiclecash.companyid inner join cashiers on cashiers.id = vehiclecash.cashierid left join vehiclecashreceived on vehiclecashreceived.vehiclecashid = vehiclecash.id where companies.name like '%" + CBVehicleCashCompany.Text + "%' and vehiclecash.receivername like '%" + TBVehicleCashReceiver.Text + "%' ";
+            string Query = "SELECT vehiclecash.id as 'Slip #',vehiclecash.datetime as Date, companies.name as `Company`, vehiclecash.receivername as `Receiver`, cashiers.Name as `Cashier`,vehiclecash.Amount,count(vehiclecashreceived.vehiclecashid),vehiclecash.Amount-sum(vehiclecashreceived.amount) from vehiclecash inner join companies on companies.id = vehiclecash.companyid inner join cashiers on cashiers.id = vehiclecash.cashierid left join vehiclecashreceived on vehiclecashreceived.vehiclecashid = vehiclecash.id where companies.name like '%" + CBVehicleCashCompany.Text + "%' and vehiclecash.receivername like '%" + TBVehicleCashReceiver.Text + "%' ";
             AppendQuery(ref Query, "vehiclecash.datetime");
 
             Query += " group by vehiclecash.id";
@@ -242,26 +243,27 @@ namespace PetrolPump
             Query += " " + (RBVehicleCashAsc.Checked ? " asc" : " desc");
 
             DGVReports.Columns.Clear();
-            DGVReports.Columns.Add("dgvc1", "Slip No");
+            DGVReports.Columns.Add("dgvc0", "Slip #");
             DGVReports.Columns.Add("dgvc1", "Date");
-            DGVReports.Columns.Add("dgvc2", "Company Name");
-            DGVReports.Columns.Add("dgvc2", "Receiver Name");
-            DGVReports.Columns.Add("dgvc4", "Amount");
-            DGVReports.Columns.Add("dgvc6", "Cashier Name");
-            DGVReports.Columns.Add("dgvc7", "Remarks");
+            DGVReports.Columns.Add("dgvc2", "Company");
+            DGVReports.Columns.Add("dgvc3", "Receiver");
+            DGVReports.Columns.Add("dgvc4", "Cashier");
+            DGVReports.Columns.Add("dgvc5", "Amount");
+            DGVReports.Columns.Add("dgvc6", "Remarks");
 
             MySqlDataReader Reader = Func.SelectQuery(Query);
             while (Reader.Read())
             {
-                TotalAmount += Convert.ToDouble(Reader[4].ToString());
+                TotalAmount += Convert.ToDouble(Reader[5].ToString());
 
                 DGVReports.Rows.Add(Reader[0].ToString(),
                                     Reader[1].ToString(),
                                     Reader[2].ToString(),
                                     Reader[3].ToString(),
-                                    string.Format("{0:#,###.##}", Convert.ToDecimal(Reader[4].ToString())),
-                                    Reader[5].ToString(),
+                                    Reader[4].ToString(),
+                                    string.Format("{0:#,###.##}", Convert.ToDecimal(Reader[5].ToString())),
                                     "Amount Receivable");
+
                 if (Reader[6].ToString() == "0" || Math.Round(Convert.ToDouble(Reader[7].ToString()), 0) != 0)
                     DGVReports.Rows[DGVReports.Rows.Count - 1].DefaultCellStyle.BackColor = Color.FromArgb(233, 234, 242);
 
@@ -278,8 +280,8 @@ namespace PetrolPump
                                         Reader2[0].ToString(),
                                         Reader[2].ToString(),
                                         Reader[3].ToString(),
-                                        string.Format("{0:#,###.##}", Convert.ToDecimal(Reader2[1].ToString())),
                                         Reader2[2].ToString(),
+                                        string.Format("{0:#,###.##}", Convert.ToDecimal(Reader2[1].ToString())),
                                         "Amount Received");
                 }
                 Reader2.Close();
@@ -307,7 +309,7 @@ namespace PetrolPump
             DGVReports.Rows.Clear();
             MySqlFunctions Func = new MySqlFunctions();
 
-            string Query = "SELECT credit.id,credit.datetime as Date, companies.name as `Company Name`, vehicles.number as `Vehicle Number`, credit.Amount as `Debit`,cashiers.Name as `Cashier Name`, credit.Type, Liter, Rate,count(creditreceived.creditid),credit.Amount-sum(creditreceived.amount) from credit inner join companies on companies.id = credit.companyid inner join vehicles on vehicles.id=credit.vehicleid inner join cashiers on cashiers.id = credit.cashierid left join creditreceived on creditreceived.creditid = credit.id where companies.name like '%" + CBCreditCompany.Text + "%' and vehicles.number like '%" + CBCreditVehicle.Text + "%' and credit.Type like '%" + CBCreditType.Text + "%'";
+            string Query = "SELECT credit.id as 'Slip #',credit.datetime as Date, companies.name as `Company`, vehicles.number as `Vehicle`,cashiers.Name as `Cashier`, credit.Type as 'Product', Liter as 'Quantity', Rate,credit.Amount, count(creditreceived.creditid),credit.Amount-sum(creditreceived.amount) from credit inner join companies on companies.id = credit.companyid inner join vehicles on vehicles.id=credit.vehicleid inner join cashiers on cashiers.id = credit.cashierid left join creditreceived on creditreceived.creditid = credit.id where companies.name like '%" + CBCreditCompany.Text + "%' and vehicles.number like '%" + CBCreditVehicle.Text + "%' and credit.Type like '%" + CBCreditType.Text + "%'";
             AppendQuery(ref Query, "credit.datetime");
 
             Query += " group by credit.id";
@@ -326,32 +328,32 @@ namespace PetrolPump
             Query += " " + (RBCreditAsc.Checked ? " asc" : " desc");
 
             DGVReports.Columns.Clear();
-            DGVReports.Columns.Add("dgvc0", "Slip No");
+            DGVReports.Columns.Add("dgvc0", "Slip #");
             DGVReports.Columns.Add("dgvc1", "Date");
-            DGVReports.Columns.Add("dgvc2", "Company Name");
-            DGVReports.Columns.Add("dgvc3", "Vehicle Number");
-            DGVReports.Columns.Add("dgvc4", "Amount");
-            DGVReports.Columns.Add("dgvc6", "Cashier Name");
-            DGVReports.Columns.Add("dgvc7", "Remarks");
-            DGVReports.Columns.Add("dgvc8", "Type");
-            DGVReports.Columns.Add("dgvc9", "Liter");
-            DGVReports.Columns.Add("dgvc10", "Rate");
+            DGVReports.Columns.Add("dgvc2", "Company");
+            DGVReports.Columns.Add("dgvc3", "Vehicle");
+            DGVReports.Columns.Add("dgvc4", "Cashier");
+            DGVReports.Columns.Add("dgvc5", "Product");
+            DGVReports.Columns.Add("dgvc6", "Quantity");
+            DGVReports.Columns.Add("dgvc7", "Rate");
+            DGVReports.Columns.Add("dgvc8", "Amount");
+            DGVReports.Columns.Add("dgvc9", "Remarks");
 
             MySqlDataReader Reader = Func.SelectQuery(Query);
             while (Reader.Read())
             {
-                TotalAmount += Convert.ToDouble(Reader[4].ToString());
+                TotalAmount += Convert.ToDouble(Reader[8].ToString());
 
                 DGVReports.Rows.Add(Reader[0].ToString(),
                                     Reader[1].ToString(),
                                     Reader[2].ToString(),
                                     Reader[3].ToString(),
-                                    string.Format("{0:#,###.##}", Convert.ToDecimal(Reader[4].ToString())),
+                                    Reader[4].ToString(),
                                     Reader[5].ToString(),
-                                    "Amount Receivable",
                                     Reader[6].ToString(),
                                     Reader[7].ToString(),
-                                    Reader[8].ToString());
+                                    string.Format("{0:#,###.##}", Convert.ToDecimal(Reader[8].ToString())),
+                                    "Amount Receivable");
                 if (Reader[9].ToString() == "0" || Math.Round(Convert.ToDouble(Reader[10].ToString()), 0) != 0)
                     DGVReports.Rows[DGVReports.Rows.Count - 1].DefaultCellStyle.BackColor = Color.FromArgb(233, 234, 242);
 
@@ -368,12 +370,12 @@ namespace PetrolPump
                                         Reader2[0].ToString(),
                                         Reader[2].ToString(),
                                         Reader[3].ToString(),
-                                        string.Format("{0:#,###.##}", Convert.ToDecimal(Reader2[1].ToString())),
                                         Reader2[2].ToString(),
-                                        "Amount Received",
+                                        Reader[5].ToString(),
                                         Reader[6].ToString(),
                                         Reader[7].ToString(),
-                                        Reader[8].ToString());
+                                        string.Format("{0:#,###.##}", Convert.ToDecimal(Reader2[1].ToString())),
+                                        "Amount Received");
                 }
                 Reader2.Close();
                 Func2.Dest();
@@ -397,7 +399,7 @@ namespace PetrolPump
             DGVReports.Rows.Clear();
             MySqlFunctions Func = new MySqlFunctions();
 
-            string Query = "SELECT cash.id as `Slip No`,DateTime as Date, cash.Name as `Driver Name`, VehicleNumber as `Vehicle Number`, Amount, cashiers.Name as `Cashier Name`, cash.Type, Liter, Rate FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%" + TBCashName.Text + "%' and vehiclenumber like '%" + TBCashNumber.Text + "%' and cash.type like '%" + CBCashType.Text + "%' ";
+            string Query = "SELECT cash.id as `Slip #`,DateTime as Date, cash.Name as `Driver`, VehicleNumber as `Vehicle`, cashiers.Name as `Cashier`, cash.Type as 'Product', Liter as 'Quantity', Rate, Amount FROM cash inner join cashiers on cashiers.id = cash.cashierid where cash.Name like '%" + TBCashName.Text + "%' and vehiclenumber like '%" + TBCashNumber.Text + "%' and cash.type like '%" + CBCashType.Text + "%' ";
             AppendQuery(ref Query, "datetime");
 
             if (CBCashOrderBy.Text == "Slip No")
@@ -431,45 +433,46 @@ namespace PetrolPump
             DGVReports.Rows.Clear();
             MySqlFunctions Func = new MySqlFunctions();
 
-            string Query = "select * from ( Select credit.ID ,  credit.DateTime  as Date, 'Credit' as `Sale Type`, companies.name as `Company Name`,  vehicles.number as `Vehicle Number`,  credit.Amount as `Debit`, cashiers.Name as `Cashier Name`,  credit.Type,  Liter,  Rate, count(creditreceived.creditid),  credit.Amount-sum(creditreceived.amount)  from credit inner join companies on companies.id = credit.companyid inner join vehicles on vehicles.id=credit.vehicleid inner join  cashiers on cashiers.id = credit.cashierid left join creditreceived on creditreceived.creditid = credit.id where companies.name like '%" + CBCreditVehicleCashName.Text + "%'  group by credit.id union all Select  vehiclecash.ID , vehiclecash.DateTime as Date,'V. Cash' as `Sale Type`, companies.name as `Company Name`, vehiclecash.receivername as `Receiver Name`, vehiclecash.Amount as `Debit`, cashiers.Name as `Cashier Name`, '-' as Type,  '-' as Liter,  '-' as Rate, count(vehiclecashreceived.vehiclecashid), vehiclecash.Amount-sum(vehiclecashreceived.amount) from vehiclecash inner join companies on companies.id = vehiclecash.companyid inner join cashiers on cashiers.id = vehiclecash.cashierid left join vehiclecashreceived on vehiclecashreceived.vehiclecashid = vehiclecash.id where companies.name like '%" + CBCreditVehicleCashName.Text + "%' group by vehiclecash.id) as temp ";
+            string Query = "select * from ( Select credit.ID as 'Slip #' , credit.DateTime  as Date, 'Credit' as `Category`, companies.name as `Company`,  vehicles.number as `Vehicle`,  cashiers.Name as `Cashier`, credit.Type as 'Product',  Liter as 'Quantity',  Rate, credit.Amount, count(creditreceived.creditid),  credit.Amount-sum(creditreceived.amount)  from credit inner join companies on companies.id = credit.companyid inner join vehicles on vehicles.id=credit.vehicleid inner join  cashiers on cashiers.id = credit.cashierid left join creditreceived on creditreceived.creditid = credit.id where companies.name like '%" + CBCreditVehicleCashName.Text + "%' group by credit.id union all Select  vehiclecash.ID as 'Slip #', vehiclecash.DateTime as Date, 'Vehicle' as `Category`, companies.name as `Company`, vehiclecash.receivername as `Receiver`, cashiers.Name as `Cashier`, '-' as 'Product',  '-' as 'Quantity',  '-' as 'Rate', vehiclecash.Amount, count(vehiclecashreceived.vehiclecashid), vehiclecash.Amount-sum(vehiclecashreceived.amount) from vehiclecash inner join companies on companies.id = vehiclecash.companyid inner join cashiers on cashiers.id = vehiclecash.cashierid left join vehiclecashreceived on vehiclecashreceived.vehiclecashid = vehiclecash.id where companies.name like '%" + CBCreditVehicleCashName.Text + "%' group by vehiclecash.id) as temp ";
             AppendQuery(ref Query, "Date");
 
             if (CBCreditVehicleCashOrder.Text == "Slip No")
-                Query += " order by ID";
+                Query += " order by 'Slip #'";
             else
                 Query += " order by `" + CBCreditVehicleCashOrder.Text + "`";
 
             Query += " " + (RBCreditVehicleCashAsc.Checked ? " asc" : " desc");
 
             DGVReports.Columns.Clear();
-            DGVReports.Columns.Add("dgvc0", "Slip No");
+            DGVReports.Columns.Add("dgvc0", "Slip #");
             DGVReports.Columns.Add("dgvc1", "Date");
-            DGVReports.Columns.Add("dgvc2", "Sale Type");
-            DGVReports.Columns.Add("dgvc3", "Company Name");
-            DGVReports.Columns.Add("dgvc4", "V. No / Rec. Name");
-            DGVReports.Columns.Add("dgvc5", "Amount");
-            DGVReports.Columns.Add("dgvc7", "Cashier Name");
-            DGVReports.Columns.Add("dgvc8", "Remarks");
-            DGVReports.Columns.Add("dgvc9", "Fuel Type");
-            DGVReports.Columns.Add("dgvc10", "Liter");
-            DGVReports.Columns.Add("dgvc11", "Rate");
+            DGVReports.Columns.Add("dgvc2", "Category");
+            DGVReports.Columns.Add("dgvc3", "Company");
+            DGVReports.Columns.Add("dgvc4", "V. # / Rec. Name");
+            DGVReports.Columns.Add("dgvc5", "Cashier");
+            DGVReports.Columns.Add("dgvc6", "Product");
+            DGVReports.Columns.Add("dgvc7", "Quantity");
+            DGVReports.Columns.Add("dgvc8", "Rate");
+            DGVReports.Columns.Add("dgvc9", "Amount");
+            DGVReports.Columns.Add("dgvc10", "Remarks");
 
             MySqlDataReader Reader = Func.SelectQuery(Query);
             while (Reader.Read())
             {
-                TotalAmount += Convert.ToDouble(Reader[5].ToString());
+                TotalAmount += Convert.ToDouble(Reader[9].ToString());
 
                 DGVReports.Rows.Add(Reader[0].ToString(),
                                     Reader[1].ToString(),
                                     Reader[2].ToString(),
                                     Reader[3].ToString(),
                                     Reader[4].ToString(),
-                                    string.Format("{0:#,###.##}", Convert.ToDecimal(Reader[5].ToString())),
+                                    Reader[5].ToString(),
                                     Reader[6].ToString(),
-                                    "Amount Receivable",
                                     Reader[7].ToString(),
                                     Reader[8].ToString(),
-                                    Reader[9].ToString());
+                                    string.Format("{0:#,###.##}", Convert.ToDecimal(Reader[9].ToString())),
+                                    "Amount Receivable");
+
                 if (Reader[10].ToString() == "0" || Math.Round(Convert.ToDouble(Reader[11].ToString()), 0) != 0)
                     DGVReports.Rows[DGVReports.Rows.Count - 1].DefaultCellStyle.BackColor = Color.FromArgb(233, 234, 242);
 
@@ -495,12 +498,12 @@ namespace PetrolPump
                                         Reader[2].ToString(),
                                         Reader[3].ToString(),
                                         Reader[4].ToString(),
-                                        string.Format("{0:#,###.##}", Convert.ToDecimal(Reader2[1].ToString())),
                                         Reader2[2].ToString(),
-                                        "Amount Received",
+                                        Reader[6].ToString(),
                                         Reader[7].ToString(),
                                         Reader[8].ToString(),
-                                        Reader[9].ToString());
+                                        string.Format("{0:#,###.##}", Convert.ToDecimal(Reader2[1].ToString())),
+                                        "Amount Received");
                 }
                 Reader2.Close();
                 Func2.Dest();
@@ -735,12 +738,12 @@ namespace PetrolPump
             else if (ClickedItem == 1)
             {
                 ReportType = "Credit Report";
-                Columns = new int[] { 0, 1, 2, 3, 4, 5, 6 };
+                Columns = new int[] { 0, 1, 2, 3, 4, 8, 9 };
             }
             else if (ClickedItem == 2)
             {
                 ReportType = "Line Credit Report";
-                Columns = new int[] { 0, 1, 2, 3, 4, 5, 6 };
+                Columns = new int[] { 0, 1, 2, 3, 4, 8, 9 };
             }
             else if (ClickedItem == 3)
             {
@@ -750,12 +753,12 @@ namespace PetrolPump
             else if (ClickedItem == 4)
             {
                 ReportType = "Inventory Added Report";
-                Columns = new int[] { 0, 1, 2, 3 };
+                Columns = new int[] { 0, 1, 2, 3, 4 };
             }
             else if (ClickedItem == 5)
             {
                 ReportType = "Credit and Vehicle Cash Report";
-                Columns = new int[] { 0, 1, 2, 3, 4, 5, 6, 7 };
+                Columns = new int[] { 0, 1, 2, 3, 4, 5, 9, 10 };
             }
 
             FileInfo newFile = new FileInfo(ReportType + " - " + GenerationTime.ToString("dddd, MMMM dd, yyyy - hh;mm;ss tt") + ".xlsx");
@@ -766,7 +769,7 @@ namespace PetrolPump
             }
             using (ExcelPackage package = new ExcelPackage(newFile))
             {
-                int Row = 5;
+                int Row = 1;
 
                 // add a new worksheet to the empty workbook
                 ExcelWorksheet worksheet = null;
@@ -776,119 +779,12 @@ namespace PetrolPump
                 worksheet.Cells[Row, 1].Value = ReportType;
 
                 worksheet.Cells[Row, 1, Row, Columns.Length].Merge = true;
-                worksheet.Cells[Row, 1].Style.Font.Size = 26;
+                //worksheet.Cells[Row, 1].Style.Font.Size = 26;
                 worksheet.Cells[Row, 1].Style.Font.UnderLine = true;
                 worksheet.Cells[Row, 1].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
 
-                //if (ClickedItem == 0)
-                //{
-                //    worksheet.Cells[Row + 1, 1].Value = "Driver Name: " + TBCashName.Text;
-                //    worksheet.Cells[Row + 2, 1].Value = "Vehicle Number: " + TBCashNumber.Text;
-                //    worksheet.Cells[Row + 3, 1].Value = "Fuel Type: " + TBCashType.Text;
-                //    worksheet.Cells[Row + 1, 1, Row + 1, Columns.Length].Merge = true;
-                //    worksheet.Cells[Row + 2, 1, Row + 2, Columns.Length].Merge = true;
-                //    worksheet.Cells[Row + 3, 1, Row + 3, Columns.Length].Merge = true;
-                //    worksheet.Cells[Row, 1, Row + 3, 1].Style.Font.Size = 16;
-
-                //    worksheet.Row(Row + 1).Height = 25;
-                //    worksheet.Row(Row + 1).Style.VerticalAlignment = ExcelVerticalAlignment.Center;
-
-                //    worksheet.Row(Row + 2).Height = 25;
-                //    worksheet.Row(Row + 2).Style.VerticalAlignment = ExcelVerticalAlignment.Center;
-
-                //    worksheet.Row(Row + 3).Height = 25;
-                //    worksheet.Row(Row + 3).Style.VerticalAlignment = ExcelVerticalAlignment.Center;
-
-                //    Row += 3;
-                //}
-
-                //else if (ClickedItem == 1)
-                //{
-                //    worksheet.Cells[Row + 1, 1].Value = "Company Name: " + TBCreditCompany.Text;
-                //    worksheet.Cells[Row + 2, 1].Value = "Vehicle Number: " + TBCreditVehicle.Text;
-                //    worksheet.Cells[Row + 3, 1].Value = "Fuel Type: " + TBCashType.Text;
-                //    worksheet.Cells[Row + 1, 1, Row + 1, Columns.Length].Merge = true;
-                //    worksheet.Cells[Row + 2, 1, Row + 2, Columns.Length].Merge = true;
-                //    worksheet.Cells[Row + 3, 1, Row + 3, Columns.Length].Merge = true;
-                //    worksheet.Cells[Row, 1, Row + 3, 1].Style.Font.Size = 16;
-
-                //    worksheet.Row(Row + 1).Height = 25;
-                //    worksheet.Row(Row + 1).Style.VerticalAlignment = ExcelVerticalAlignment.Center;
-
-                //    worksheet.Row(Row + 2).Height = 25;
-                //    worksheet.Row(Row + 2).Style.VerticalAlignment = ExcelVerticalAlignment.Center;
-
-                //    worksheet.Row(Row + 3).Height = 25;
-                //    worksheet.Row(Row + 3).Style.VerticalAlignment = ExcelVerticalAlignment.Center;
-
-                //    Row += 3;
-                //}
-
-                //else if (ClickedItem == 2)
-                //{
-                //    worksheet.Cells[Row + 1, 1].Value = "Customer Name: " + TBLineCreditCustomer.Text;
-                //    worksheet.Cells[Row + 2, 1].Value = "Vehicle Number: " + TBLineCreditVehicle.Text;
-                //    worksheet.Cells[Row + 3, 1].Value = "Fuel Type: " + TBCashType.Text;
-                //    worksheet.Cells[Row + 1, 1, Row + 1, Columns.Length].Merge = true;
-                //    worksheet.Cells[Row + 2, 1, Row + 2, Columns.Length].Merge = true;
-                //    worksheet.Cells[Row + 3, 1, Row + 3, Columns.Length].Merge = true;
-                //    worksheet.Cells[Row, 1, Row + 3, 1].Style.Font.Size = 16;
-
-                //    worksheet.Row(Row + 1).Height = 25;
-                //    worksheet.Row(Row + 1).Style.VerticalAlignment = ExcelVerticalAlignment.Center;
-
-                //    worksheet.Row(Row + 2).Height = 25;
-                //    worksheet.Row(Row + 2).Style.VerticalAlignment = ExcelVerticalAlignment.Center;
-
-                //    worksheet.Row(Row + 3).Height = 25;
-                //    worksheet.Row(Row + 3).Style.VerticalAlignment = ExcelVerticalAlignment.Center;
-
-                //    Row += 3;
-                //}
-
-                //else if (ClickedItem == 3)
-                //{
-                //    worksheet.Cells[Row + 1, 1].Value = "Company Name: " + TBVehicleCashCompany.Text;
-                //    worksheet.Cells[Row + 2, 1].Value = "Receiver Name: " + TBVehicleCashReceiver.Text;
-                //    worksheet.Cells[Row + 1, 1, Row + 1, Columns.Length].Merge = true;
-                //    worksheet.Cells[Row + 2, 1, Row + 2, Columns.Length].Merge = true;
-                //    worksheet.Cells[Row, 1, Row + 2, 1].Style.Font.Size = 16;
-
-                //    worksheet.Row(Row + 1).Height = 25;
-                //    worksheet.Row(Row + 1).Style.VerticalAlignment = ExcelVerticalAlignment.Center;
-
-                //    worksheet.Row(Row + 2).Height = 25;
-                //    worksheet.Row(Row + 2).Style.VerticalAlignment = ExcelVerticalAlignment.Center;
-
-                //    Row += 2;
-                //}
-
-                //else if (ClickedItem == 4)
-                //{
-                //    worksheet.Cells[Row + 1, 1].Value = "Fuel Type: " + TBInventoryAddType.Text;
-                //    worksheet.Cells[Row + 1, 1, Row + 1, Columns.Length].Merge = true;
-                //    worksheet.Cells[Row, 1, Row + 1, 1].Style.Font.Size = 16;
-
-                //    worksheet.Row(Row + 1).Height = 25;
-                //    worksheet.Row(Row + 1).Style.VerticalAlignment = ExcelVerticalAlignment.Center;
-
-                //    Row += 1;
-                //}
-
-                //else if (ClickedItem == 5)
-                //{
-                //    worksheet.Cells[Row + 1, 1].Value = "Company Name: " + TBCreditCompany.Text;
-                //    worksheet.Cells[Row + 1, 1, Row + 1, Columns.Length].Merge = true;
-                //    worksheet.Cells[Row, 1, Row + 1, 1].Style.Font.Size = 16;
-
-                //    worksheet.Row(Row + 1).Height = 25;
-                //    worksheet.Row(Row + 1).Style.VerticalAlignment = ExcelVerticalAlignment.Center;
-
-                //    Row += 1;
-                //}
-
                 //Logo Title
-                var MainLogo = worksheet.Drawings.AddPicture("Main Logo", new Bitmap(Properties.Resources.Main_Logo, 60, 60));
+                /*var MainLogo = worksheet.Drawings.AddPicture("Main Logo", new Bitmap(Properties.Resources.Main_Logo, 60, 60));
                 MainLogo.SetPosition(0, 0, 0, 0);
 
                 double ShellLogoWidthDouble = (double)Properties.Resources.Shell_Logo.Width / Properties.Resources.Shell_Logo.Height;
@@ -912,7 +808,7 @@ namespace PetrolPump
                // worksheet.Cells[3, 1, 3, Columns.Length].Merge = true;
                 //worksheet.Row(3).Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
                 //worksheet.Row(3).Style.VerticalAlignment = ExcelVerticalAlignment.Bottom;
-                //worksheet.Row(3).Height = 20;
+                //worksheet.Row(3).Height = 20;*/
 
                 Row += 2;
 
@@ -935,7 +831,7 @@ namespace PetrolPump
                     worksheet.Cells[Row, 1].Value = "Billing Period: Last 30 Days";
 
                 worksheet.Cells[Row, 1, Row, Columns.Length].Merge = true;
-                worksheet.Cells[Row, 1, Row, 1].Style.Font.Size = 14;
+                //worksheet.Cells[Row, 1, Row, 1].Style.Font.Size = 12;
 
                 Row++;
 
@@ -974,7 +870,7 @@ namespace PetrolPump
                 if (DateRowAdded)
                 {
                     worksheet.Cells[Row, 1, Row, Columns.Length].Merge = true;
-                    worksheet.Cells[Row, 1, Row, 1].Style.Font.Size = 14;
+                    //worksheet.Cells[Row, 1, Row, 1].Style.Font.Size = 12;
 
                     Row++;
                 }
@@ -989,10 +885,10 @@ namespace PetrolPump
                 foreach (int c in Columns)
                 {
                     if (DGVReports.Columns[c].HeaderText == "Slip No")
-                        worksheet.Cells[Row, CurrentExcelColumn].Value = "No";
+                        worksheet.Cells[Row, CurrentExcelColumn].Value = "Slip #";
 
                     else if (DGVReports.Columns[c].HeaderText == "Vehicle Number")
-                        worksheet.Cells[Row, CurrentExcelColumn].Value = "V. No";
+                        worksheet.Cells[Row, CurrentExcelColumn].Value = "Vehicle";
 
                     else if (DGVReports.Columns[c].HeaderText == "Cashier Name")
                         worksheet.Cells[Row, CurrentExcelColumn].Value = "Cashier";
@@ -1006,25 +902,32 @@ namespace PetrolPump
                     else if (DGVReports.Columns[c].HeaderText == "Receiver Name")
                         worksheet.Cells[Row, CurrentExcelColumn].Value = "Receiver";
 
-                    else if (DGVReports.Columns[c].HeaderText == "Sale Type")
-                        worksheet.Cells[Row, CurrentExcelColumn].Value = "Type";
+                    else if (DGVReports.Columns[c].HeaderText == "Sale Type" ||
+                                DGVReports.Columns[c].HeaderText == "Type")
+                        worksheet.Cells[Row, CurrentExcelColumn].Value = "Product";
 
                     else if (DGVReports.Columns[c].HeaderText == "V. No / Rec. Name")
-                        worksheet.Cells[Row, CurrentExcelColumn].Value = "V. No / Name";
+                        worksheet.Cells[Row, CurrentExcelColumn].Value = "Vehicle / Name";
+
+                    else if (DGVReports.Columns[c].HeaderText == "Liter")
+                        worksheet.Cells[Row, CurrentExcelColumn].Value = "Quantity";
 
                     else
                         worksheet.Cells[Row, CurrentExcelColumn].Value = DGVReports.Columns[c].HeaderText;
 
                     worksheet.Cells[Row, CurrentExcelColumn].Style.Font.Bold = true;
-                    worksheet.Cells[Row, CurrentExcelColumn].Style.Font.Size = 14;
+                    //worksheet.Cells[Row, CurrentExcelColumn].Style.Font.Size = 14;
                     worksheet.Cells[Row, CurrentExcelColumn].Style.Border.BorderAround(ExcelBorderStyle.Thin);
                     CurrentExcelColumn++;
                 }
-
-                worksheet.Row(Row).Height = 25;
+                
+                //worksheet.Row(Row).Height = 25;
                 worksheet.Row(Row).Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
 
+                ExcelRange HeaderCell = worksheet.Cells[Row, 1, Row, CurrentExcelColumn - 1];
+
                 Row += 1;
+                int TableRowStart = Row;
 
                 int RowCount = DGVReports.Rows.Count;
                 if (ClickedItem != 0 && ClickedItem != 4)
@@ -1032,20 +935,33 @@ namespace PetrolPump
 
                 for (int r = 0; r < RowCount; r++)
                 {
+                    if (r % 40 == 0 && r != 0)
+                    {
+                        HeaderCell.Copy(worksheet.Cells[Row, 1, Row, CurrentExcelColumn]);
+                        Row++;
+                    }
+
                     CurrentExcelColumn = 1;
                     foreach (int c in Columns)
                     {
-                        if (ClickedItem != 4 && c == 1)
+                        if ((ClickedItem != 4 && c == 1) || (ClickedItem == 4 && c == 0))
                             worksheet.Cells[Row, CurrentExcelColumn].Value = Convert.ToDateTime(DGVReports.Rows[r].Cells[c].Value).ToString("dd-MM-yyyy");
 
                         else
-                            worksheet.Cells[Row, CurrentExcelColumn].Value = DGVReports.Rows[r].Cells[c].Value.ToString().Replace("Amount ", "");
+                        {
+                            double ValueDouble;
+                            string ValueString = DGVReports.Rows[r].Cells[c].Value.ToString();
+                            if (double.TryParse(ValueString, out ValueDouble))
+                                worksheet.Cells[Row, CurrentExcelColumn].Value = Math.Round(ValueDouble, 2);
+                            else
+                                worksheet.Cells[Row, CurrentExcelColumn].Value = DGVReports.Rows[r].Cells[c].Value.ToString().Replace("Amount ", "");
+                        }
 
                         worksheet.Cells[Row, CurrentExcelColumn].Style.Border.BorderAround(ExcelBorderStyle.Thin);
                         CurrentExcelColumn++;
                     }
 
-                    worksheet.Row(Row).Height = 23;
+                    //worksheet.Row(Row).Height = 23;
                     if (DGVReports.Rows[r].DefaultCellStyle.BackColor == Color.FromArgb(233, 234, 242))
                     {
                         worksheet.Cells[Row, 1, Row, Columns.Length].Style.Fill.PatternType = ExcelFillStyle.Solid;
@@ -1057,35 +973,68 @@ namespace PetrolPump
                 if (ClickedItem != 0 && ClickedItem != 4)
                 {
                     Row++;
-                    int Cell = 3;
+                    int Cell = 4;
                     if (ClickedItem == 5)
-                        Cell = 4;
+                        Cell = 5;
 
                     worksheet.Cells[Row, Cell].Value = "Total Amount";
                     worksheet.Cells[Row + 1, Cell].Value = "Amount Received";
                     worksheet.Cells[Row + 2, Cell].Value = "Amount Receivable";
-                    worksheet.Cells[Row, Cell + 1].Value = DGVReports.Rows[DGVReports.Rows.Count - 3].Cells[Cell + 1].Value.ToString();
-                    worksheet.Cells[Row + 1, Cell + 1].Value = DGVReports.Rows[DGVReports.Rows.Count - 2].Cells[Cell + 1].Value.ToString();
-                    worksheet.Cells[Row + 2, Cell + 1].Value = DGVReports.Rows[DGVReports.Rows.Count - 1].Cells[Cell + 1].Value.ToString();
 
-                    worksheet.Cells[Row, Cell, Row + 2, Cell + 1].Style.Border.BorderAround(ExcelBorderStyle.Thick);
-                    worksheet.Cells[Row, Cell, Row + 2, Cell].Style.Border.Right.Style = ExcelBorderStyle.Thin;
-                    worksheet.Cells[Row, Cell, Row, Cell + 1].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
-                    worksheet.Cells[Row + 1, Cell, Row + 1, Cell + 1].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+                    double ValueDouble;
 
-                    worksheet.Row(Row).Height = 23;
-                    worksheet.Row(Row + 1).Height = 23;
-                    worksheet.Row(Row + 2).Height = 23;
+                    if (double.TryParse(DGVReports.Rows[DGVReports.Rows.Count - 3].Cells[Cell].Value.ToString(), out ValueDouble))
+                        worksheet.Cells[Row, Cell + 2].Value = Math.Round(ValueDouble, 2);
+                    else
+                        worksheet.Cells[Row, Cell + 2].Value = 0;
+
+                    if (double.TryParse(DGVReports.Rows[DGVReports.Rows.Count - 2].Cells[Cell].Value.ToString(), out ValueDouble))
+                        worksheet.Cells[Row + 1, Cell + 2].Value = Math.Round(ValueDouble, 2);
+                    else
+                        worksheet.Cells[Row + 1, Cell + 2].Value = 0;
+
+                    if (double.TryParse(DGVReports.Rows[DGVReports.Rows.Count - 1].Cells[Cell].Value.ToString(), out ValueDouble))
+                        worksheet.Cells[Row + 2, Cell + 2].Value = Math.Round(ValueDouble, 2);
+                    else
+                        worksheet.Cells[Row + 2, Cell + 2].Value = 0;
+
+                    worksheet.Cells[Row, Cell, Row + 2, Cell + 2].Style.Border.BorderAround(ExcelBorderStyle.Thick);
+                    worksheet.Cells[Row, Cell, Row + 2, Cell + 1].Style.Border.Right.Style = ExcelBorderStyle.Thin;
+                    worksheet.Cells[Row, Cell, Row, Cell + 2].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+                    worksheet.Cells[Row + 1, Cell, Row + 1, Cell + 2].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+
+                    worksheet.Cells[Row, Cell, Row, Cell + 1].Merge = true;
+                    worksheet.Cells[Row + 1, Cell, Row + 1, Cell + 1].Merge = true;
+                    worksheet.Cells[Row + 2, Cell, Row + 2, Cell + 1].Merge = true;
 
                     Row += 2;
                 }
 
-                worksheet.Cells[MainRow + 1, 1, Row, Columns.Length].Style.Font.Size = 12;
-                worksheet.Cells[MainRow, 1, Row, Columns.Length].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
-                worksheet.Cells.AutoFitColumns(1, 20);
-
+                // NUMBER FORMATTING
+                if (ClickedItem == 0)
+                {
+                    worksheet.Cells[TableRowStart, 6, Row, 8].Style.Numberformat.Format = "#,##0.00";
+                }
+                if (ClickedItem == 1 || ClickedItem == 2 || ClickedItem == 3)
+                {
+                    worksheet.Cells[TableRowStart, 6, Row, 6].Style.Numberformat.Format = "#,##0.00";
+                }
                 if (ClickedItem == 4)
-                    worksheet.Column(1).Width = 25;
+                {
+                    worksheet.Cells[TableRowStart, 3, Row, 5].Style.Numberformat.Format = "#,##0.00";
+                }
+                if (ClickedItem == 5)
+                {
+                    worksheet.Cells[TableRowStart, 7, Row, 7].Style.Numberformat.Format = "#,##0.00";
+                }
+
+                //worksheet.Cells[MainRow + 1, 1, Row, Columns.Length].Style.Font.Size = 12;
+                worksheet.Cells[MainRow, 1, Row, Columns.Length].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+                //worksheet.Cells.AutoFitColumns(1, 20);
+                worksheet.Cells.AutoFitColumns();
+
+                worksheet.Cells.Style.Font.Size = 11;
+                worksheet.Cells.Style.Font.Name = "Times New Roman";
 
                 // add the page number to the footer plus the total number of pages
                 worksheet.HeaderFooter.OddFooter.RightAlignedText = string.Format("Page " + ExcelHeaderFooter.PageNumber + " of " + ExcelHeaderFooter.NumberOfPages);
@@ -1139,7 +1088,7 @@ namespace PetrolPump
             Offset += 15;
             PGraphics.DrawString("LINE CREDIT RECEIPT", new Font(FontName, 14), new SolidBrush(Color.Black), new PointF(X + ((MaxX - PGraphics.MeasureString("LINE CREDIT RECEIPT", new Font(FontName, 14)).Width) / 2), Y + Offset));
             Offset += 30;
-            PGraphics.DrawLine(DashedPen, X, Y + Offset, MaxX, Y + Offset);
+            PGraphics.DrawLine(DashedPen, X, Y + Offset, MaxX + X, Y + Offset);
             Offset += 10;
         }
 

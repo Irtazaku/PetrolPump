@@ -159,11 +159,11 @@ namespace PetrolPump
             FontFamily FontName = this.Font.FontFamily;
 
             //int MaxX = 300;
-            int MaxX = 750;
+            int MaxX = 720;
             int Y = 0;
             //int Offset = 0;
             int Offset = 70;
-            int X = 0;
+            int X = 30;
             //int Logo = 60;
             int MaxY = 333;
             
@@ -183,12 +183,12 @@ namespace PetrolPump
             Offset += 10;
             PGraphics.DrawString("Cash Sale Receipt", new Font(FontName, 14), new SolidBrush(Color.Black), new PointF(X + ((MaxX - PGraphics.MeasureString("Cash Sale Receipt", new Font(FontName, 14)).Width) / 2), Y + Offset));
             Offset += 30;
-            PGraphics.DrawLine(DashedPen, X, Y + Offset, MaxX, Y + Offset);
+            PGraphics.DrawLine(DashedPen, X, Y + Offset, MaxX + X, Y + Offset);
             Offset += 8;
             PGraphics.DrawString("Slip Number: " + InsertID, new Font(FontName, 12), new SolidBrush(Color.Black), new PointF(X, Y + Offset));
             PGraphics.DrawString("Cashier: " + MySqlFunctions.CashierName, new Font(FontName, 12), new SolidBrush(Color.Black), new PointF(X + (MaxX - PGraphics.MeasureString("Cashier: " + MySqlFunctions.CashierName, new Font(FontName, 12)).Width), Y + Offset));
             Offset += 25;
-            PGraphics.DrawLine(DashedPen, X, Y + Offset, MaxX, Y + Offset);
+            PGraphics.DrawLine(DashedPen, X, Y + Offset, MaxX + X, Y + Offset);
             Offset += 20;
 
             if (TBName.Text != "" && TBVehicleNumber.Text != "") //both entered
@@ -242,7 +242,7 @@ namespace PetrolPump
             }
 
             Offset += 30;
-            PGraphics.DrawLine(DashedPen, X, Y + Offset, MaxX, Y + Offset);
+            PGraphics.DrawLine(DashedPen, X, Y + Offset, MaxX + X, Y + Offset);
             Offset += 5;
             PGraphics.DrawString("THANK YOU!", new Font(FontName, 12, FontStyle.Bold), new SolidBrush(Color.Black), new PointF(X + ((MaxX - PGraphics.MeasureString("THANK YOU!", new Font(FontName, 12, FontStyle.Bold)).Width) / 2), Y + Offset));
             Offset += 23;

@@ -137,28 +137,31 @@ namespace PetrolPump
         private void AdminPanelForm_Load(object sender, EventArgs e)
         {
             if (CBOrderBy.Items.Count > 0)
-            CBOrderBy.SelectedIndex = 0;
+                CBOrderBy.SelectedIndex = 0;
 
             if (CBSearchType.Items.Count > 0)
-            CBSearchType.SelectedIndex = 0;
+                CBSearchType.SelectedIndex = 0;
 
             if (CBAddType.Items.Count > 0)
-            CBAddType.SelectedIndex = 0;
+                CBAddType.SelectedIndex = 0;
 
             foreach (string Item in Inventory.Name)
             {
                 CBAddMachineType.Items.Add(Item);
                 CBEditMachineType.Items.Add(Item);
             }
-    
+
             foreach (string Name in Machines.MachineName)
             {
                 CBEditMachineName.Items.Add(Name);
             }
 
+            int PrinterIndex = -1;
             foreach (string printer in System.Drawing.Printing.PrinterSettings.InstalledPrinters)
             {
                 CBPrinterName.Items.Add(printer);
+                if (printer == Inventory.PrinterName)
+                    PrinterIndex = CBPrinterName.Items.Count - 1;
             }
 
             if (CBAddMachineType.Items.Count > 0)
@@ -166,7 +169,15 @@ namespace PetrolPump
             if (CBEditMachineType.Items.Count > 0)
                 CBEditMachineType.SelectedIndex = 0;
             if (CBPrinterName.Items.Count > 0)
-                CBPrinterName.SelectedIndex = 0;
+            {
+                if (PrinterIndex != -1)
+                {
+                    PrinterIndex = CBPrinterName.Items.IndexOf(Inventory.PrinterName);
+                }
+                else
+                    PrinterIndex = 0;
+                CBPrinterName.SelectedIndex = PrinterIndex;
+            }
         }
 
         private void TBSearchID_TextChanged(object sender, EventArgs e)

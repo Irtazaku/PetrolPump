@@ -1425,12 +1425,12 @@
             this.Controls.Add(this.menuStrip2);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.DGVReports);
-            this.Controls.Add(this.PanelCredit);
-            this.Controls.Add(this.PanelVehicleCash);
-            this.Controls.Add(this.PanelCreditVehicleCash);
             this.Controls.Add(this.PanelCash);
             this.Controls.Add(this.PanelLineCredit);
             this.Controls.Add(this.PanelInventoryAdded);
+            this.Controls.Add(this.PanelCredit);
+            this.Controls.Add(this.PanelVehicleCash);
+            this.Controls.Add(this.PanelCreditVehicleCash);
             this.Name = "ReportsForm";
             this.Text = "Reports - Sitara Hilal Petroleum Service";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
