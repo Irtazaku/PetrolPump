@@ -45,6 +45,11 @@ namespace PetrolPump
                 MessageBox.Show("No company selected", "Operation Unsuccessful", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            if (DPTo.Value < DPFrom.Value)
+            {
+                MessageBox.Show("Invalide date range.", "Operation Unsuccessful", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             string fileName = "Bill - " + CBCompany.Text + " - " + DPFrom.Value.ToString("dd MMM yyyy") + " to " + DPTo.Value.ToString("yyyy-MM-dd");
             FileInfo newFile = new FileInfo( fileName + ".xlsx");
             //if (newFile.Exists)
@@ -87,7 +92,7 @@ namespace PetrolPump
 
                 Row++;
 
-                worksheet.Cells[Row, 6].Value = "DATE " + DPFrom.Value.ToString("dd MMM yyyy") + " TO " + DateTime.Today.ToString("dd MMM yyyy");
+                worksheet.Cells[Row, 6].Value = "DATE " + DPFrom.Value.ToString("dd MMM yyyy") + " TO " + DPTo.Value.ToString("dd MMM yyyy");
                 worksheet.Cells[Row, 6].Style.Font.Bold = true;
                 worksheet.Cells[Row, 6, Row, 9].Merge = true;
                 worksheet.Cells[Row, 6].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
@@ -192,8 +197,8 @@ namespace PetrolPump
 
                 Row++;
 
-                double BalanceCredit = Math.Round(Convert.ToDouble(Func.ScalarString("SELECT sum(amount) FROM credit where companyid = '" + Company.ID[CBCompany.SelectedIndex] + "'").ToString()), 2);
-                double BalanceVehicleCash = Math.Round(Convert.ToDouble(Func.ScalarString("SELECT sum(amount) FROM vehiclecash where companyid = '" + Company.ID[CBCompany.SelectedIndex] + "'").ToString()), 2);
+                double BalanceCredit = Math.Round(Convert.ToDouble(Func.ScalarString("SELECT sum(amount) FROM credit where companyid = '" + Company.ID[CBCompany.SelectedIndex] + "'" + "and date(datetime) <= date('" + DPTo.Value.ToString("yyyy-MM-dd")+"')").ToString()), 2);
+                double BalanceVehicleCash = Math.Round(Convert.ToDouble(Func.ScalarString("SELECT sum(amount) FROM vehiclecash where companyid = '" + Company.ID[CBCompany.SelectedIndex] + "'" + "and date(datetime)  <= date('" + DPTo.Value.ToString("yyyy-MM-dd") + "')").ToString()), 2);
                 double Balance = BalanceCredit + BalanceVehicleCash;
                 worksheet.Cells[Row, 6].Value = "Previous Dues";
                 worksheet.Cells[Row, 6, Row, 8].Merge = true;
@@ -201,8 +206,8 @@ namespace PetrolPump
 
                 Row++;
                 
-                double ReceivedCredit = Math.Round(Convert.ToDouble(Func.ScalarString("SELECT coalesce(sum(creditreceived.amount),0) FROM creditreceived inner join credit on credit.id = creditreceived.creditid where companyid = '" + Company.ID[CBCompany.SelectedIndex] + "'")), 2);
-                double ReceivedVehicleCash = Math.Round(Convert.ToDouble(Func.ScalarString("SELECT coalesce(sum(vehiclecashreceived.amount),0) FROM vehiclecashreceived inner join vehiclecash on vehiclecash.id = vehiclecashreceived.vehiclecashid where companyid = '" + Company.ID[CBCompany.SelectedIndex] + "'")), 2);
+                double ReceivedCredit = Math.Round(Convert.ToDouble(Func.ScalarString("SELECT coalesce(sum(creditreceived.amount),0) FROM creditreceived inner join credit on credit.id = creditreceived.creditid where companyid = '" + Company.ID[CBCompany.SelectedIndex] + "'" + " and " + " date(creditreceived.DateTime) between '" + DPFrom.Value.ToString("yyyy-MM-dd") + "' and '" + DPTo.Value.ToString("yyyy-MM-dd") + "' ")), 2);
+                double ReceivedVehicleCash = Math.Round(Convert.ToDouble(Func.ScalarString("SELECT coalesce(sum(vehiclecashreceived.amount),0) FROM vehiclecashreceived inner join vehiclecash on vehiclecash.id = vehiclecashreceived.vehiclecashid where companyid = '" + Company.ID[CBCompany.SelectedIndex] + "'" + " and " + " date(vehiclecashreceived.DateTime) between '" + DPFrom.Value.ToString("yyyy-MM-dd") + "' and '" + DPTo.Value.ToString("yyyy-MM-dd") + "' ")), 2);
                 double Received = ReceivedCredit + ReceivedVehicleCash;
                 worksheet.Cells[Row, 6].Value = "Amount Received";
                 worksheet.Cells[Row, 6, Row, 8].Merge = true;
