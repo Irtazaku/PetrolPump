@@ -76,65 +76,47 @@ namespace PetrolPump
                 ExcelWorksheet worksheet = null;
                 worksheet = package.Workbook.Worksheets.Add("Bill - " + CBCompany.Text);
 
-                int Row = 1;
-
-
-                var MainLogo = worksheet.Drawings.AddPicture("Main Logo", new Bitmap(Properties.Resources.Main_Logo, 45, 30));
-                MainLogo.SetPosition(0, 5, 0, 5);
-                var ShellLogo = worksheet.Drawings.AddPicture("Shell Logo", new Bitmap(PetrolPump.Properties.Resources.Shell_Logo, 45, 30));
-                ShellLogo.SetPosition(0, 5, 7, 5);
-
-
-                worksheet.Cells[Row, 1].Value = "SITARA HILAL PETROLEUM SERVICES";
-                worksheet.Cells[Row, 1].Style.Font.Size = 22;
-                worksheet.Cells[Row, 1, Row, 8].Merge = true;
-                worksheet.Cells[Row, 1].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
-                worksheet.Cells[Row, 1, Row, 8].Style.Border.BorderAround(ExcelBorderStyle.Thin);
-                worksheet.Cells[Row, 1, Row, 8].Style.Border.Bottom.Style = ExcelBorderStyle.None;
-
-                Row++;
-
-                worksheet.Cells[Row, 1].Value = "144 KM SUPER HIGHWAY HYDERABAD - CELL: 0300-3240440, 0345-1404440";
-                worksheet.Cells[Row, 1].Style.Font.Size = 10;
-                worksheet.Cells[Row, 1, Row, 8].Merge = true;
-                worksheet.Cells[Row, 1].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
-                worksheet.Cells[Row, 1, Row, 8].Style.Border.BorderAround(ExcelBorderStyle.Thin);
-                worksheet.Cells[Row, 1, Row, 8].Style.Border.Top.Style = ExcelBorderStyle.None;
-
-
-                Row++;
-                int TableStart = Row;
+                int Row = 2;
 
                 worksheet.Cells[Row, 1].Value = CBCompany.Text;
                 worksheet.Cells[Row, 1].Style.Font.Size = 14;
                 worksheet.Cells[Row, 1].Style.Font.Bold = true;
-                worksheet.Cells[Row, 1, Row, 8].Merge = true;
+                worksheet.Cells[Row, 1, Row+1, 5].Merge = true;
                 worksheet.Cells[Row, 1].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                worksheet.Cells[Row, 1].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+
+                worksheet.Cells[Row, 6].Value = "BILLING PERIOD " + DateTime.Today.AddDays(1).Subtract(DPFrom.Value).Days + " DAYS";
+                worksheet.Cells[Row, 6].Style.Font.Bold = true;
+                worksheet.Cells[Row, 6, Row, 9].Merge = true;
+                worksheet.Cells[Row, 6].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
 
                 Row++;
 
-                worksheet.Cells[Row, 1].Value = "BILLING PERIOD " + DPTo.Value.AddDays(1).Subtract(DPFrom.Value).Days + " DAYS";
-                worksheet.Cells[Row, 1].Style.Font.Bold = true;
-                worksheet.Cells[Row, 1, Row, 4].Merge = true;
-                worksheet.Cells[Row, 1].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                worksheet.Cells[Row, 6].Value = "DATE " + DPFrom.Value.ToString("dd MMM yyyy") + " TO " + DPTo.Value.ToString("dd MMM yyyy");
+                worksheet.Cells[Row, 6].Style.Font.Bold = true;
+                worksheet.Cells[Row, 6, Row, 9].Merge = true;
+                worksheet.Cells[Row, 6].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
 
-                worksheet.Cells[Row, 5].Value = "DATE " + DPFrom.Value.ToString("dd MMM yyyy") + " TO " + DPTo.Value.ToString("dd MMM yyyy");
-                worksheet.Cells[Row, 5].Style.Font.Bold = true;
-                worksheet.Cells[Row, 5, Row, 8].Merge = true;
-                worksheet.Cells[Row, 5].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                worksheet.Cells[2, 1, 3, 9].Style.Border.Right.Style = ExcelBorderStyle.Thin;
+                worksheet.Cells[2, 1, 3, 9].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+                worksheet.Cells[2, 1, 3, 9].Style.Border.Left.Style = ExcelBorderStyle.Thin;
+                worksheet.Cells[2, 1, 3, 9].Style.Border.Top.Style = ExcelBorderStyle.Thin;
 
-                Row++;
+                Row+=2;
 
-                worksheet.Cells[Row, 1].Value = "S. No";
-                worksheet.Cells[Row, 2].Value = "Sale Date";
-                worksheet.Cells[Row, 3].Value = "V. No";
-                worksheet.Cells[Row, 4].Value = "Slip No";
-                worksheet.Cells[Row, 5].Value = "Fuel Type";
-                worksheet.Cells[Row, 6].Value = "Liter";
+                worksheet.Cells[Row, 1].Value = "S #";
+                worksheet.Cells[Row, 2].Value = "Date";
+                worksheet.Cells[Row, 3].Value = "Slip #";
+                worksheet.Cells[Row, 4].Value = "Vehicle";
+                worksheet.Cells[Row, 5].Value = "Product";
+                worksheet.Cells[Row, 6].Value = "Quantity";
                 worksheet.Cells[Row, 7].Value = "Rate";
-                worksheet.Cells[Row, 8].Value = "Balance";
-                worksheet.Cells[Row, 1, Row, 8].Style.Font.Bold = true;
-                worksheet.Cells[Row, 1, Row, 8].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                worksheet.Cells[Row,8].Value = "Discount";
+                worksheet.Cells[Row,9].Value = "Amount";
+                worksheet.Cells[Row, 1, Row, 9].Style.Font.Bold = true;
+                worksheet.Cells[Row, 1, Row, 9].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+
+                ExcelRange HeaderCell = worksheet.Cells[Row, 1, Row, 9];
 
                 Row++;
 
@@ -142,7 +124,6 @@ namespace PetrolPump
 
                 MySqlDataReader Transactions = Func.SelectQuery("SELECT credit.datetime, vehicles.number, credit.id, type, liter, rate, liter*rate,amount,credit.companyid FROM `credit` inner join vehicles on vehicles.id = credit.vehicleid where credit.companyid = '" + Company.ID[CBCompany.SelectedIndex] + "' and " + DateClause + " union all SELECT datetime,null, id, 'Cash', null, null, amount,amount,companyid FROM vehiclecash where companyid = '" + Company.ID[CBCompany.SelectedIndex] + "' and " + DateClause + " order by datetime");
 
-                double TotalLiter = 0;
                 double TotalAmount = 0;
                 double TotalDiscount = 0;
 
@@ -152,26 +133,33 @@ namespace PetrolPump
 
                     while (Transactions.Read())
                     {
+                        if (SerialNum % 40 == 0)
+                        {
+                            HeaderCell.Copy(worksheet.Cells[Row, 1, Row, 9]);
+                            Row++;
+                        }
+
                         worksheet.Cells[Row, 1].Value = SerialNum++;
                         worksheet.Cells[Row, 2].Value = Convert.ToDateTime(Transactions[0]).ToString("dd-MM-yyyy");
-                        worksheet.Cells[Row, 3].Value = Transactions[1].ToString();
-                        worksheet.Cells[Row, 4].Value = Convert.ToDouble(Transactions[2].ToString());
+                        worksheet.Cells[Row, 3].Value = Convert.ToInt32(Transactions[2]);
+                        worksheet.Cells[Row, 4].Value = Transactions[1].ToString();
                         worksheet.Cells[Row, 5].Value = Transactions[3].ToString();
 
                         if (Transactions[1].ToString() != "")
                         {
-                            double Liter = Convert.ToDouble(Transactions[4].ToString());
-                            worksheet.Cells[Row, 6].Value = Liter;
-                            TotalLiter += Liter;
-
-                            worksheet.Cells[Row, 7].Value = Convert.ToDouble(Transactions[5].ToString());
+                            worksheet.Cells[Row, 6].Value = Math.Round(Convert.ToDouble(Transactions[4].ToString()), 2);
+                            worksheet.Cells[Row, 7].Value = Math.Round(Convert.ToDouble(Transactions[5].ToString()), 2);
                         }
 
                         double Amount = Math.Round(Convert.ToDouble(Transactions[6].ToString()), 2);
-                        worksheet.Cells[Row, 8].Value = Amount;
+                        double Discount = Math.Round(Convert.ToDouble(Transactions[7].ToString()), 2);
 
                         TotalAmount += Amount;
-                        TotalDiscount += Math.Round(Convert.ToDouble(Transactions[7].ToString()), 2);
+                        TotalDiscount += Discount;
+
+                        if (Amount - Discount != 0)
+                            worksheet.Cells[Row, 8].Value = Amount - Discount;
+                        worksheet.Cells[Row, 9].Value = Amount;
 
                         Row++;
                     }
@@ -180,75 +168,62 @@ namespace PetrolPump
 
                 Row--;
 
-                worksheet.Cells[TableStart, 2, Row, 2].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
-                worksheet.Cells[TableStart, 3, Row, 3].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
-                worksheet.Cells[TableStart, 5, Row, 5].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
-
-                worksheet.Cells[TableStart + 2, 6, Row, 7].Style.Numberformat.Format = "#,###.00";
-                worksheet.Cells[TableStart + 2, 8, Row, 8].Style.Numberformat.Format = "#,###";
-                worksheet.Cells[TableStart, 1, Row, 8].Style.Border.Right.Style = ExcelBorderStyle.Thin;
-                worksheet.Cells[TableStart, 1, Row, 8].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
-                worksheet.Cells[TableStart, 1, Row, 8].Style.Border.Left.Style = ExcelBorderStyle.Thin;
-                worksheet.Cells[TableStart, 1, Row, 8].Style.Border.Top.Style = ExcelBorderStyle.Thin;
+                worksheet.Cells[6, 6, Row, 9].Style.Numberformat.Format = "#,##0.00";
+                worksheet.Cells[5, 1, Row, 9].Style.Border.Right.Style = ExcelBorderStyle.Thin;
+                worksheet.Cells[5, 1, Row, 9].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+                worksheet.Cells[5, 1, Row, 9].Style.Border.Left.Style = ExcelBorderStyle.Thin;
+                worksheet.Cells[5, 1, Row, 9].Style.Border.Top.Style = ExcelBorderStyle.Thin;
 
                 Row += 2;
 
                 int SummaryTableStart = Row;
 
-                worksheet.Cells[Row, 4].Value = "TOTAL LTRS";
-                worksheet.Cells[Row, 4, Row, 5].Merge = true;
-                worksheet.Cells[Row, 6].Value = TotalLiter;
-                worksheet.Cells[Row, 8].Value = TotalAmount;
+                worksheet.Cells[Row, 6].Value = "Total Bill Amount";
+                worksheet.Cells[Row, 6, Row, 8].Merge = true;
+                worksheet.Cells[Row, 9].Value = TotalAmount;
 
                 Row++;
 
-                worksheet.Cells[Row, 4].Value = "LESS DISCOUNT";
-                worksheet.Cells[Row, 4, Row, 7].Merge = true;
-                worksheet.Cells[Row, 8].Value = TotalAmount - TotalDiscount;
+                worksheet.Cells[Row, 6].Value = "Discounts";
+                worksheet.Cells[Row, 6, Row, 8].Merge = true;
+                worksheet.Cells[Row, 9].Value = TotalAmount - TotalDiscount;
 
                 Row++;
 
-                worksheet.Cells[Row, 4].Value = "CURRENT BILL AMOUNT";
-                worksheet.Cells[Row, 4, Row, 7].Merge = true;
-                worksheet.Cells[Row, 8].Value = TotalDiscount;
-                worksheet.Cells[Row, 4, Row, 8].Style.Font.Bold = true;
+                worksheet.Cells[Row, 6].Value = "Total Dues (Current)";
+                worksheet.Cells[Row, 6, Row, 8].Merge = true;
+                worksheet.Cells[Row, 9].Value = TotalDiscount;
+                worksheet.Cells[Row, 6, Row, 9].Style.Font.Bold = true;
 
                 Row++;
 
                 double BalanceCredit = Math.Round(Convert.ToDouble(Func.ScalarString("SELECT sum(amount) FROM credit where companyid = '" + Company.ID[CBCompany.SelectedIndex] + "'" + "and date(datetime) <= date('" + DPTo.Value.ToString("yyyy-MM-dd")+"')").ToString()), 2);
                 double BalanceVehicleCash = Math.Round(Convert.ToDouble(Func.ScalarString("SELECT sum(amount) FROM vehiclecash where companyid = '" + Company.ID[CBCompany.SelectedIndex] + "'" + "and date(datetime)  <= date('" + DPTo.Value.ToString("yyyy-MM-dd") + "')").ToString()), 2);
                 double Balance = BalanceCredit + BalanceVehicleCash;
-                worksheet.Cells[Row, 4].Value = "BALANCE";
-                worksheet.Cells[Row, 4, Row, 7].Merge = true;
-                worksheet.Cells[Row, 8].Value = Balance - TotalDiscount;
+                worksheet.Cells[Row, 6].Value = "Previous Dues";
+                worksheet.Cells[Row, 6, Row, 8].Merge = true;
+                worksheet.Cells[Row, 9].Value = Balance - TotalDiscount;
 
                 Row++;
-
-                worksheet.Cells[Row, 4].Value = "TOTAL AMOUNT";
-                worksheet.Cells[Row, 4, Row, 7].Merge = true;
-                worksheet.Cells[Row, 8].Value = Balance;
-                worksheet.Cells[Row, 4, Row, 8].Style.Font.Bold = true;
-
-                Row++;
-
+                
                 double ReceivedCredit = Math.Round(Convert.ToDouble(Func.ScalarString("SELECT coalesce(sum(creditreceived.amount),0) FROM creditreceived inner join credit on credit.id = creditreceived.creditid where companyid = '" + Company.ID[CBCompany.SelectedIndex] + "'" + " and " + " date(creditreceived.DateTime) between '" + DPFrom.Value.ToString("yyyy-MM-dd") + "' and '" + DPTo.Value.ToString("yyyy-MM-dd") + "' ")), 2);
                 double ReceivedVehicleCash = Math.Round(Convert.ToDouble(Func.ScalarString("SELECT coalesce(sum(vehiclecashreceived.amount),0) FROM vehiclecashreceived inner join vehiclecash on vehiclecash.id = vehiclecashreceived.vehiclecashid where companyid = '" + Company.ID[CBCompany.SelectedIndex] + "'" + " and " + " date(vehiclecashreceived.DateTime) between '" + DPFrom.Value.ToString("yyyy-MM-dd") + "' and '" + DPTo.Value.ToString("yyyy-MM-dd") + "' ")), 2);
                 double Received = ReceivedCredit + ReceivedVehicleCash;
-                worksheet.Cells[Row, 4].Value = "TOTAL RECEIVED AMOUNT";
-                worksheet.Cells[Row, 4, Row, 7].Merge = true;
-                worksheet.Cells[Row, 8].Value = Received;
+                worksheet.Cells[Row, 6].Value = "Amount Received";
+                worksheet.Cells[Row, 6, Row, 8].Merge = true;
+                worksheet.Cells[Row, 9].Value = Received;
 
                 Row++;
 
-                worksheet.Cells[Row, 4].Value = "GRAND TOTAL";
-                worksheet.Cells[Row, 4, Row, 7].Merge = true;
-                worksheet.Cells[Row, 8].Value = Balance - Received;
-                worksheet.Cells[Row, 4, Row, 8].Style.Font.Bold = true;
+                worksheet.Cells[Row, 6].Value = "Total Amount Payable";
+                worksheet.Cells[Row, 6, Row, 8].Merge = true;
+                worksheet.Cells[Row, 9].Value = Balance - Received;
+                worksheet.Cells[Row, 6, Row, 9].Style.Font.Bold = true;
 
-                worksheet.Cells[SummaryTableStart, 8, Row, 8].Style.Numberformat.Format = "#,###";
-                worksheet.Cells[SummaryTableStart, 4, Row, 8].Style.Border.Right.Style = ExcelBorderStyle.Thin;
-                worksheet.Cells[SummaryTableStart, 4, Row, 8].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
-                worksheet.Cells[SummaryTableStart, 4, Row, 8].Style.Border.BorderAround(ExcelBorderStyle.Medium);
+                worksheet.Cells[SummaryTableStart, 9, Row, 9].Style.Numberformat.Format = "#,##0.00";
+                worksheet.Cells[SummaryTableStart, 6, Row, 9].Style.Border.Right.Style = ExcelBorderStyle.Thin;
+                worksheet.Cells[SummaryTableStart, 6, Row, 9].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+                worksheet.Cells[SummaryTableStart, 6, Row, 9].Style.Border.BorderAround(ExcelBorderStyle.Medium);
 
                 Row--;
 
@@ -257,7 +232,10 @@ namespace PetrolPump
 
                 worksheet.HeaderFooter.OddFooter.LeftAlignedText = fileName;
 
-                worksheet.Cells.AutoFitColumns(200);
+                worksheet.Cells.AutoFitColumns();
+
+                worksheet.Cells.Style.Font.Size = 11;
+                worksheet.Cells.Style.Font.Name = "Times New Roman";
 
                 package.Save();
                 if (FileNum == 0)
