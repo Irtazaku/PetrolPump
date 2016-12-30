@@ -28,6 +28,8 @@ namespace PetrolPump
 
             DPFrom.Value = DateTime.Today.AddDays(-1);
             DPFrom.MaxDate = DateTime.Today;
+            DPTo.Value = DateTime.Today;
+            DPTo.MaxDate = DateTime.Today;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -85,7 +87,7 @@ namespace PetrolPump
                 worksheet.Cells[Row, 1].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
                 worksheet.Cells[Row, 1].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
 
-                worksheet.Cells[Row, 6].Value = "BILLING PERIOD " + DateTime.Today.AddDays(1).Subtract(DPFrom.Value).Days + " DAYS";
+                worksheet.Cells[Row, 6].Value = "BILLING PERIOD " + DPTo.Value.AddDays(1).Subtract(DPFrom.Value).Days + " DAYS";
                 worksheet.Cells[Row, 6].Style.Font.Bold = true;
                 worksheet.Cells[Row, 6, Row, 9].Merge = true;
                 worksheet.Cells[Row, 6].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
@@ -102,7 +104,7 @@ namespace PetrolPump
                 worksheet.Cells[2, 1, 3, 9].Style.Border.Left.Style = ExcelBorderStyle.Thin;
                 worksheet.Cells[2, 1, 3, 9].Style.Border.Top.Style = ExcelBorderStyle.Thin;
 
-                Row+=2;
+                Row+=4;
 
                 worksheet.Cells[Row, 1].Value = "S #";
                 worksheet.Cells[Row, 2].Value = "Date";
@@ -133,10 +135,18 @@ namespace PetrolPump
 
                     while (Transactions.Read())
                     {
-                        if (SerialNum % 40 == 0)
+                        
+                        if (SerialNum != 1 && (SerialNum-1) % 40 == 0)
                         {
+                            
+                            if (SerialNum > 41)
+                            {
+                                Row += 5;
+                            }
+                            Row+=4;
                             HeaderCell.Copy(worksheet.Cells[Row, 1, Row, 9]);
                             Row++;
+                            
                         }
 
                         worksheet.Cells[Row, 1].Value = SerialNum++;
@@ -162,6 +172,10 @@ namespace PetrolPump
                         worksheet.Cells[Row, 9].Value = Amount;
 
                         Row++;
+                    }
+                    if (SerialNum > 35 && SerialNum < 41)
+                    {
+                        Row += 5 - 40 + SerialNum;
                     }
                 }
                 Transactions.Close();
