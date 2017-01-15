@@ -322,3 +322,7 @@ C:\Users\irtaz_000\Documents\Visual Studio 2013\Projects\petrolpump\PetrolPump\b
 C:\Users\irtaz_000\Documents\Visual Studio 2013\Projects\petrolpump\PetrolPump\obj\Debug\PetrolPump.csprojResolveAssemblyReference.cache
 C:\Users\irtaz_000\Documents\Visual Studio 2013\Projects\petrolpump\PetrolPump\obj\Debug\PetrolPump.exe.manifest
 C:\Users\irtaz_000\Documents\Visual Studio 2013\Projects\petrolpump\PetrolPump\obj\Debug\PetrolPump.application
+D:\BSCS\PetrolPump\PetrolPump\bin\Debug\PetrolPump.exe.manifest
+D:\BSCS\PetrolPump\PetrolPump\bin\Debug\PetrolPump.application
+D:\BSCS\PetrolPump\PetrolPump\obj\Debug\PetrolPump.exe.manifest
+D:\BSCS\PetrolPump\PetrolPump\obj\Debug\PetrolPump.application

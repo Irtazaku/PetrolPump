@@ -104,7 +104,7 @@ namespace PetrolPump
                 worksheet.Cells[2, 1, 3, 9].Style.Border.Left.Style = ExcelBorderStyle.Thin;
                 worksheet.Cells[2, 1, 3, 9].Style.Border.Top.Style = ExcelBorderStyle.Thin;
 
-                Row+=4;
+                Row+=3;
 
                 worksheet.Cells[Row, 1].Value = "S #";
                 worksheet.Cells[Row, 2].Value = "Date";
@@ -117,8 +117,12 @@ namespace PetrolPump
                 worksheet.Cells[Row,9].Value = "Amount";
                 worksheet.Cells[Row, 1, Row, 9].Style.Font.Bold = true;
                 worksheet.Cells[Row, 1, Row, 9].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                worksheet.Cells[Row, 1, Row, 9].Style.Border.Right.Style = ExcelBorderStyle.Thin;
+                worksheet.Cells[Row, 1, Row, 9].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+                worksheet.Cells[Row, 1, Row, 9].Style.Border.Left.Style = ExcelBorderStyle.Thin;
+                worksheet.Cells[Row, 1, Row, 9].Style.Border.Top.Style = ExcelBorderStyle.Thin;
 
-                ExcelRange HeaderCell = worksheet.Cells[Row, 1, Row, 9];
+                ExcelRange HeaderCell = worksheet.Cells[2, 1, Row, 9];
 
                 Row++;
 
@@ -132,21 +136,30 @@ namespace PetrolPump
                 if (Transactions.HasRows)
                 {
                     int SerialNum = 1;
+                    int BorderRow = Row;
 
                     while (Transactions.Read())
                     {
-                        
-                        if (SerialNum != 1 && (SerialNum-1) % 40 == 0)
+
+                        if (SerialNum != 1 && (SerialNum - 1) % 40 == 0)
                         {
-                            
-                            if (SerialNum > 41)
+
+                            worksheet.Cells[BorderRow, 1, Row - 1, 9].Style.Border.Right.Style = ExcelBorderStyle.Thin;
+                            worksheet.Cells[BorderRow, 1, Row - 1, 9].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+                            worksheet.Cells[BorderRow, 1, Row - 1, 9].Style.Border.Left.Style = ExcelBorderStyle.Thin;
+                            worksheet.Cells[BorderRow, 1, Row - 1, 9].Style.Border.Top.Style = ExcelBorderStyle.Thin;
+                            worksheet.Row(Row).PageBreak = true;
+
+                            /*if (SerialNum > 41)
                             {
                                 Row += 5;
                             }
-                            Row+=4;
-                            HeaderCell.Copy(worksheet.Cells[Row, 1, Row, 9]);
-                            Row++;
-                            
+                            Row += 4;*/
+                            Row+=2;
+                            HeaderCell.Copy(worksheet.Cells[Row, 1, Row+5, 9]);
+                            Row+=5;
+
+                            BorderRow = Row;
                         }
 
                         worksheet.Cells[Row, 1].Value = SerialNum++;
@@ -173,6 +186,12 @@ namespace PetrolPump
 
                         Row++;
                     }
+
+                    worksheet.Cells[BorderRow, 1, Row - 1, 9].Style.Border.Right.Style = ExcelBorderStyle.Thin;
+                    worksheet.Cells[BorderRow, 1, Row - 1, 9].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+                    worksheet.Cells[BorderRow, 1, Row - 1, 9].Style.Border.Left.Style = ExcelBorderStyle.Thin;
+                    worksheet.Cells[BorderRow, 1, Row - 1, 9].Style.Border.Top.Style = ExcelBorderStyle.Thin;
+
                     if (SerialNum > 35 && SerialNum < 41)
                     {
                         Row += 5 - 40 + SerialNum;
@@ -183,10 +202,10 @@ namespace PetrolPump
                 Row--;
 
                 worksheet.Cells[6, 6, Row, 9].Style.Numberformat.Format = "#,##0.00";
-                worksheet.Cells[5, 1, Row, 9].Style.Border.Right.Style = ExcelBorderStyle.Thin;
-                worksheet.Cells[5, 1, Row, 9].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
-                worksheet.Cells[5, 1, Row, 9].Style.Border.Left.Style = ExcelBorderStyle.Thin;
-                worksheet.Cells[5, 1, Row, 9].Style.Border.Top.Style = ExcelBorderStyle.Thin;
+                /*worksheet.Cells[7, 1, Row, 9].Style.Border.Right.Style = ExcelBorderStyle.Thin;
+                worksheet.Cells[7, 1, Row, 9].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+                worksheet.Cells[7, 1, Row, 9].Style.Border.Left.Style = ExcelBorderStyle.Thin;
+                worksheet.Cells[7, 1, Row, 9].Style.Border.Top.Style = ExcelBorderStyle.Thin;*/
 
                 Row += 2;
 
@@ -242,15 +261,15 @@ namespace PetrolPump
                 Row--;
 
                 // add the page number to the footer plus the total number of pages
-                worksheet.HeaderFooter.OddFooter.RightAlignedText = string.Format("Page " + ExcelHeaderFooter.PageNumber + " of " + ExcelHeaderFooter.NumberOfPages);
+                worksheet.HeaderFooter.OddFooter.RightAlignedText = "&11&\"Times New Roman\""+string.Format("Page " + ExcelHeaderFooter.PageNumber + " of " + ExcelHeaderFooter.NumberOfPages);
+                worksheet.HeaderFooter.OddFooter.LeftAlignedText = "&11&\"Times New Roman\""+fileName;
 
-                worksheet.HeaderFooter.OddFooter.LeftAlignedText = fileName;
 
                 worksheet.Cells.AutoFitColumns();
 
                 worksheet.Cells.Style.Font.Size = 11;
                 worksheet.Cells.Style.Font.Name = "Times New Roman";
-
+                
                 package.Save();
                 if (FileNum == 0)
                     System.Diagnostics.Process.Start(fileName + ".xlsx");

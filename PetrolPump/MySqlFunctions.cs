@@ -12,8 +12,8 @@ namespace PetrolPump
         public static int CashierID;
         public static string CashierName;
         public static string CashierType;
-        string ConnString = "Server=localhost;Database=petrolpump;UID=root;Password=stialphasoft";
-        //string ConnString = "Server=localhost;Database=petrolpump;UID=root;Password=";
+        //string ConnString = "Server=localhost;Database=petrolpump;UID=root;Password=stialphasoft";
+        string ConnString = "Server=localhost;Database=petrolpump;UID=root;Password=";
         MySqlConnection Conn;
         
         public MySqlFunctions()
